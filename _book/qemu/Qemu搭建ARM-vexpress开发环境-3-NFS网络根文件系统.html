@@ -1,0 +1,796 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Qemu搭建ARM-vexpress开发环境-3-NFS网络根文件系统 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../hexo/" />
+    
+    
+    <link rel="prev" href="Qemu搭建ARM-vexpress开发环境-2-u-boot启动kernel.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" >
+            
+                <span>
+            
+                    
+                    计算机基础
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../elf/">
+            
+                <a href="../elf/">
+            
+                    
+                    ELF
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1.1" data-path="../elf/linux中ELF二进制程序解析.html">
+            
+                <a href="../elf/linux中ELF二进制程序解析.html">
+            
+                    
+                    Linux中ELF二进制程序解析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.2" data-path="../elf/linux中ELF二进制程序解析----ELF文件实例解析.html">
+            
+                <a href="../elf/linux中ELF二进制程序解析----ELF文件实例解析.html">
+            
+                    
+                    Linux中ELF二进制程序解析----ELF文件实例解析
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../driver/">
+            
+                <a href="../driver/">
+            
+                    
+                    Linux driver
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" >
+            
+                <span>
+            
+                    
+                    BringUp
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1.1" data-path="../bringup/u-boot引导kernel启动过程.html">
+            
+                <a href="../bringup/u-boot引导kernel启动过程.html">
+            
+                    
+                    u-boot引导kernel启动过程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.2" data-path="../bringup/Linux内核启动流程-基于ARM64.html">
+            
+                <a href="../bringup/Linux内核启动流程-基于ARM64.html">
+            
+                    
+                    Linux内核启动流程-基于ARM64
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" >
+            
+                <span>
+            
+                    
+                    Driver
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.2.1" data-path="../driver/Linux字符设备驱动.html">
+            
+                <a href="../driver/Linux字符设备驱动.html">
+            
+                    
+                    Linux字符设备驱动
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.2" data-path="../driver/Linux块设备驱动.html">
+            
+                <a href="../driver/Linux块设备驱动.html">
+            
+                    
+                    Linux块设备驱动
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../platform/">
+            
+                <a href="../platform/">
+            
+                    
+                    platform
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.3.1" data-path="../platform/platform总线设备驱动模型.html">
+            
+                <a href="../platform/platform总线设备驱动模型.html">
+            
+                    
+                    platform总线设备驱动模型
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../tty/">
+            
+                <a href="../tty/">
+            
+                    
+                    tty
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="../i2c/">
+            
+                <a href="../i2c/">
+            
+                    
+                    i2c
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../tool/">
+            
+                <a href="../tool/">
+            
+                    
+                    Tool
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" >
+            
+                <span>
+            
+                    
+                    qemu
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1.1" data-path="Qemu搭建ARM-vexpress开发环境-1.html">
+            
+                <a href="Qemu搭建ARM-vexpress开发环境-1.html">
+            
+                    
+                    Qemu搭建ARM-vexpress开发环境-1
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.1.2" data-path="Qemu搭建ARM-vexpress开发环境-2-u-boot启动kernel.html">
+            
+                <a href="Qemu搭建ARM-vexpress开发环境-2-u-boot启动kernel.html">
+            
+                    
+                    Qemu搭建ARM-vexpress开发环境-2-u-boot启动kernel
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.4.1.3" data-path="Qemu搭建ARM-vexpress开发环境-3-NFS网络根文件系统.html">
+            
+                <a href="Qemu搭建ARM-vexpress开发环境-3-NFS网络根文件系统.html">
+            
+                    
+                    Qemu搭建ARM-vexpress开发环境-3-NFS网络根文件系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../hexo/">
+            
+                <a href="../hexo/">
+            
+                    
+                    hexo
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.2.1" data-path="../hexo/Hexo-Github搭建个人博客.html">
+            
+                <a href="../hexo/Hexo-Github搭建个人博客.html">
+            
+                    
+                    Hexo-Github搭建个人博客
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2.2" data-path="../hexo/Ubuntu-Hexo-Github搭建个人博客.html">
+            
+                <a href="../hexo/Ubuntu-Hexo-Github搭建个人博客.html">
+            
+                    
+                    Ubuntu-Hexo-Github搭建个人博客
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Qemu搭建ARM-vexpress开发环境-3-NFS网络根文件系统</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="qemu&#x642D;&#x5EFA;arm-vexpress&#x5F00;&#x53D1;&#x73AF;&#x5883;3----nfs&#x7F51;&#x7EDC;&#x6839;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;">Qemu&#x642D;&#x5EFA;ARM vexpress&#x5F00;&#x53D1;&#x73AF;&#x5883;(3)----NFS&#x7F51;&#x7EDC;&#x6839;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;</h1>
+<h2 id="&#x76EE;&#x5F55;">&#x76EE;&#x5F55;</h2>
+<p>[TOC]</p>
+<p>&#x7ECF;&#x8FC7;&#x4E0A;&#x4E00;&#x7BC7;&#x300A;<a href="https://www.jianshu.com/p/8619a6739040" target="_blank">Qemu&#x642D;&#x5EFA;ARM vexpress&#x5F00;&#x53D1;&#x73AF;&#x5883;(2)----&#x901A;&#x8FC7;u-boot&#x542F;&#x52A8;Linux&#x5185;&#x6838;</a>&#x300B;&#xFF0C;&#x5DF2;&#x7ECF;&#x5B9E;&#x73B0;&#x4E86;&#x901A;&#x8FC7;u-boot&#x52A0;&#x8F7D;Kernel&#x542F;&#x52A8;&#x5F00;&#x53D1;&#x677F;&#xFF0C;&#x5E76;&#x4E14;&#x6302;&#x8F7D;&#x6839;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#xFF0C;&#x672C;&#x6587;&#x8BB2;&#x8FF0;&#x901A;&#x8FC7;NFS&#x7F51;&#x7EDC;&#x6302;&#x8F7D;&#x6839;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x3002;</p>
+<p>&#x901A;&#x8FC7;NFS&#x7F51;&#x7EDC;&#x6839;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#xFF0C;&#x53EF;&#x4EE5;&#x5B9E;&#x73B0;&#x5F00;&#x53D1;&#x677F;&#x5728;&#x901A;&#x8FC7;u-boot&#x542F;&#x52A8;&#x5185;&#x6838;&#x540E;&#xFF0C;&#x901A;&#x8FC7;NFS&#x7F51;&#x7EDC;&#x5728;&#x522B;&#x7684;PC&#x4E3B;&#x673A;&#x4E0A;&#x6302;&#x8F7D;&#x6839;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x3002;&#x5BF9;&#x4E8E;&#x5F00;&#x53D1;&#x8C03;&#x8BD5;&#x9636;&#x6BB5;&#x7684;&#x5DE5;&#x4F5C;&#x5B66;&#x4E60;&#x63D0;&#x4F9B;&#x4E86;&#x5F88;&#x5927;&#x7684;&#x4FBF;&#x5229;&#xFF0C;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x5728;Linux&#x4E3B;&#x673A;&#x4E0A;&#x5F00;&#x53D1;&#x3001;&#x7F16;&#x8BD1;&#x9A71;&#x52A8;&#x6216;&#x8005;APP&#xFF0C;&#x5E76;&#x5C06;&#x76EE;&#x6807;&#x6587;&#x4EF6;&#x62F7;&#x8D1D;&#x5230;NFS&#x670D;&#x52A1;&#x76EE;&#x5F55;&#x4E2D;&#x8FDB;&#x884C;&#x4F7F;&#x7528;&#xFF08;&#x6B64;&#x65F6;&#x6587;&#x4EF6;&#x76F8;&#x5F53;&#x4E8E;&#x88AB;&#x62F7;&#x8D1D;&#x5230;&#x4E86;&#x5F00;&#x53D1;&#x677F;&#x7684;&#x6839;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x4E2D;&#xFF09;&#x3002;&#x4E5F;&#x53EF;&#x4EE5;&#x5728;&#x4E3B;&#x673A;&#x7AEF;&#x76F4;&#x63A5;&#x4FEE;&#x6539;rootfs&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x4E2D;&#x522B;&#x7684;&#x6587;&#x4EF6;&#xFF0C;&#x7B49;&#x6548;&#x4E8E;&#x5728;&#x5F00;&#x53D1;&#x677F;&#x4E0A;&#x76F4;&#x63A5;&#x4FEE;&#x6539;&#x3002;</p>
+<!--more-->
+<p>&#x672C;&#x6587;&#x6765;&#x4ECB;&#x7ECD;NFS&#x6302;&#x8F7D;&#x7F51;&#x7EDC;&#x6839;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x7684;&#x64CD;&#x4F5C;&#x6B65;&#x9AA4;&#xFF0C;&#x672C;&#x65B9;&#x6CD5;&#x4E0D;&#x4EC5;&#x4EC5;&#x9002;&#x7528;&#x4E8E;Qemu&#x642D;&#x5EFA;&#x7684;ARM vexpress&#x5F00;&#x53D1;&#x677F;&#x73AF;&#x5883;&#xFF0C;&#x4E5F;&#x9002;&#x7528;&#x4E8E;&#x6240;&#x6709;&#x5176;&#x4ED6;&#x7684;&#x5F00;&#x53D1;&#x677F;&#x5B9E;&#x4F53;&#x3002;</p>
+<p>&#x7531;&#x4E8E;&#x5404;&#x4E2A;&#x5F00;&#x53D1;&#x677F;&#x7684;NFS&#x7F51;&#x7EDC;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x5236;&#x4F5C;&#x65B9;&#x6CD5;&#x662F;&#x76F8;&#x540C;&#x7684;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x53C2;&#x8003;Exynos4412&#x548C;NanopiNEO&#x5F00;&#x53D1;&#x677F;&#x73AF;&#x5883;&#x642D;&#x5EFA;&#x4E2D;&#x7684;NFS&#x7F51;&#x7EDC;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x5236;&#x4F5C;&#x65B9;&#x6CD5;&#x90E8;&#x5206;&#x5185;&#x5BB9;&#x3002;</p>
+<h2 id="1-&#x73AF;&#x5883;&#x914D;&#x7F6E;">1. &#x73AF;&#x5883;&#x914D;&#x7F6E;</h2>
+<p>Linux&#x4E3B;&#x673A;&#x652F;&#x6301;NFS&#x670D;&#x52A1;
+&#x4FEE;&#x6539;bootargs&#x542F;&#x52A8;&#x53C2;&#x6570;
+    &#x8BBE;&#x7F6E;NFS&#x4E3A;&#x6839;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;
+    &#x8BBE;&#x7F6E;&#x4E3B;&#x673A;NFS&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x5730;&#x5740;
+&#x5185;&#x6838;&#x652F;&#x6301;NFS&#x6302;&#x8F7D;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;</p>
+<h2 id="2-&#x5B89;&#x88C5;&#x5E76;&#x914D;&#x7F6E;nfs&#x670D;&#x52A1;">2. &#x5B89;&#x88C5;&#x5E76;&#x914D;&#x7F6E;NFS&#x670D;&#x52A1;</h2>
+<h3 id="21-linux&#x4E3B;&#x673A;&#x5F00;&#x542F;nfs&#x670D;&#x52A1;">2.1 Linux&#x4E3B;&#x673A;&#x5F00;&#x542F;NFS&#x670D;&#x52A1;</h3>
+<h4 id="1-&#x5B89;&#x88C5;nfs">1) &#x5B89;&#x88C5;NFS</h4>
+<pre><code># sudo apt install nfs-kernel-server
+</code></pre><h4 id="2-&#x914D;&#x7F6E;nfs">2) &#x914D;&#x7F6E;NFS</h4>
+<pre><code># vim /etc/exports
+// &#x6DFB;&#x52A0;NFS&#x5171;&#x4EAB;&#x76EE;&#x5F55;
+/home/mcy/qemu/rootfs    *(rw, sync, no_root_squash, no_subtree_check)
+    *    &#x5141;&#x8BB8;&#x6240;&#x6709;&#x7F51;&#x6BB5;&#x8BBF;&#x95EE;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x5177;&#x4F53;&#x7684;IP&#x5730;&#x5740;
+    rw    &#x53EF;&#x8BFB;&#x53EF;&#x5199;&#x64CD;&#x4F5C;
+    sync    &#x5185;&#x5B58;&#x548C;&#x78C1;&#x76D8;&#x4E0A;&#x7684;&#x5185;&#x5BB9;&#x4FDD;&#x6301;&#x540C;&#x6B65;
+    no_root_squash    Linux&#x4E3B;&#x673A;&#x4E0D;&#x518D;&#x5C06;&#x5F00;&#x53D1;&#x677F;&#x8BBE;&#x7F6E;&#x4E3A;&#x533F;&#x540D;&#x7528;&#x6237;&#xFF0C;&#x53EF;&#x4EE5;&#x64CD;&#x4F5C;&#x6587;&#x4EF6;&#x8BFB;&#x5199;
+    no_subtree_check    &#x4E0D;&#x68C0;&#x67E5;&#x6839;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x5B50;&#x76EE;&#x5F55;&#x6587;&#x4EF6;
+</code></pre><h4 id="3-&#x91CD;&#x542F;nfs&#x670D;&#x52A1;">3) &#x91CD;&#x542F;NFS&#x670D;&#x52A1;</h4>
+<p>&#x56E0;&#x4E3A;NFS&#x662F;&#x4E00;&#x4E2A;RPC&#x7A0B;&#x5E8F;&#xFF0C;&#x4F7F;&#x7528;&#x5B83;&#x4E4B;&#x524D;&#xFF0C;&#x9700;&#x8981;&#x6620;&#x5C04;&#x597D;&#x7AEF;&#x53E3;&#xFF0C;&#x901A;&#x8FC7;rpcbind&#x6765;&#x5B8C;&#x6210;&#xFF1B;&#x6240;&#x4EE5;&#x9700;&#x8981;&#x91CD;&#x542F;rpcbin&#x670D;&#x52A1;&#x548C;nfs&#x670D;&#x52A1;&#xFF1B;</p>
+<pre><code>$ sudo /etc/init.d/rpcbind restart
+[ ok ] Restarting rpcbind (via systemctl): rpcbind.service.
+</code></pre><pre><code>$ sudo /etc/init.d/rpcbind status
+&#x25CF; rpcbind.service - RPC bind portmap service
+   Loaded: loaded (/lib/systemd/system/rpcbind.service; enabled; vendor preset: enabled)
+   Active: active (running) since Thu 2020-03-26 21:22:13 CST; 2min 19s ago
+     Docs: man:rpcbind(8)
+ Main PID: 6779 (rpcbind)
+    Tasks: 1 (limit: 4448)
+   CGroup: /system.slice/rpcbind.service
+           &#x2514;&#x2500;6779 /sbin/rpcbind -f -w
+
+Mar 26 21:22:13 xiami systemd[1]: Starting RPC bind portmap service...
+Mar 26 21:22:13 xiami systemd[1]: Started RPC bind portmap service.
+</code></pre><pre><code>$ sudo /etc/init.d/nfs-kernel-server restart
+[ ok ] Restarting nfs-kernel-server (via systemctl): nfs-kernel-server.service.
+</code></pre><pre><code>$ sudo /etc/init.d/nfs-kernel-server status
+&#x25CF; nfs-server.service - NFS server and services
+   Loaded: loaded (/lib/systemd/system/nfs-server.service; enabled; vendor preset: enabled)
+   Active: active (exited) since Thu 2020-03-26 21:32:46 CST; 19s ago
+  Process: 8259 ExecStopPost=/usr/sbin/exportfs -f (code=exited, status=0/SUCCESS)
+  Process: 8258 ExecStopPost=/usr/sbin/exportfs -au (code=exited, status=0/SUCCESS)
+  Process: 8257 ExecStop=/usr/sbin/rpc.nfsd 0 (code=exited, status=0/SUCCESS)
+  Process: 8267 ExecStart=/usr/sbin/rpc.nfsd $RPCNFSDARGS (code=exited, status=0/SUCCESS)
+  Process: 8266 ExecStartPre=/usr/sbin/exportfs -r (code=exited, status=0/SUCCESS)
+ Main PID: 8267 (code=exited, status=0/SUCCESS)
+
+Mar 26 21:32:45 xiami systemd[1]: Starting NFS server and services...
+Mar 26 21:32:46 xiami systemd[1]: Started NFS server and services.
+</code></pre><pre><code>$ sudo /etc/init.d/nfs-kernel-server restart
+[....] Restarting nfs-kernel-server (via systemctl): nfs-kernel-server.serviceJob for nfs-server.service canceled.
+ failed!
+</code></pre><p>&#x5982;&#x679C;&#x51FA;&#x73B0;&#x4EE5;&#x4E0A;&#x62A5;&#x9519;&#xFF0C;&#x53EF;&#x80FD;&#x662F;/etc/exports&#x6587;&#x4EF6;&#x8BBE;&#x7F6E;&#x7684;NFS&#x76EE;&#x5F55;&#x9519;&#x8BEF;&#xFF1B;&#x6BD4;&#x5982;&#x6211;&#x7684;&#x8BBE;&#x7F6E;&#x9519;&#x8BEF;&#x662F;&#x56E0;&#x4E3A;&#x62EC;&#x53F7;&#x4E2D;&#x7684;&#x5404;&#x4E2A;&#x9009;&#x9879;&#x4E4B;&#x95F4;&#x591A;&#x4E86;&#x7A7A;&#x683C;&#xFF1A;</p>
+<pre><code># vim /etc/exports
+/home/xiami/qemu/nfs_root    *(rw, sync, no_root_squash, no_subtree_check)
+&#x4FEE;&#x6539;&#x4E3A;&#xFF1A;
+/home/xiami/qemu/nfs_root    *(rw,sync,no_root_squash,no_subtree_check)
+</code></pre><pre><code>sudo /etc/init.d/rpcbind restart
+sudo /etc/init.d/nfs-kernel-server restart
+</code></pre><p>&#x6216;&#x8005;&#xFF1A;</p>
+<pre><code># systemctl restart nfs-kernel-server
+</code></pre><h4 id="4-&#x68C0;&#x67E5;nfs&#x5171;&#x4EAB;&#x76EE;&#x5F55;&#x662F;&#x5426;&#x521B;&#x5EFA;">4) &#x68C0;&#x67E5;NFS&#x5171;&#x4EAB;&#x76EE;&#x5F55;&#x662F;&#x5426;&#x521B;&#x5EFA;</h4>
+<pre><code># sudo showmount -e
+Export list for xiami:
+/home/xiami/qemu/rootfs *
+</code></pre><p>&#x6CE8;&#xFF1A;
+&#x4F7F;&#x7528;NFS&#x7F51;&#x7EDC;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x65F6;&#xFF0C;&#x9700;&#x8981;Linux&#x4E3B;&#x673A;&#x5173;&#x95ED;&#x7CFB;&#x7EDF;&#x9632;&#x706B;&#x5899;&#xFF0C;&#x5426;&#x5219;&#xFF0C;&#x7CFB;&#x7EDF;&#x5728;&#x8FD0;&#x884C;&#x65F6;&#x4F1A;&#x51FA;&#x73B0;&#x5F02;&#x5E38;&#x3002;</p>
+<p>Ubuntu&#x4E0B;&#x5173;&#x95ED;&#x9632;&#x706B;&#x5899;&#x64CD;&#x4F5C;&#xFF1A;</p>
+<pre><code># sudo ufw disable
+</code></pre><p>&#x67E5;&#x770B;&#x9632;&#x706B;&#x5899;&#x72B6;&#x6001;&#xFF1A;</p>
+<pre><code># sudo ufw status
+Status: inactive
+</code></pre><p>&#x5F00;&#x542F;&#x9632;&#x706B;&#x5899;&#xFF1A;</p>
+<pre><code># sudo ufw enable
+</code></pre><h3 id="22-&#x5F00;&#x53D1;&#x677F;&#x914D;&#x7F6E;&#x652F;&#x6301;nfs&#x7F51;&#x7EDC;">2.2 &#x5F00;&#x53D1;&#x677F;&#x914D;&#x7F6E;&#x652F;&#x6301;NFS&#x7F51;&#x7EDC;</h3>
+<p>&#x4FEE;&#x6539;u-boot&#x4E2D;&#x7684;&#x542F;&#x52A8;&#x53C2;&#x6570;&#xFF1A;</p>
+<pre><code># vim include/configs/vexpress_common.h
+#define CONFIG_BOOTCOMMAND  \
+    &quot;tftp 0x60003000 uImage; tftp 0x60500000 vexpress-v2p-ca9.dtb;  \
+    setenv bootargs &apos;root=/dev/nfs rw   \
+    nfsroot=192.168.1.102:/home/xiami/qemu/nfs_root init=/linuxrc   \
+    ip=192.168.1.110 console=ttyAMA0&apos;;  \
+    bootm 0x60003000 - 0x60500000;&quot;
+</code></pre><p>&#x914D;&#x7F6E;&#x5185;&#x6838;&#x652F;&#x6301;NFS&#x6302;&#x8F7D;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;</p>
+<p>&#x5B8C;&#x5584;NFS&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;
+&#x91CD;&#x542F;reboot&#x547D;&#x4EE4;</p>
+<h2 id="3-&#x5236;&#x4F5C;&#x6839;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;">3. &#x5236;&#x4F5C;&#x6839;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;</h2>
+<p>&#x7F16;&#x8BD1;busybox</p>
+<pre><code># make ARCH=arm CROSS_COMPILE=arm-linux-gnueabi- menuconfig
+
+Linux System Utilities  ---&gt;
+    [*] mount (30 kb)
+        [*]   Support mounting NFS file systems on Linux &lt; 2.6.23
+</code></pre><pre><code># make ARCH=arm CROSS_COMPILE=arm-linux-gnueabi- menuconfig
+scripts/kconfig/mconf Config.in
+#
+# using defaults found in .config
+#
+
+
+*** End of configuration.
+*** Execute &apos;make&apos; to build the project or try &apos;make help&apos;.
+</code></pre><p>&#x7F16;&#x8BD1;&#xFF1A;</p>
+<pre><code># make ARCH=arm CROSS_COMPILE=arm-linux-gnueabi-
+</code></pre><p>&#x5B89;&#x88C5;&#xFF1A;</p>
+<pre><code># make ARCH=arm CROSS_COMPILE=arm-linux-gnueabi- install
+</code></pre><p>&#x63D0;&#x793A;&#x4E0B;&#x8FB9;&#x4FE1;&#x606F;&#xFF0C;&#x8868;&#x793A;&#x5B89;&#x88C5;&#x6210;&#x529F;&#xFF1A;</p>
+<pre><code>--------------------------------------------------
+You will probably need to make your busybox binary
+setuid root to ensure all configured applets will
+work properly.
+--------------------------------------------------
+</code></pre><p>&#x521B;&#x5EFA;rootfs&#x76EE;&#x5F55;&#xFF0C;&#x5E76;&#x5728;rootfs&#x76EE;&#x5F55;&#x4E0B;&#x521B;&#x5EFA;&#x6587;&#x4EF6;&#xFF1A;</p>
+<pre><code># mkdir dev
+# cd dev
+# sudo mknod -m 666 tty1 c 4 1
+# sudo mknod -m 666 tty2 c 4 2
+# sudo mknod -m 666 tty3 c 4 3
+# sudo mknod -m 666 tty4 c 4 4
+# sudo mknod -m 666 console c 5 1
+# sudo mknod -m 666 null c 1 3
+# ls -l
+crw-rw-rw- 1 root root 5, 1 Mar 26 22:16 console
+crw-rw-rw- 1 root root 1, 3 Mar 26 22:16 null
+crw-rw-rw- 1 root root 4, 1 Mar 26 22:18 tty1
+crw-rw-rw- 1 root root 4, 2 Mar 26 22:18 tty2
+crw-rw-rw- 1 root root 4, 3 Mar 26 22:19 tty3
+crw-rw-rw- 1 root root 4, 4 Mar 26 22:19 tty4
+</code></pre><pre><code># mkdir etc
+# cd etc
+# vim inittab
+::sysinit:/etc/init.d/rcS        // &#x6267;&#x884C;rcS&#x811A;&#x672C;
+#::respawn:-/bin/sh
+#tty2::askfirst:-/bin/sh
+#::ctrlaltdel:/bin/umount -a -r
+
+console::askfirst:-/bin/sh
+::ctrlaltdel:/sbin/reboot
+::shutdown:/bin/umount -a -r
+</code></pre><pre><code># vim init.d/rcS
+#! /bin/sh
+PATH=/sbin:/bin:/user/sbin:/usr/bin
+LD_LIBRARY_PATH=/lib
+export PATH LD_LIBRARY_PATH
+
+mount -a        // &#x6302;&#x8F7D;&#x6839;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF; fstab
+mkdir -p /dev/pts
+mount -t devpts devpts dev/pts
+mdev -s
+mkdir -p /var/lock
+
+echo &quot;......&quot;
+</code></pre><pre><code># vim fstab
+proc    /proc    proc    defaults    0    0
+tmpfs    /tmp    tmpfs    default    0    0
+sysfs    /sys    sysfs    default    0    0
+tmpfs    /dev    tmpfs    default    0    0
+var    /dev    tmpfs    default    0    0
+ramfs    /dev    ramfs    default    0    0
+</code></pre><pre><code># vim profile
+PS1=&apos;xiami@vexpress:\w #&apos;
+export PS1
+</code></pre><p>&#x4E5F;&#x53EF;&#x4EE5;&#x5728;~/.bashrc&#x4E2D;&#x4FEE;&#x6539;&#x6216;&#x8BBE;&#x7F6E;PS1</p>
+<pre><code>VFS: Unable to mount root fs via NFS, trying floppy.
+VFS: Cannot open root device &quot;nfs&quot; or unknown-block(2,0): error -6
+Please append a correct &quot;root=&quot; boot option; here are the available partitions:
+1f00          131072 mtdblock0 
+ (driver?)
+1f01           32768 mtdblock1 
+ (driver?)
+Kernel panic - not syncing: VFS: Unable to mount root fs on unknown-block(2,0)
+CPU: 0 PID: 1 Comm: swapper/0 Not tainted 4.14.172 #1
+Hardware name: ARM-Versatile Express
+[&lt;8010f180&gt;] (unwind_backtrace) from [&lt;8010b444&gt;] (show_stack+0x10/0x14)
+[&lt;8010b444&gt;] (show_stack) from [&lt;806616cc&gt;] (dump_stack+0x94/0xa8)
+[&lt;806616cc&gt;] (dump_stack) from [&lt;8011d67c&gt;] (panic+0xdc/0x248)
+[&lt;8011d67c&gt;] (panic) from [&lt;8090129c&gt;] (mount_block_root+0x1d4/0x2a8)
+[&lt;8090129c&gt;] (mount_block_root) from [&lt;80901490&gt;] (mount_root+0x120/0x128)
+[&lt;80901490&gt;] (mount_root) from [&lt;809015e8&gt;] (prepare_namespace+0x150/0x198)
+[&lt;809015e8&gt;] (prepare_namespace) from [&lt;80900ea0&gt;] (kernel_init_freeable+0x244/0x254)
+[&lt;80900ea0&gt;] (kernel_init_freeable) from [&lt;80674538&gt;] (kernel_init+0x8/0x114)
+[&lt;80674538&gt;] (kernel_init) from [&lt;801076a8&gt;] (ret_from_fork+0x14/0x2c)
+---[ end Kernel panic - not syncing: VFS: Unable to mount root fs on unknown-block(2,0)
+</code></pre><pre><code>  &#x2502;                                                                         &#x2502;  
+  &#x2502; Symbol: ROOT_NFS [=y]                                                   &#x2502;  
+  &#x2502; Type  : boolean                                                         &#x2502;  
+  &#x2502; Prompt: Root file system on NFS                                         &#x2502;  
+  &#x2502;   Location:                                                             &#x2502;  
+  &#x2502;     -&gt; File systems                                                     &#x2502;  
+  &#x2502; (3)   -&gt; Network File Systems (NETWORK_FILESYSTEMS [=y])                &#x2502;  
+  &#x2502;   Defined at fs/nfs/Kconfig:160                                         &#x2502;  
+  &#x2502;   Depends on: NETWORK_FILESYSTEMS [=y] &amp;&amp; NFS_FS [=y]=y &amp;&amp; IP_PNP [=y]  &#x2502;
+</code></pre><pre><code>sudo mount -o nolock -t nfs 192.168.1.104:/home/xiami/qemu/nfs_root /mnt
+</code></pre><p>&#x542F;&#x52A8;&#x6D41;&#x7A0B;&#xFF1A;
+Linux&#x5185;&#x6838;&#x542F;&#x52A8;&#x4E4B;&#x540E;&#xFF0C;&#x6302;&#x8F7D;&#x6839;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;
+&#x5F00;&#x542F;init&#x8FDB;&#x7A0B;&#xFF0C;bootargs init=/linuxrc&#xFF0C;&#x542F;&#x52A8;&#x7B2C;&#x4E00;&#x4E2A;&#x7528;&#x6237;&#x8FDB;&#x7A0B;
+&#x5728;&#x7528;&#x6237;&#x8FDB;&#x7A0B;&#x4E2D;&#x8BFB;&#x53D6;inittab&#x811A;&#x672C;&#xFF0C;</p>
+<p>&#x6784;&#x5EFA;&#x5176;&#x4ED6;&#x76EE;&#x5F55;
+&#x5176;&#x4ED6;&#x7684;&#x76EE;&#x5F55;&#x53EF;&#x4EE5;&#x662F;&#x7A7A;&#x76EE;&#x5F55;</p>
+<pre><code># cd rootfs
+# mkdir proc mnt tmp sys root
+</code></pre>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="Qemu搭建ARM-vexpress开发环境-2-u-boot启动kernel.html" class="navigation navigation-prev " aria-label="Previous page: Qemu搭建ARM-vexpress开发环境-2-u-boot启动kernel">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../hexo/" class="navigation navigation-next " aria-label="Next page: hexo">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Qemu搭建ARM-vexpress开发环境-3-NFS网络根文件系统","level":"1.4.1.3","depth":3,"next":{"title":"hexo","level":"1.4.2","depth":2,"path":"hexo/README.md","ref":"hexo/README.md","articles":[{"title":"Hexo-Github搭建个人博客","level":"1.4.2.1","depth":3,"path":"hexo/Hexo-Github搭建个人博客.md","ref":"hexo/Hexo-Github搭建个人博客.md","articles":[]},{"title":"Ubuntu-Hexo-Github搭建个人博客","level":"1.4.2.2","depth":3,"path":"hexo/Ubuntu-Hexo-Github搭建个人博客.md","ref":"hexo/Ubuntu-Hexo-Github搭建个人博客.md","articles":[]}]},"previous":{"title":"Qemu搭建ARM-vexpress开发环境-2-u-boot启动kernel","level":"1.4.1.2","depth":3,"path":"qemu/Qemu搭建ARM-vexpress开发环境-2-u-boot启动kernel.md","ref":"qemu/Qemu搭建ARM-vexpress开发环境-2-u-boot启动kernel.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"qemu/Qemu搭建ARM-vexpress开发环境-3-NFS网络根文件系统.md","mtime":"2020-09-20T08:26:34.805Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-09-20T08:30:58.779Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

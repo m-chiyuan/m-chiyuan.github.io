@@ -1,0 +1,1358 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Linux块设备驱动 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../platform/" />
+    
+    
+    <link rel="prev" href="Linux字符设备驱动.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" >
+            
+                <span>
+            
+                    
+                    计算机基础
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../elf/">
+            
+                <a href="../elf/">
+            
+                    
+                    ELF
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1.1" data-path="../elf/linux中ELF二进制程序解析.html">
+            
+                <a href="../elf/linux中ELF二进制程序解析.html">
+            
+                    
+                    Linux中ELF二进制程序解析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.2" data-path="../elf/linux中ELF二进制程序解析----ELF文件实例解析.html">
+            
+                <a href="../elf/linux中ELF二进制程序解析----ELF文件实例解析.html">
+            
+                    
+                    Linux中ELF二进制程序解析----ELF文件实例解析
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Linux driver
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" >
+            
+                <span>
+            
+                    
+                    BringUp
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1.1" data-path="../bringup/u-boot引导kernel启动过程.html">
+            
+                <a href="../bringup/u-boot引导kernel启动过程.html">
+            
+                    
+                    u-boot引导kernel启动过程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.2" data-path="../bringup/Linux内核启动流程-基于ARM64.html">
+            
+                <a href="../bringup/Linux内核启动流程-基于ARM64.html">
+            
+                    
+                    Linux内核启动流程-基于ARM64
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" >
+            
+                <span>
+            
+                    
+                    Driver
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.2.1" data-path="Linux字符设备驱动.html">
+            
+                <a href="Linux字符设备驱动.html">
+            
+                    
+                    Linux字符设备驱动
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.3.2.2" data-path="Linux块设备驱动.html">
+            
+                <a href="Linux块设备驱动.html">
+            
+                    
+                    Linux块设备驱动
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../platform/">
+            
+                <a href="../platform/">
+            
+                    
+                    platform
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.3.1" data-path="../platform/platform总线设备驱动模型.html">
+            
+                <a href="../platform/platform总线设备驱动模型.html">
+            
+                    
+                    platform总线设备驱动模型
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../tty/">
+            
+                <a href="../tty/">
+            
+                    
+                    tty
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="../i2c/">
+            
+                <a href="../i2c/">
+            
+                    
+                    i2c
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../tool/">
+            
+                <a href="../tool/">
+            
+                    
+                    Tool
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" >
+            
+                <span>
+            
+                    
+                    qemu
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1.1" data-path="../qemu/Qemu搭建ARM-vexpress开发环境-1.html">
+            
+                <a href="../qemu/Qemu搭建ARM-vexpress开发环境-1.html">
+            
+                    
+                    Qemu搭建ARM-vexpress开发环境-1
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.1.2" data-path="../qemu/Qemu搭建ARM-vexpress开发环境-2-u-boot启动kernel.html">
+            
+                <a href="../qemu/Qemu搭建ARM-vexpress开发环境-2-u-boot启动kernel.html">
+            
+                    
+                    Qemu搭建ARM-vexpress开发环境-2-u-boot启动kernel
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.1.3" data-path="../qemu/Qemu搭建ARM-vexpress开发环境-3-NFS网络根文件系统.html">
+            
+                <a href="../qemu/Qemu搭建ARM-vexpress开发环境-3-NFS网络根文件系统.html">
+            
+                    
+                    Qemu搭建ARM-vexpress开发环境-3-NFS网络根文件系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../hexo/">
+            
+                <a href="../hexo/">
+            
+                    
+                    hexo
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.2.1" data-path="../hexo/Hexo-Github搭建个人博客.html">
+            
+                <a href="../hexo/Hexo-Github搭建个人博客.html">
+            
+                    
+                    Hexo-Github搭建个人博客
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2.2" data-path="../hexo/Ubuntu-Hexo-Github搭建个人博客.html">
+            
+                <a href="../hexo/Ubuntu-Hexo-Github搭建个人博客.html">
+            
+                    
+                    Ubuntu-Hexo-Github搭建个人博客
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Linux块设备驱动</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h2 id="linux&#x5757;&#x8BBE;&#x5907;&#x9A71;&#x52A8;">Linux&#x5757;&#x8BBE;&#x5907;&#x9A71;&#x52A8;</h2>
+<p>Linux&#x5757;&#x8BBE;&#x5907;&#x9A71;&#x52A8;</p>
+<p>&#x672A;&#x5B8C;&#x6210;</p>
+<!--more-->
+<h3 id="&#x76EE;&#x5F55;">&#x76EE;&#x5F55;</h3>
+<p>[TOC]</p>
+<h3 id="0-&#x7B80;&#x4ECB;">0. &#x7B80;&#x4ECB;</h3>
+<p>&#x5B57;&#x7B26;&#x8BBE;&#x5907;</p>
+<p>&#x5B57;&#x7B26;&#x8BBE;&#x5907;&#x662F;&#x4E00;&#x79CD;&#x987A;&#x5E8F;&#x7684;&#x6570;&#x636E;&#x6D41;&#x8BBE;&#x5907;&#xFF0C;&#x5BF9;&#x5B57;&#x7B26;&#x8BBE;&#x5907;&#x7684;&#x8BFB;&#x5199;&#x662F;&#x4EE5;&#x5B57;&#x8282;&#x4E3A;&#x5355;&#x4F4D;&#x8FDB;&#x884C;&#x7684;&#xFF0C;&#x8FD9;&#x4E9B;&#x5B57;&#x7B26;&#x8FDE;&#x7EED;&#x5730;&#x5F62;&#x6210;&#x4E00;&#x4E2A;&#x6570;&#x636E;&#x6D41;&#xFF0C;&#x5B57;&#x7B26;&#x8BBE;&#x5907;&#x6CA1;&#x6709;&#x7F13;&#x5B58;&#x533A;&#xFF0C;&#x5BF9;&#x4E8E;&#x5B57;&#x7B26;&#x8BBE;&#x5907;&#x7684;&#x8BFB;&#x5199;&#x662F;&#x5B9E;&#x65F6;&#x7684;&#xFF1B;</p>
+<p>&#x5757;&#x8BBE;&#x5907;</p>
+<p>&#x5757;&#x8BBE;&#x5907;&#x662F;&#x4E00;&#x79CD;&#x5177;&#x6709;&#x4E00;&#x5B9A;&#x7ED3;&#x6784;&#x7684;&#x968F;&#x673A;&#x5B58;&#x53D6;&#x8BBE;&#x5907;&#xFF0C;&#x5BF9;&#x5757;&#x8BBE;&#x5907;&#x7684;&#x8BFB;&#x5199;&#x662F;&#x4EE5;&#x5757;&#x4E3A;&#x5355;&#x4F4D;&#x8FDB;&#x884C;&#x7684;&#xFF0C;&#x5757;&#x8BBE;&#x5907;&#x4F7F;&#x7528;&#x7F13;&#x5B58;&#x533A;&#x6765;&#x5B58;&#x653E;&#x6570;&#x636E;&#xFF0C;&#x5F85;&#x6761;&#x4EF6;&#x6EE1;&#x8DB3;&#x540E;&#xFF0C;&#x5C06;&#x6570;&#x636E;&#x4ECE;&#x7F13;&#x5B58;&#x533A;&#x4E00;&#x6B21;&#x6027;&#x5199;&#x5165;&#x5230;&#x8BBE;&#x5907;&#xFF0C;&#x6216;&#x8005;&#x4ECE;&#x8BBE;&#x5907;&#x4E00;&#x6B21;&#x6027;&#x8BFB;&#x53D6;&#x5230;&#x7F13;&#x5B58;&#x533A;&#xFF1B;</p>
+<p>&#x4E3A;&#x4E86;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x5757;&#x8BBE;&#x5907;&#x9A71;&#x52A8;&#x7A0B;&#x5E8F;&#xFF0C;&#x5B9E;&#x73B0;&#x4E00;&#x4E2A;&#x57FA;&#x4E8E;&#x5185;&#x5B58;&#x7684;&#x5757;&#x8BBE;&#x5907;&#x9A71;&#x52A8;&#x7A0B;&#x5E8F;&#xFF1B;</p>
+<h4 id="1-&#x5757;&#x8BBE;&#x5907;&#x7ED3;&#x6784;">1. &#x5757;&#x8BBE;&#x5907;&#x7ED3;&#x6784;</h4>
+<p><strong>&#x6BB5;&#xFF08;Segments&#xFF09;</strong>&#xFF1A;&#x7531;&#x82E5;&#x5E72;&#x4E2A;&#x5757;&#x7EC4;&#x6210;&#xFF1B;&#x662F;Linux&#x5185;&#x5B58;&#x7BA1;&#x7406;&#x673A;&#x5236;&#x4E2D;&#x4E00;&#x4E2A;&#x5185;&#x5B58;&#x9875;&#x6216;&#x5185;&#x5B58;&#x9875;&#x7684;&#x4E00;&#x90E8;&#x5206;&#xFF1B;</p>
+<p><strong>&#x5757;&#xFF08;Blocks&#xFF09;</strong>&#xFF1A;&#x7531;Linux&#x5236;&#x5B9A;&#x5BF9;&#x5185;&#x6838;&#x6216;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x7B49;&#x6570;&#x636E;&#x5904;&#x7406;&#x7684;&#x57FA;&#x672C;&#x5355;&#x4F4D;&#xFF1B;&#x901A;&#x5E38;&#x901A;&#x5E38;&#x4E3A;4096&#x4E2A;&#x5B57;&#x8282;&#xFF0C;&#x7531;1&#x4E2A;&#x6216;&#x591A;&#x4E2A;&#x6247;&#x533A;&#x7EC4;&#x6210;&#xFF1B;</p>
+<p><strong>&#x6247;&#x533A;&#xFF08;Sectors&#xFF09;</strong>&#xFF1A;&#x5757;&#x8BBE;&#x5907;&#x7684;&#x57FA;&#x672C;&#x5355;&#x4F4D;&#xFF0C;&#x662F;&#x4E00;&#x4E2A;&#x56FA;&#x5B9A;&#x7684;&#x786C;&#x4EF6;&#x5355;&#x4F4D;&#xFF0C;&#x5236;&#x5B9A;&#x4E86;&#x8BBE;&#x5907;&#x6700;&#x5C11;&#x80FD;&#x591F;&#x4F20;&#x8F93;&#x7684;&#x6570;&#x636E;&#x91CF;&#xFF1B;&#x901A;&#x5E38;&#x5728;512&#x5B57;&#x8282;&#x5230;32768&#x5B57;&#x8282;&#x4E4B;&#x95F4;&#xFF0C;&#x9ED8;&#x8BA4;&#xFF1A;512&#x5B57;&#x8282;&#xFF1B;</p>
+<p>&#x5757;&#x662F;&#x8FDE;&#x7EED;&#x6247;&#x533A;&#x7684;&#x5E8F;&#x5217;&#xFF0C;&#x5757;&#x957F;&#x5EA6;&#x603B;&#x662F;&#x6247;&#x533A;&#x957F;&#x5EA6;&#x7684;&#x6574;&#x6570;&#x500D;&#xFF1B;&#x5757;&#x7684;&#x6700;&#x5927;&#x957F;&#x5EA6;&#xFF0C;&#x53D7;&#x7279;&#x5B9A;&#x4F53;&#x7CFB;&#x7ED3;&#x6784;&#x7684;&#x5185;&#x5B58;&#x9875;&#x957F;&#x5EA6;&#x9650;&#x5236;&#xFF1B;</p>
+<p>&#x5757;&#x8BBE;&#x5907;&#x4F7F;&#x7528;&#x8BF7;&#x6C42;&#x961F;&#x5217;&#xFF0C;&#x7F13;&#x5B58;&#x5E76;&#x91CD;&#x6392;&#x8BFB;&#x5199;&#x6570;&#x636E;&#x5757;&#x7684;&#x8BF7;&#x6C42;&#xFF0C;&#x7528;&#x9AD8;&#x6548;&#x7684;&#x65B9;&#x5F0F;&#x8BFB;&#x53D6;&#x6570;&#x636E;&#xFF1B;&#x5757;&#x8BBE;&#x5907;&#x7684;&#x6BCF;&#x4E2A;&#x8BBE;&#x5907;&#x90FD;&#x5173;&#x8054;&#x4E86;&#x8BF7;&#x6C42;&#x961F;&#x5217;&#xFF1B;&#x5BF9;&#x5757;&#x8BBE;&#x5907;&#x7684;&#x8BFB;&#x5199;&#x8BF7;&#x6C42;&#x4E0D;&#x4F1A;&#x7ACB;&#x5373;&#x6267;&#x884C;&#xFF0C;&#x8FD9;&#x4E9B;&#x8BF7;&#x6C42;&#x4F1A;&#x6C47;&#x603B;&#x8D77;&#x6765;&#xFF0C;&#x7ECF;&#x8FC7;&#x534F;&#x540C;&#x4E4B;&#x540E;&#x4F20;&#x8F93;&#x5230;&#x8BBE;&#x5907;&#xFF1B;</p>
+<p><img src="Linux&#x5757;&#x8BBE;&#x5907;&#x9A71;&#x52A8;/Linux&#x7684;&#x5757;IO.png" alt="Linux&#x7684;&#x5757;IO"></p>
+<h4 id="2-&#x5757;&#x8BBE;&#x5907;&#x9A71;&#x52A8;&#x6846;&#x67B6;">2. &#x5757;&#x8BBE;&#x5907;&#x9A71;&#x52A8;&#x6846;&#x67B6;</h4>
+<p><img src="Linux&#x5757;&#x8BBE;&#x5907;&#x9A71;&#x52A8;/&#x5757;&#x8BBE;&#x5907;&#x9A71;&#x52A8;&#x67B6;&#x6784;&#x56FE;.jpg" alt="&#x5757;&#x8BBE;&#x5907;&#x9A71;&#x52A8;&#x67B6;&#x6784;&#x56FE;"></p>
+<h3 id="1-&#x91CD;&#x8981;&#x7ED3;&#x6784;&#x53CA;&#x64CD;&#x4F5C;">1. &#x91CD;&#x8981;&#x7ED3;&#x6784;&#x53CA;&#x64CD;&#x4F5C;</h3>
+<h4 id="1-&#x6CE8;&#x518C;&#x5757;&#x8BBE;&#x5907;&#x9A71;&#x52A8;&#x7A0B;&#x5E8F;">1. &#x6CE8;&#x518C;&#x5757;&#x8BBE;&#x5907;&#x9A71;&#x52A8;&#x7A0B;&#x5E8F;</h4>
+<p>&#x5411;&#x5185;&#x6838;&#x6CE8;&#x518C;&#x5757;&#x8BBE;&#x5907;&#x9A71;&#x52A8;&#x7A0B;&#x5E8F;</p>
+<pre><code class="lang-c"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;linux/fs.h&gt;</span></span>
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">register_blkdev</span><span class="hljs-params">(<span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">int</span> major, <span class="hljs-keyword">const</span> <span class="hljs-keyword">char</span> *name)</span></span>;
+</code></pre>
+<blockquote>
+<p>name&#xFF1A;&#x8BBE;&#x5907;&#x540D;&#x5B57;&#xFF0C;&#x662F;&#x5728;/proc/devices&#x4E2D;&#x663E;&#x793A;&#x7684;&#x540D;&#x5B57;</p>
+<p>major&#xFF1A;&#x8BBE;&#x5907;&#x7684;&#x4E3B;&#x8BBE;&#x5907;&#x53F7;&#xFF0C;&#x5982;&#x679C;major=0&#xFF0C;&#x5219;&#x5206;&#x914D;&#x4E00;&#x4E2A;&#x4E3B;&#x8BBE;&#x5907;&#x53F7;</p>
+</blockquote>
+<p>&#x8BE5;&#x51FD;&#x6570;&#x7684;&#x8C03;&#x7528;&#x662F;&#x53EF;&#x9009;&#x7684;&#xFF0C;&#x5B8C;&#x6210;&#x7684;&#x5DE5;&#x4F5C;&#xFF1A;</p>
+<blockquote>
+<ol>
+<li>&#x5982;&#x679C;&#x9700;&#x8981;&#x7684;&#x8BDD;&#x5206;&#x914D;&#x4E00;&#x4E2A;&#x52A8;&#x6001;&#x7684;&#x4E3B;&#x8BBE;&#x5907;&#x53F7;</li>
+<li>&#x5728;/proc/devices&#x4E2D;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x5165;&#x53E3;&#x9879;</li>
+</ol>
+</blockquote>
+<p>&#x6CE8;&#x9500;&#x5757;&#x8BBE;&#x5907;&#x9A71;&#x52A8;&#x7A0B;&#x5E8F;</p>
+<pre><code class="lang-c"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;linux/fs.h&gt;</span></span>
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">unregister_blkdev</span><span class="hljs-params">(<span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">int</span> major, <span class="hljs-keyword">const</span> <span class="hljs-keyword">char</span> *name)</span></span>;
+</code></pre>
+<p>&#x5982;&#x4E0B;&#x7528;&#x4F8B;&#xFF1A;</p>
+<pre><code class="lang-c"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;linux/fs.h&gt;</span></span>
+<span class="hljs-keyword">int</span> sbull_major = <span class="hljs-number">0</span>;
+sbull_major = register_blkdev(sbull_major, <span class="hljs-string">&quot;sbull&quot;</span>);
+<span class="hljs-keyword">if</span> (sbull_major &lt; <span class="hljs-number">0</span>) {
+    printk(KERN_WARNNING <span class="hljs-string">&quot;sbull: unable to get major number\n&quot;</span>);
+    <span class="hljs-keyword">return</span> -EBUSY;
+}
+</code></pre>
+<pre><code class="lang-c"><span class="hljs-comment">// include/linux/fs.h</span>
+<span class="hljs-keyword">struct</span> block_device {
+    <span class="hljs-keyword">dev_t</span>           bd_dev;  <span class="hljs-comment">/* not a kdev_t - it&apos;s a search key */</span>
+    <span class="hljs-keyword">int</span>         bd_openers;
+    <span class="hljs-keyword">struct</span> inode *      bd_inode;   <span class="hljs-comment">/* will die */</span>
+    <span class="hljs-keyword">struct</span> super_block *    bd_super;
+    <span class="hljs-keyword">struct</span> mutex        bd_mutex;   <span class="hljs-comment">/* open/close mutex */</span>
+    <span class="hljs-keyword">void</span> *          bd_claiming;
+    <span class="hljs-keyword">void</span> *          bd_holder;
+    <span class="hljs-keyword">int</span>         bd_holders;
+    <span class="hljs-keyword">bool</span>            bd_write_holder;
+<span class="hljs-meta">#<span class="hljs-meta-keyword">ifdef</span> CONFIG_SYSFS</span>
+    <span class="hljs-keyword">struct</span> list_head    bd_holder_disks;
+<span class="hljs-meta">#<span class="hljs-meta-keyword">endif</span></span>
+    <span class="hljs-keyword">struct</span> block_device *   bd_contains;
+    <span class="hljs-keyword">unsigned</span>        bd_block_size;
+    <span class="hljs-keyword">struct</span> hd_struct *  bd_part;
+    <span class="hljs-comment">/* number of times partitions within this device have been opened. */</span>
+    <span class="hljs-keyword">unsigned</span>        bd_part_count;
+    <span class="hljs-keyword">int</span>         bd_invalidated;
+    <span class="hljs-keyword">struct</span> gendisk *    bd_disk;
+    <span class="hljs-keyword">struct</span> request_queue *  bd_queue;
+    <span class="hljs-keyword">struct</span> list_head    bd_list;
+    <span class="hljs-comment">/*
+     * Private data.  You must have bd_claim&apos;ed the block_device
+     * to use this.  <span class="hljs-doctag">NOTE:</span>  bd_claim allows an owner to claim
+     * the same device multiple times, the owner must take special
+     * care to not mess up bd_private for that case.
+     */</span>
+    <span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">long</span>       bd_private;
+
+    <span class="hljs-comment">/* The counter of freeze processes */</span>
+    <span class="hljs-keyword">int</span>         bd_fsfreeze_count;
+    <span class="hljs-comment">/* Mutex for freeze */</span>
+    <span class="hljs-keyword">struct</span> mutex        bd_fsfreeze_mutex;
+};
+</code></pre>
+<h4 id="2-&#x5757;&#x8BBE;&#x5907;&#x64CD;&#x4F5C;">2. &#x5757;&#x8BBE;&#x5907;&#x64CD;&#x4F5C;</h4>
+<p>&#x5B57;&#x7B26;&#x8BBE;&#x5907;&#x4F7F;&#x7528;file_operations&#x7ED3;&#x6784;&#xFF0C;&#x6765;&#x544A;&#x8BC9;&#x7CFB;&#x7EDF;&#x5B57;&#x7B26;&#x8BBE;&#x5907;&#x9A71;&#x52A8;&#x7684;&#x64CD;&#x4F5C;&#x63A5;&#x53E3;&#xFF1B;</p>
+<p>&#x5757;&#x8BBE;&#x5907;&#x4F7F;&#x7528;block_device_operations&#x7ED3;&#x6784;&#xFF0C;&#x6765;&#x544A;&#x8BC9;&#x7CFB;&#x7EDF;&#x5757;&#x8BBE;&#x5907;&#x9A71;&#x52A8;&#x7684;&#x64CD;&#x4F5C;&#x63A5;&#x53E3;&#xFF1B;</p>
+<pre><code class="lang-c"><span class="hljs-comment">// include/linux/blkdev.h</span>
+<span class="hljs-keyword">struct</span> block_device_operations {
+    <span class="hljs-keyword">int</span> (*open) (<span class="hljs-keyword">struct</span> block_device *, <span class="hljs-keyword">fmode_t</span>);
+    <span class="hljs-keyword">void</span> (*release) (<span class="hljs-keyword">struct</span> gendisk *, <span class="hljs-keyword">fmode_t</span>);
+    <span class="hljs-keyword">int</span> (*rw_page)(<span class="hljs-keyword">struct</span> block_device *, <span class="hljs-keyword">sector_t</span>, <span class="hljs-keyword">struct</span> page *, <span class="hljs-keyword">bool</span>);
+    <span class="hljs-keyword">int</span> (*ioctl) (<span class="hljs-keyword">struct</span> block_device *, <span class="hljs-keyword">fmode_t</span>, <span class="hljs-keyword">unsigned</span>, <span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">long</span>);
+    <span class="hljs-keyword">int</span> (*compat_ioctl) (<span class="hljs-keyword">struct</span> block_device *, <span class="hljs-keyword">fmode_t</span>, <span class="hljs-keyword">unsigned</span>, <span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">long</span>);
+    ......
+    <span class="hljs-comment">/* -&gt;media_changed() is DEPRECATED, use -&gt;check_events() instead */</span>
+    <span class="hljs-keyword">int</span> (*media_changed) (<span class="hljs-keyword">struct</span> gendisk *);
+    <span class="hljs-keyword">int</span> (*getgeo)(<span class="hljs-keyword">struct</span> block_device *, <span class="hljs-keyword">struct</span> hd_geometry *);
+    ......
+};
+</code></pre>
+<p>&#x548C;&#x5B57;&#x7B26;&#x8BBE;&#x5907;&#x9A71;&#x52A8;&#x4E0D;&#x540C;&#xFF0C;&#x5757;&#x8BBE;&#x5907;&#x9A71;&#x52A8;&#x7684;block_device_operations&#x64CD;&#x4F5C;&#x96C6;&#x4E2D;&#x6CA1;&#x6709;&#x8D1F;&#x8D23;&#x8BFB;&#x548C;&#x5199;&#x6570;&#x636E;&#x7684;&#x51FD;&#x6570;&#xFF1B;&#x5728;&#x5757;&#x8BBE;&#x5907;&#x9A71;&#x52A8;&#x4E2D;&#xFF0C;&#x8FD9;&#x4E9B;&#x64CD;&#x4F5C;&#x662F;&#x7531;request&#x51FD;&#x6570;&#x5904;&#x7406;&#x7684;&#xFF1B;</p>
+<h4 id="3-&#x6CE8;&#x518C;&#x78C1;&#x76D8;">3. &#x6CE8;&#x518C;&#x78C1;&#x76D8;</h4>
+<p>&#x4E3A;&#x4E86;&#x7BA1;&#x7406;&#x72EC;&#x7ACB;&#x7684;&#x78C1;&#x76D8;&#xFF0C;&#x9700;&#x8981;&#x4F7F;&#x7528;struct gendisk&#x7ED3;&#x6784;&#x4F53;&#xFF0C;&#x5185;&#x6838;&#x4F7F;&#x7528;gendisk&#x7ED3;&#x6784;&#x8868;&#x793A;&#x4E00;&#x4E2A;&#x72EC;&#x7ACB;&#x7684;&#x78C1;&#x76D8;&#x8BBE;&#x5907;&#xFF0C;&#x8FD8;&#x53EF;&#x4EE5;&#x8868;&#x793A;&#x5206;&#x533A;&#xFF1B;</p>
+<pre><code class="lang-c"><span class="hljs-comment">// include/linux/genhd.h</span>
+<span class="hljs-keyword">struct</span> gendisk {
+    <span class="hljs-keyword">int</span> major;          <span class="hljs-comment">/* major number of driver */</span>
+    <span class="hljs-keyword">int</span> first_minor;
+    <span class="hljs-keyword">int</span> minors;                     <span class="hljs-comment">/* maximum number of minors, =1 for
+                                         * disks that can&apos;t be partitioned. */</span>
+    <span class="hljs-keyword">char</span> disk_name[DISK_NAME_LEN];  <span class="hljs-comment">/* name of major driver */</span>
+    <span class="hljs-keyword">char</span> *(*devnode)(<span class="hljs-keyword">struct</span> gendisk *gd, <span class="hljs-keyword">umode_t</span> *mode);
+
+    <span class="hljs-keyword">struct</span> hd_struct part0;
+
+    <span class="hljs-keyword">const</span> <span class="hljs-keyword">struct</span> block_device_operations *fops;
+    <span class="hljs-keyword">struct</span> request_queue *<span class="hljs-built_in">queue</span>;
+    ......
+};
+</code></pre>
+<p>major&#xFF1A;&#x6307;&#x5B9A;&#x9A71;&#x52A8;&#x7A0B;&#x5E8F;&#x7684;&#x4E3B;&#x8BBE;&#x5907;&#x53F7;</p>
+<p>first_minor&#x548C;minors&#xFF1A;&#x4ECE;&#x8BBE;&#x5907;&#x53F7;&#x7684;&#x53EF;&#x80FD;&#x8303;&#x56F4;</p>
+<p>disk_name&#xFF1A;&#x78C1;&#x76D8;&#x540D;&#x79F0;&#xFF0C;&#x5728;/proc/partitions &#x548C; sysfs &#x4E2D;&#x8868;&#x793A;&#x8BE5;&#x78C1;&#x76D8;</p>
+<pre><code class="lang-c"><span class="hljs-keyword">char</span> disk_name[DISK_NAME_LEN];
+</code></pre>
+<p>&#x663E;&#x793A;&#x5728;/proc/partitions &#x548C; sysfs &#x4E2D;</p>
+<p>&#x5BF9;&#x4E8E;&#x6BCF;&#x4E00;&#x4E2A;&#x5206;&#x533A;&#x6765;&#x8BF4;&#xFF0C;&#x90FD;&#x6709;&#x4E00;&#x4E2A;hd_struct&#x7ED3;&#x6784;&#x4F53;&#xFF0C;&#x7528;&#x4E8E;&#x63CF;&#x8FF0;&#x8BE5;&#x5206;&#x533A;</p>
+<pre><code class="lang-c"><span class="hljs-comment">// include/linux/genhd.h</span>
+<span class="hljs-keyword">struct</span> hd_struct {
+    <span class="hljs-keyword">sector_t</span> start_sect;
+    <span class="hljs-keyword">sector_t</span> nr_sects;
+    <span class="hljs-keyword">seqcount_t</span> nr_sects_seq;
+    ......
+    <span class="hljs-keyword">struct</span> partition_meta_info *info;
+    ......
+};
+</code></pre>
+<p>start_sect&#x548C;nr_sects&#xFF1A;&#x5B9A;&#x4E49;&#x4E86;&#x8BE5;&#x5206;&#x533A;&#x5728;&#x5757;&#x8BBE;&#x5907;&#x4E0A;&#x7684;&#x8D77;&#x59CB;&#x6247;&#x533A;&#x548C;&#x957F;&#x5EA6;&#xFF0C;&#x552F;&#x4E00;&#x5730;&#x63CF;&#x8FF0;&#x4E86;&#x8BE5;&#x5206;&#x533A;</p>
+<p>&#x62E5;&#x6709;&#x4E86;&#x8BBE;&#x5907;&#x5185;&#x5B58;&#x548C;&#x8BF7;&#x6C42;&#x961F;&#x5217;&#xFF0C;&#x5C31;&#x53EF;&#x4EE5;&#x5206;&#x914D;&#x3001;&#x521D;&#x59CB;&#x5316;&#x53CA;&#x5B89;&#x88C5;gendisk&#x7ED3;&#x6784;&#xFF1B;&#x5728;struct gendisk&#x662F;&#x52A8;&#x6001;&#x5206;&#x914D;&#x7684;&#x7ED3;&#x6784;&#xFF0C;&#x9700;&#x8981;&#x5185;&#x6838;&#x8FDB;&#x884C;&#x521D;&#x59CB;&#x5316;&#xFF0C;&#x9A71;&#x52A8;&#x5FC5;&#x987B;&#x901A;&#x8FC7;alloc_disk&#x5206;&#x914D;&#xFF1A;</p>
+<pre><code class="lang-c"><span class="hljs-meta"># <span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;linux/genhd.h&gt;</span></span>
+<span class="hljs-function"><span class="hljs-keyword">struct</span> gendisk *<span class="hljs-title">alloc_disk</span><span class="hljs-params">(<span class="hljs-keyword">int</span> minors)</span></span>;
+</code></pre>
+<blockquote>
+<p>minors&#xFF1A;&#x662F;&#x8BE5;&#x78C1;&#x76D8;&#x4F7F;&#x7528;&#x7684;&#x4ECE;&#x8BBE;&#x5907;&#x53F7;&#x7684;&#x6570;&#x76EE;&#xFF1B;</p>
+</blockquote>
+<p>&#x5378;&#x8F7D;&#x78C1;&#x76D8;</p>
+<pre><code class="lang-c"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">del_gendisk</span><span class="hljs-params">(<span class="hljs-keyword">struct</span> gendisk *disk)</span>
+</span></code></pre>
+<p>gendisk&#x662F;&#x4E00;&#x4E2A;&#x5F15;&#x7528;&#x8BA1;&#x6570;&#x7ED3;&#x6784;&#xFF0C;get_disk&#x548C;put_disk&#x51FD;&#x6570;&#x8D1F;&#x8D23;&#x5904;&#x7406;&#x5F15;&#x7528;&#x8BA1;&#x6570;&#xFF1B;&#x8C03;&#x7528;del_gendisk&#x540E;&#xFF0C;&#x8BE5;&#x7ED3;&#x6784;&#x53EF;&#x80FD;&#x7EE7;&#x7EED;&#x5B58;&#x5728;&#xFF1B;</p>
+<p>&#x4E3A;&#x4E86;&#x4F7F;gendisk&#x7ED3;&#x6784;&#x7684;&#x78C1;&#x76D8;&#x8BBE;&#x5907;&#x751F;&#x6548;&#xFF0C;&#x9700;&#x8981;&#x521D;&#x59CB;&#x5316;&#x7ED3;&#x6784;&#xFF0C;&#x5E76;&#x5C06;&#x78C1;&#x76D8;&#x6216;&#x5206;&#x533A;&#x4FE1;&#x606F;&#x6DFB;&#x52A0;&#x5230;&#x5185;&#x6838;&#x94FE;&#x8868;&#xFF1B;</p>
+<pre><code class="lang-c"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">add_disk</span><span class="hljs-params">(<span class="hljs-keyword">struct</span> gendisk *gd)</span></span>;
+</code></pre>
+<p>&#x8C03;&#x7528;add_disk&#x540E;&#xFF0C;&#x78C1;&#x76D8;&#x8BBE;&#x5907;&#x5C06;&#x88AB;&#x6FC0;&#x6D3B;&#xFF0C;&#x5E76;&#x968F;&#x65F6;&#x4F1A;&#x8C03;&#x7528;&#x5B83;&#x63D0;&#x4F9B;&#x7684;&#x64CD;&#x4F5C;&#x65B9;&#x6CD5;&#xFF0C;&#x56E0;&#x6B64;&#x5728;&#x9A71;&#x52A8;&#x7A0B;&#x5E8F;&#x5B8C;&#x5168;&#x88AB;&#x521D;&#x59CB;&#x5316;&#x5E76;&#x4E14;&#x80FD;&#x591F;&#x54CD;&#x5E94;&#x5BF9;&#x78C1;&#x76D8;&#x7684;&#x8BF7;&#x6C42;&#x524D;&#xFF0C;&#x4E0D;&#x8981;&#x8C03;&#x7528;add_disk&#xFF1B;</p>
+<h4 id="4-&#x8BF7;&#x6C42;&#x961F;&#x5217;">4. &#x8BF7;&#x6C42;&#x961F;&#x5217;</h4>
+<p>&#x5757;&#x8BBE;&#x5907;&#x7684;&#x8BFB;&#x5199;&#x8BF7;&#x6C42;&#x653E;&#x7F6E;&#x5728;&#x8BF7;&#x6C42;&#x961F;&#x5217;&#x4E2D;&#xFF0C;&#x5728;struct gendisk&#x4E2D;&#xFF0C;&#x901A;&#x8FC7;struct request_queue *queue&#x6307;&#x9488;&#x6307;&#x5411;&#x8BF7;&#x6C42;&#x961F;&#x5217;&#xFF1B;&#x8BF7;&#x6C42;&#x961F;&#x5217;&#x7528;&#x6570;&#x636E;&#x7ED3;&#x6784;struct request_queue&#x8868;&#x793A;&#xFF1B;</p>
+<pre><code class="lang-c"><span class="hljs-comment">// include/linux/blkdev.h</span>
+<span class="hljs-keyword">struct</span> request_queue {
+    <span class="hljs-keyword">struct</span> list_head    queue_head;
+    <span class="hljs-keyword">struct</span> request      *last_merge;
+    <span class="hljs-keyword">struct</span> elevator_queue   *elevator;
+    ......
+    request_fn_proc     *request_fn;
+    make_request_fn     *make_request_fn;
+    ......
+    <span class="hljs-keyword">void</span>            *queuedata;
+
+    <span class="hljs-keyword">spinlock_t</span>      __queue_lock;
+    <span class="hljs-keyword">spinlock_t</span>      *queue_lock;
+
+    <span class="hljs-keyword">struct</span> list_head    icq_list;
+
+    <span class="hljs-keyword">struct</span> queue_limits limits;
+
+    <span class="hljs-keyword">struct</span> blk_flush_queue  *fq;
+
+    <span class="hljs-keyword">struct</span> list_head    requeue_list;
+    <span class="hljs-keyword">spinlock_t</span>      requeue_lock;
+    <span class="hljs-keyword">struct</span> delayed_work requeue_work;
+    ......
+};
+</code></pre>
+<p>queue_head&#xFF1A;&#x8868;&#x5934;&#xFF0C;&#x7528;&#x4E8E;&#x6784;&#x5EFA;&#x4E00;&#x4E2A;IO&#x8BF7;&#x6C42;&#x7684;&#x53CC;&#x94FE;&#x8868;&#xFF1B;&#x94FE;&#x8868;&#x6BCF;&#x4E2A;&#x5143;&#x7D20;&#x4EE3;&#x8868;&#x5411;&#x5757;&#x8BBE;&#x5907;&#x8BFB;&#x53D6;&#x6570;&#x636E;&#x7684;&#x4E00;&#x4E2A;&#x8BF7;&#x6C42;&#xFF1B;&#x5185;&#x6838;&#x4F1A;&#x91CD;&#x6392;&#x8BE5;&#x94FE;&#x8868;&#xFF0C;&#x4EE5;&#x5F97;&#x5230;&#x66F4;&#x597D;&#x7684;IO&#x6027;&#x80FD;&#xFF1B;</p>
+<p>&#x4E0E;&#x6BCF;&#x4E2A;&#x5757;&#x8BBE;&#x5907;&#x9A71;&#x52A8;&#x7A0B;&#x5E8F;&#x76F8;&#x5173;&#x7684;I/O&#x8BF7;&#x6C42;&#x961F;&#x5217;&#x7528;request_queue&#x7ED3;&#x6784;&#x4F53;&#x63CF;&#x8FF0;&#xFF0C;&#x800C;&#x6BCF;&#x4E2A;request_queue&#x961F;&#x5217;&#x4E2D;&#x7684;&#x8BF7;&#x6C42;&#x7528;request&#x7ED3;&#x6784;&#x4F53;&#x63CF;&#x8FF0;&#xFF1B;</p>
+<pre><code class="lang-c"><span class="hljs-comment">// include/linux/blkdev.h</span>
+<span class="hljs-keyword">struct</span> request {
+    <span class="hljs-keyword">struct</span> list_head queuelist;
+
+    <span class="hljs-keyword">struct</span> request_queue *q;
+    <span class="hljs-keyword">struct</span> blk_mq_ctx *mq_ctx;
+
+    <span class="hljs-comment">/* the following two fields are internal, NEVER access directly */</span>
+    <span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">int</span> __data_len;    <span class="hljs-comment">/* total data len */</span>
+    <span class="hljs-keyword">sector_t</span> __sector;      <span class="hljs-comment">/* sector cursor */</span>
+
+    <span class="hljs-keyword">struct</span> bio *bio;
+    <span class="hljs-keyword">struct</span> bio *biotail;
+
+    <span class="hljs-keyword">struct</span> request *next_rq;
+    ......
+}
+</code></pre>
+<p>request&#x7ED3;&#x6784;&#x4F53;&#x5173;&#x8054;&#x4E86;struct bio&#xFF0C;struct bio&#x7ED3;&#x6784;&#x4F53;&#x662F;&#x5757;I/O&#x64CD;&#x4F5C;&#x5728;&#x9875;&#x7EA7;&#x7C92;&#x5EA6;&#x7684;&#x5E95;&#x5C42;&#x63CF;&#x8FF0;&#xFF1B;</p>
+<pre><code class="lang-c"><span class="hljs-comment">// include/linux/blk_types.h</span>
+<span class="hljs-keyword">struct</span> bio {
+    <span class="hljs-keyword">struct</span> bio      *bi_next;   <span class="hljs-comment">/* request queue link */</span>
+    <span class="hljs-keyword">struct</span> block_device *bi_bdev;
+    <span class="hljs-keyword">int</span>         bi_error;
+
+    <span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">short</span>      bi_flags;   <span class="hljs-comment">/* status, command, etc */</span>
+    <span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">short</span>      bi_ioprio;
+
+    <span class="hljs-keyword">struct</span> bvec_iter    bi_iter;
+
+    <span class="hljs-keyword">atomic_t</span>        __bi_remaining;
+    <span class="hljs-keyword">bio_end_io_t</span>        *bi_end_io;
+
+    <span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">short</span>      bi_vcnt;    <span class="hljs-comment">/* how many bio_vec&apos;s */</span>
+    <span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">short</span>      bi_max_vecs;    <span class="hljs-comment">/* max bvl_vecs we can hold */</span>
+    <span class="hljs-keyword">struct</span> bio_vec      *bi_io_vec; <span class="hljs-comment">/* the actual vec list */</span>
+    ......
+}
+</code></pre>
+<p>&#x5757;&#x6570;&#x636E;&#x901A;&#x8FC7;bio_vec&#x7ED3;&#x6784;&#x4F53;&#x6570;&#x7EC4;&#x5728;&#x5185;&#x90E8;&#x88AB;&#x8868;&#x793A;&#x6210;I/O&#x5411;&#x91CF;&#xFF1B;&#x6BCF;&#x4E2A;bio_vec&#x6570;&#x7EC4;&#x5143;&#x7D20;&#x7531;&#x4E09;&#x5143;&#x7EC4;&#x7EC4;&#x6210;&#xFF08;&#x5373;&#xFF0C;&#x9875;&#x3001;&#x9875;&#x504F;&#x79FB;&#x3001;&#x957F;&#x5EA6;&#xFF09;&#xFF0C;&#x8868;&#x793A;&#x8BE5;&#x5757;I/O&#x7684;&#x4E00;&#x4E2A;&#x6BB5;&#xFF1B;</p>
+<pre><code class="lang-c"><span class="hljs-comment">// include/linux/bvec.h</span>
+<span class="hljs-keyword">struct</span> bio_vec {
+    <span class="hljs-keyword">struct</span> page *bv_page;    <span class="hljs-comment">// &#x9875;&#x6307;&#x9488;</span>
+    <span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">int</span>    bv_len;    <span class="hljs-comment">// &#x4F20;&#x8F93;&#x7684;&#x5B57;&#x8282;&#x6570;</span>
+    <span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">int</span>    bv_offset;    <span class="hljs-comment">// &#x504F;&#x79FB;&#x4F4D;&#x7F6E;</span>
+};
+</code></pre>
+<p>&#x5757;&#x8BBE;&#x5907;&#x9A71;&#x52A8;&#x7A0B;&#x5E8F;&#x7684;&#x6838;&#x5FC3;&#x662F;&#x8BF7;&#x6C42;&#x51FD;&#x6570;&#xFF0C;&#x5305;&#x542B;&#x8BF7;&#x6C42;&#x5904;&#x7406;&#x8FC7;&#x7A0B;&#xFF1B;</p>
+<pre><code class="lang-c"><span class="hljs-comment">// include/linux/blkdev.h</span>
+<span class="hljs-function"><span class="hljs-keyword">struct</span> request_queue *<span class="hljs-title">blk_init_queue</span><span class="hljs-params">(request_fn_proc *rfn, spinlock_t *lock)</span>
+</span></code></pre>
+<p>&#x6216;</p>
+<pre><code class="lang-c"><span class="hljs-comment">// include/linux/blkdev.h</span>
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">blk_queue_make_request</span><span class="hljs-params">(<span class="hljs-keyword">struct</span> request_queue *q, make_request_fn *mfn)</span>
+</span></code></pre>
+<h3 id="2-&#x5757;&#x8BBE;&#x5907;&#x9A71;&#x52A8;&#x7684;&#x521D;&#x59CB;&#x5316;">2. &#x5757;&#x8BBE;&#x5907;&#x9A71;&#x52A8;&#x7684;&#x521D;&#x59CB;&#x5316;</h3>
+<h4 id="21-&#x5757;&#x8BBE;&#x5907;&#x7684;&#x6CE8;&#x518C;&#x8FC7;&#x7A0B;">2.1 &#x5757;&#x8BBE;&#x5907;&#x7684;&#x6CE8;&#x518C;&#x8FC7;&#x7A0B;</h4>
+<p>&#x6CE8;&#x518C;&#x4E00;&#x4E2A;&#x5757;&#x8BBE;&#x5907;&#x9A71;&#x52A8;&#xFF0C;&#x9700;&#x8981;&#x4EE5;&#x4E0B;&#x6B65;&#x9AA4;&#xFF1A;</p>
+<blockquote>
+<p>&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x5757;&#x8BBE;&#x5907; </p>
+<p>&#x5206;&#x914D;&#x4E00;&#x4E2A;&#x7533;&#x8BF7;&#x961F;&#x5217;</p>
+<p>&#x5206;&#x914D;&#x4E00;&#x4E2A;gendisk&#x7ED3;&#x6784;&#x4F53;</p>
+<p>&#x8BBE;&#x7F6E;gendisk&#x7ED3;&#x6784;&#x4F53;&#x6210;&#x5458;</p>
+<p>&#x6CE8;&#x518C;gendisk&#x7ED3;&#x6784;&#x4F53;</p>
+</blockquote>
+<pre><code class="lang-mermaid">graph TB
+    A(&quot;&#x6CE8;&#x518C;&#x8BBE;&#x5907;(register_blkdev)(&#x53EF;&#x9009;)&quot;)--&gt;B(&quot;&#x5206;&#x914D;&#x78C1;&#x76D8;(alloc_disk)&quot;)
+    B--&gt;C(&quot;&#x4E0D;&#x4F7F;&#x7528;&#x8BF7;&#x6C42;&#x961F;&#x5217;(blk_init_queue)&quot;)--&gt;E
+    B--&gt;D(&quot;&#x4F7F;&#x7528;&#x8BF7;&#x6C42;&#x961F;&#x5217;(blk_alloc_queue)&quot;)--&gt;E
+    E(&quot;&#x8BBE;&#x7F6E;&#x78C1;&#x76D8;&#x5C5E;&#x6027;(gendisk)&quot;)--&gt;F(&quot;&#x6FC0;&#x6D3B;&#x78C1;&#x76D8;(add_disk)&quot;)
+</code></pre>
+<ol>
+<li><p>&#x901A;&#x8FC7;register_blkdev()&#x51FD;&#x6570;&#x6CE8;&#x518C;&#x8BBE;&#x5907;&#xFF0C;&#x662F;&#x4E2A;&#x53EF;&#x9009;&#x64CD;&#x4F5C;&#xFF1B;</p>
+</li>
+<li><p>&#x4F7F;&#x7528;alloc_disk()&#x51FD;&#x6570;&#x5206;&#x914D;&#x901A;&#x7528;&#x78C1;&#x76D8;gendisk&#x7ED3;&#x6784;&#x4F53;&#xFF1B;</p>
+</li>
+<li><p>&#x6839;&#x636E;&#x662F;&#x5426;&#x9700;&#x8981;I/O&#x8C03;&#x5EA6;&#xFF0C;&#x5206;&#x4E24;&#x79CD;&#x60C5;&#x51B5;&#xFF0C;&#x4E00;&#x79CD;&#x662F;&#x4F7F;&#x7528;&#x8BF7;&#x6C42;&#x961F;&#x5217;&#x8FDB;&#x884C;&#x6570;&#x636E;&#x4F20;&#x8F93;&#xFF0C;&#x4E00;&#x79CD;&#x662F;&#x4E0D;&#x4F7F;&#x7528;&#x8BF7;&#x6C42;&#x961F;&#x5217;&#x8FDB;&#x884C;&#x6570;&#x636E;&#x4F20;&#x8F93;&#xFF1B;</p>
+</li>
+<li><p>&#x521D;&#x59CB;&#x5316;gendisk&#x7ED3;&#x6784;&#x4F53;&#x7684;&#x6570;&#x636E;&#x6210;&#x5458;&#xFF0C;&#x5305;&#x62EC;&#xFF1A;major&#x3001;fops&#x3001;queue&#x7B49;&#xFF1B;</p>
+</li>
+<li><p>&#x4F7F;&#x7528;add_disk()&#x51FD;&#x6570;&#x6FC0;&#x6D3B;&#x78C1;&#x76D8;&#x8BBE;&#x5907;&#xFF0C;&#x8C03;&#x7528;&#x8BE5;&#x51FD;&#x6570;&#x4E4B;&#x524D;&#x8981;&#x505A;&#x597D;&#x6240;&#x6709;&#x7684;&#x51C6;&#x5907;&#x5DE5;&#x4F5C;&#xFF1B;</p>
+</li>
+</ol>
+<p>&#x5206;&#x914D;&#x4E00;&#x4E2A;gendisk&#x7ED3;&#x6784;&#x4F53;</p>
+<p>&#x8BBE;&#x7F6E;&#x4E00;&#x4E2A;&#x961F;&#x5217;&#xFF0C;&#x5C06;&#x8BBF;&#x95EE;&#x8BF7;&#x6C42;&#x653E;&#x5230;&#x961F;&#x5217;&#x91CC;</p>
+<p>&#x8BBE;&#x7F6E;gendisk&#x7ED3;&#x6784;&#x4F53;&#x7684;&#x5C5E;&#x6027;&#xFF0C;&#x5982;&#xFF1A;&#x540D;&#x79F0;&#x3001;&#x5BB9;&#x91CF;&#x3001;&#x64CD;&#x4F5C;&#x96C6;&#x7B49;</p>
+<p>&#x6DFB;&#x52A0;gendisk&#x7ED3;&#x6784;&#x4F53;</p>
+<p>&#x53E6;&#x5916;&#x5206;&#x914D;&#x4E00;&#x5757;&#x5185;&#x5B58;&#x7A7A;&#x95F4;&#xFF0C;&#x5F53;&#x505A;&#x5757;&#x8BBE;&#x5907;&#xFF0C;&#x5728;request&#x51FD;&#x6570;&#x4E2D;&#x4F7F;&#x7528;memcpy&#x8BBF;&#x95EE;&#xFF0C;&#x6A21;&#x4EFF;&#x5757;&#x8BBE;&#x5907;&#x8BFB;&#x5199;</p>
+<pre><code class="lang-c">module_init(sbull_blkdev_init);
+module_exit(sbull_blkdev_exit);
+</code></pre>
+<p>&#x5757;&#x8BBE;&#x5907;&#x9A71;&#x52A8;&#x7A0B;&#x5E8F;&#x7684;&#x521D;&#x59CB;&#x5316;&#x65B9;&#x6CD5;&#x5728;sbull_blkdev_init()&#x51FD;&#x6570;&#x4E2D;&#xFF1B;</p>
+<h5 id="1&#xFF09;&#x6CE8;&#x518C;&#x5757;&#x8BBE;&#x5907;">1&#xFF09;&#x6CE8;&#x518C;&#x5757;&#x8BBE;&#x5907;</h5>
+<pre><code class="lang-c"><span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span> major = <span class="hljs-number">0</span>;
+major = register_blkdev(major, <span class="hljs-string">&quot;sbull_blkdev&quot;</span>);
+</code></pre>
+<p>&#x4E3A;&#x5757;&#x8BBE;&#x5907;&#x9A71;&#x52A8;&#x5206;&#x914D;&#x4E00;&#x4E2A;&#x672A;&#x4F7F;&#x7528;&#x7684;&#x4E3B;&#x8BBE;&#x5907;&#x53F7;&#xFF0C;&#x5E76;&#x5728;/proc/devies&#x4E2D;&#x6DFB;&#x52A0;&#x4E00;&#x4E2A;&#x5165;&#x53E3;&#xFF1B;</p>
+<h5 id="2&#xFF09;&#x6CE8;&#x518C;&#x8BF7;&#x6C42;&#x961F;&#x5217;">2&#xFF09;&#x6CE8;&#x518C;&#x8BF7;&#x6C42;&#x961F;&#x5217;</h5>
+<p>&#x6CE8;&#x518C;&#x8BF7;&#x6C42;&#x961F;&#x5217;&#x7684;&#x64CD;&#x4F5C;&#xFF0C;&#x5C06;&#x4E00;&#x4E2A;&#x8BF7;&#x6C42;&#x7684;&#x64CD;&#x4F5C;&#x65B9;&#x6CD5;&#x4E0E;&#x8BE5;&#x8BBE;&#x5907;&#x76F8;&#x5173;&#x8054;&#xFF0C;&#x901A;&#x8FC7;blk_init_queue()&#x51FD;&#x6570;&#x5B9E;&#x73B0;&#xFF1B;</p>
+<pre><code class="lang-c"><span class="hljs-keyword">static</span> <span class="hljs-keyword">struct</span> request_queue *sbull_blkdev_request = <span class="hljs-literal">NULL</span>;
+<span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-title">DEFINE_SPINLOCK</span><span class="hljs-params">(sbull_blkdev_lock)</span></span>;
+sbull_blkdev_queue = blk_init_queue(sbull_blkdev_request, &amp;sbull_blkdev_lock);
+</code></pre>
+<p>blk_init_queue()&#x51FD;&#x6570;&#x8FD4;&#x56DE;&#x8BF7;&#x6C42;&#x961F;&#x5217;request_queue&#xFF1B;&#x5C06;blkdev_request()&#x51FD;&#x6570;&#x6307;&#x9488;&#x65B9;&#x5F0F;&#x5173;&#x8054;&#x5230;&#x8BBE;&#x5907;&#xFF1B;&#x800C;&#x7B2C;&#x4E8C;&#x4E2A;&#x53C2;&#x6570;&#x662F;&#x81EA;&#x65CB;&#x9501;&#xFF0C;&#x7528;&#x6765;&#x4FDD;&#x62A4;request_queue&#x961F;&#x5217;&#x4E0D;&#x88AB;&#x540C;&#x65F6;&#x8BBF;&#x95EE;&#xFF1B;</p>
+<h5 id="3&#xFF09;&#x8BBE;&#x7F6E;&#x8BFB;&#x5199;&#x5757;&#x5927;&#x5C0F;">3&#xFF09;&#x8BBE;&#x7F6E;&#x8BFB;&#x5199;&#x5757;&#x5927;&#x5C0F;</h5>
+<p>&#x786C;&#x4EF6;&#x6267;&#x884C;&#x78C1;&#x76D8;&#x662F;&#x4EE5;&#x6247;&#x533A;&#x4E3A;&#x5355;&#x4F4D;&#x7684;&#xFF0C;&#x800C;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x662F;&#x4EE5;&#x5757;&#x4E3A;&#x5355;&#x4F4D;&#x5904;&#x7406;&#x6570;&#x636E;&#xFF1B;&#x901A;&#x5E38;&#xFF0C;&#x6247;&#x533A;&#x5927;&#x5C0F;&#x4E3A;512&#x5B57;&#x8282;&#xFF0C;&#x5757;&#x5927;&#x5C0F;&#x4E3A;4096&#x5B57;&#x8282;&#xFF1B;&#x9700;&#x8981;&#x5C06;&#x786C;&#x4EF6;&#x652F;&#x6301;&#x7684;&#x6247;&#x533A;&#x5927;&#x5C0F;&#x548C;&#x9A71;&#x52A8;&#x7A0B;&#x5E8F;&#x5728;&#x4E00;&#x6B21;&#x8BF7;&#x6C42;&#x4E2D;&#x80FD;&#x63A5;&#x6536;&#x7684;&#x6700;&#x5927;&#x6247;&#x533A;&#x6570;&#x901A;&#x77E5;&#x5757;&#x5C42;&#xFF1B;</p>
+<pre><code class="lang-c"><span class="hljs-comment">// include/linux/blkdev.h</span>
+<span class="hljs-keyword">int</span> sbull_blkdev_sect_size = <span class="hljs-number">512</span>;
+<span class="hljs-keyword">int</span> sbull_blkdev_size = <span class="hljs-number">16</span> * <span class="hljs-number">1024</span> * <span class="hljs-number">1024</span>;
+<span class="hljs-comment">// blk_queue_hardsect_size(blkdev_queue, my_blkdev_sect_size);</span>
+blk_queue_logical_block_size(sbull_blkdev_queue, sbull_blkdev_sect_size);
+</code></pre>
+<h5 id="4&#xFF09;&#x521B;&#x5EFA;&#x78C1;&#x76D8;">4&#xFF09;&#x521B;&#x5EFA;&#x78C1;&#x76D8;</h5>
+<p>&#x4F7F;&#x7528;alloc_disk()&#x51FD;&#x6570;&#x5206;&#x914D;&#x4E00;&#x4E2A;&#x4E0E;&#x8BBE;&#x5907;&#x5BF9;&#x5E94;&#x7684;&#x78C1;&#x76D8;gendisk&#x7ED3;&#x6784;&#x4F53;&#xFF0C;&#x5E76;&#x521D;&#x59CB;&#x5316;&#x5176;&#x6210;&#x5458;&#xFF1B;&#x9700;&#x8981;&#x521D;&#x59CB;&#x5316;&#x7684;&#x6210;&#x5458;&#x6709;&#xFF1A;block_device_operations&#x3001;&#x5B58;&#x50A8;&#x5BB9;&#x91CF;&#xFF08;&#x5355;&#x4F4D;&#x662F;&#x6247;&#x533A;&#xFF09;&#x3001;&#x8BF7;&#x6C42;&#x961F;&#x5217;&#x3001;&#x4E3B;&#x8BBE;&#x5907;&#x53F7;&#x3001;&#x78C1;&#x76D8;&#x540D;&#x79F0;&#x7B49;&#xFF1B;&#x8BBE;&#x7F6E;&#x5B58;&#x50A8;&#x5BB9;&#x91CF;&#x901A;&#x8FC7;set_capacity()&#x51FD;&#x6570;&#x6765;&#x5B8C;&#x6210;&#xFF1B;</p>
+<p>&#x8C03;&#x7528;add_disk()&#x51FD;&#x6570;&#x5C06;&#x78C1;&#x76D8;&#x6DFB;&#x52A0;&#x5230;&#x5757;I/O&#x5C42;&#xFF1B;</p>
+<pre><code class="lang-c">sbull_blkdev_disk = alloc_disk(<span class="hljs-number">1</span>);
+
+<span class="hljs-built_in">sprintf</span>(sbull_blkdev_disk-&gt;disk_name, <span class="hljs-string">&quot;sbull_blkdev_disk&quot;</span>);
+sbull_blkdev_disk-&gt;fops = &amp;sbull_blkdev_fops;
+sbull_blkdev_disk-&gt;<span class="hljs-built_in">queue</span> = sbull_blkdev_queue;
+sbull_blkdev_disk-&gt;major = major;
+sbull_blkdev_disk-&gt;first_minor = <span class="hljs-number">0</span>;
+set_capacity(sbull_blkdev_disk, sbull_blkdev_size);
+
+add_disk(sbull_blkdev_disk);
+</code></pre>
+<p>&#x5230;&#x8FD9;&#x91CC;&#xFF0C;&#x8BBE;&#x5907;/dev/sbull_blkdev_disk&#x5C31;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x4E86;&#xFF0C;&#x5982;&#x679C;&#x8BBE;&#x5907;&#x652F;&#x6301;&#x591A;&#x4E2A;&#x78C1;&#x76D8;&#x5206;&#x533A;&#xFF0C;&#x4F1A;&#x663E;&#x793A;&#x4E3A;/dev/sbull_blkdev_diskX&#xFF0C;X&#x662F;&#x5206;&#x533A;&#x53F7;&#xFF1B;</p>
+<pre><code class="lang-c"><span class="hljs-meta"># ls /dev/sbull_blkdev_disk -l</span>
+brw-rw----    <span class="hljs-number">1</span> root     root      <span class="hljs-number">253</span>,   <span class="hljs-number">0</span> Oct <span class="hljs-number">21</span> <span class="hljs-number">08</span>:<span class="hljs-number">18</span> /dev/sbull_blkdev_disk
+</code></pre>
+<h5 id="5&#xFF09;&#x5757;&#x8BBE;&#x5907;&#x521D;&#x59CB;&#x5316;&#x5B9E;&#x4F8B;">5&#xFF09;&#x5757;&#x8BBE;&#x5907;&#x521D;&#x59CB;&#x5316;&#x5B9E;&#x4F8B;</h5>
+<pre><code class="lang-c"><span class="hljs-keyword">struct</span> block_device_operations sbull_blkdev_fops = {
+    .owner = THIS_MODULE,
+    .open = sbull_blkdev_open,
+    .release = sbull_blkdev_release,
+    .ioctl = sbull_blkdev_ioctl,
+};
+</code></pre>
+<p>&#x8BF7;&#x6C42;&#x5904;&#x7406;&#x51FD;&#x6570;&#xFF0C;&#x5177;&#x4F53;&#x5B9E;&#x73B0;&#x5185;&#x5BB9;&#xFF0C;&#x540E;&#x8FB9;&#x8865;&#x5145;&#xFF1B;</p>
+<pre><code class="lang-c"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">sbull_blkdev_request</span><span class="hljs-params">(<span class="hljs-keyword">struct</span> request_queue *q)</span>
+</span>{
+    printk(<span class="hljs-string">&quot;%s: %d\n&quot;</span>, __func__, __LINE__);
+
+    <span class="hljs-keyword">return</span>;
+}
+</code></pre>
+<pre><code class="lang-c"><span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span> major = <span class="hljs-number">0</span>;
+<span class="hljs-keyword">static</span> <span class="hljs-keyword">struct</span> request_queue *sbull_blkdev_queue = <span class="hljs-literal">NULL</span>;
+<span class="hljs-keyword">static</span> <span class="hljs-keyword">struct</span> gendisk *sbull_blkdev_disk = <span class="hljs-literal">NULL</span>;
+<span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-title">DEFINE_SPINLOCK</span><span class="hljs-params">(sbull_blkdev_lock)</span></span>;
+
+<span class="hljs-keyword">int</span> sbull_blkdev_size = <span class="hljs-number">256</span> * <span class="hljs-number">1024</span>;
+<span class="hljs-keyword">int</span> sbull_blkdev_sect_size = <span class="hljs-number">512</span>;
+
+<span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span> <span class="hljs-title">sbull_blkdev_init</span><span class="hljs-params">(<span class="hljs-keyword">void</span>)</span>
+</span>{
+    major = register_blkdev(major, <span class="hljs-string">&quot;mcy_blk&quot;</span>);
+    <span class="hljs-keyword">if</span> (major &lt; <span class="hljs-number">0</span>) {
+        printk(<span class="hljs-string">&quot;%s, register_blkdev failed, major: %d\n&quot;</span>, __func__, major);
+        <span class="hljs-keyword">goto</span> register_blkdev_err;
+    }
+    printk(<span class="hljs-string">&quot;%s, major: %d\n&quot;</span>, __func__, major);
+
+    sbull_blkdev_queue = blk_init_queue(sbull_blkdev_request, &amp;sbull_blkdev_lock);
+    <span class="hljs-keyword">if</span> (!sbull_blkdev_queue) {
+        printk(<span class="hljs-string">&quot;%s, blk_init_queue failed!\n&quot;</span>, __func__);
+        <span class="hljs-keyword">goto</span> init_queue_err;
+    }
+
+    sbull_blkdev_disk = alloc_disk(<span class="hljs-number">1</span>);
+    <span class="hljs-keyword">if</span> (!sbull_blkdev_disk) {
+        printk(<span class="hljs-string">&quot;%s, alloc_disk failed!\n&quot;</span>, __func__);
+        <span class="hljs-keyword">goto</span> alloc_disk_err;
+    }
+
+    <span class="hljs-built_in">sprintf</span>(sbull_blkdev_disk-&gt;disk_name, <span class="hljs-string">&quot;sbull_blkdev_disk&quot;</span>);
+    sbull_blkdev_disk-&gt;fops = &amp;sbull_blkdev_fops;
+    sbull_blkdev_disk-&gt;<span class="hljs-built_in">queue</span> = sbull_blkdev_queue;
+    sbull_blkdev_disk-&gt;major = major;
+    sbull_blkdev_disk-&gt;first_minor = <span class="hljs-number">0</span>;
+    set_capacity(sbull_blkdev_disk, sbull_blkdev_size * <span class="hljs-number">2</span>);
+
+    add_disk(sbull_blkdev_disk);
+    printk(<span class="hljs-string">&quot;%s, sbull_blkdev_disk add success!\n&quot;</span>, __func__);
+
+    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+alloc_disk_err:
+    blk_cleanup_queue(sbull_blkdev_queue);
+init_queue_err:
+    unregister_blkdev(major, <span class="hljs-string">&quot;sbull_blkdev&quot;</span>);
+register_blkdev_err:
+    <span class="hljs-keyword">return</span> -EBUSY;
+}
+</code></pre>
+<h4 id="22-&#x5757;&#x8BBE;&#x5907;&#x7684;&#x5378;&#x8F7D;&#x8FC7;&#x7A0B;">2.2 &#x5757;&#x8BBE;&#x5907;&#x7684;&#x5378;&#x8F7D;&#x8FC7;&#x7A0B;</h4>
+<pre><code class="lang-mermaid">graph TB
+    A(&quot;&#x5220;&#x9664;gendisk(del_gendisk)&quot;)--&gt;
+    B(&quot;&#x5220;&#x9664;gendisk&#x7684;&#x5F15;&#x7528;(put_disk)&quot;)--&gt;
+    C(&quot;&#x6E05;&#x9664;&#x8BF7;&#x6C42;&#x961F;&#x5217;(blk_cleanup_queue)&quot;)--&gt;
+    D(&quot;&#x6CE8;&#x9500;&#x5757;&#x8BBE;&#x5907;(unregister_blkdev)&quot;)
+</code></pre>
+<ol>
+<li><p>&#x4F7F;&#x7528;del_gendisk()&#x51FD;&#x6570;&#x5220;&#x9664;gendisk&#x8BBE;&#x5907;&#xFF08;&#x78C1;&#x76D8;&#xFF09;&#xFF1B;</p>
+</li>
+<li><p>&#x4F7F;&#x7528;put_disk()&#x51FD;&#x6570;&#x5220;&#x9664;gendisk&#x8BBE;&#x5907;&#x7684;&#x5F15;&#x7528;&#xFF1B;</p>
+</li>
+<li><p>&#x4F7F;&#x7528;blk_cleanup_queue()&#x51FD;&#x6570;&#x6E05;&#x9664;&#x8BF7;&#x6C42;&#x961F;&#x5217;&#xFF0C;&#x91CA;&#x653E;&#x8BF7;&#x6C42;&#x961F;&#x5217;&#x5360;&#x7528;&#x7684;&#x8D44;&#x6E90;&#xFF1B;</p>
+</li>
+<li><p>&#x4F7F;&#x7528;unregister_blkdev()&#x51FD;&#x6570;&#x6CE8;&#x9500;&#x8BBE;&#x5907;&#xFF0C;&#x5E76;&#x91CA;&#x653E;&#x5BF9;&#x8BBE;&#x5907;&#x7684;&#x5F15;&#x7528;&#xFF0C;&#x53EF;&#x9009;&#x64CD;&#x4F5C;&#xFF0C;&#x4E0E;register_blkdev()&#x51FD;&#x6570;&#x914D;&#x5408;&#x4F7F;&#x7528;&#xFF1B;</p>
+</li>
+</ol>
+<pre><code class="lang-c"><span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">sbull_blkdev_exit</span><span class="hljs-params">(<span class="hljs-keyword">void</span>)</span>
+</span>{
+    del_gendisk(sbull_blkdev_disk);
+    put_disk(sbull_blkdev_disk);
+    blk_cleanup_queue(sbull_blkdev_queue);
+    unregister_blkdev(major, <span class="hljs-string">&quot;sbull_blkdev&quot;</span>);
+}
+</code></pre>
+<pre><code class="lang-c">module_init(sbull_blkdev_init);
+module_exit(sbull_blkdev_exit);
+MODULE_LICENSE(<span class="hljs-string">&quot;GPL&quot;</span>);
+</code></pre>
+<h4 id="23-&#x5C01;&#x88C5;&#x5757;&#x8BBE;&#x5907;&#x4FE1;&#x606F;">2.3 &#x5C01;&#x88C5;&#x5757;&#x8BBE;&#x5907;&#x4FE1;&#x606F;</h4>
+<p>&#x4E3A;&#x4E86;&#x5728;&#x4E00;&#x4E9B;&#x51FD;&#x6570;&#x4E2D;&#x80FD;&#x591F;&#x8BBF;&#x95EE;&#x5757;&#x8BBE;&#x5907;&#x9A71;&#x52A8;&#x7684;&#x4E00;&#x4E9B;&#x4FE1;&#x606F;&#xFF08;&#x6BD4;&#x5982;&#xFF1A;&#x8BF7;&#x6C42;&#x961F;&#x5217;&#xFF0C;&#x786C;&#x76D8;&#x5206;&#x533A;&#xFF0C;&#x786C;&#x76D8;&#x5C3A;&#x5BF8;&#x7B49;&#xFF09;&#x53C2;&#x6570;&#xFF0C;&#x53EF;&#x4EE5;&#x5B9A;&#x4E49;&#x4E00;&#x4E2A;&#x5757;&#x8BBE;&#x5907;&#x9A71;&#x52A8;&#x8BBE;&#x5907;&#x7ED3;&#x6784;&#x4F53;&#xFF0C;&#x7ED9;&#x6BCF;&#x4E00;&#x4E2A;&#x5757;&#x8BBE;&#x5907;&#x5B9A;&#x4E49;&#x4E00;&#x4E2A;&#x4FE1;&#x606F;&#x63CF;&#x8FF0;&#xFF0C;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code class="lang-c"><span class="hljs-keyword">typedef</span> <span class="hljs-keyword">struct</span> sbull_dev {
+    <span class="hljs-keyword">int</span> major;
+    <span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">long</span> size;
+    <span class="hljs-keyword">void</span> *data;
+    <span class="hljs-keyword">struct</span> request_queue *<span class="hljs-built_in">queue</span>;
+    <span class="hljs-keyword">struct</span> gendisk *disk;
+    <span class="hljs-keyword">spinlock_t</span> lock;
+    <span class="hljs-keyword">struct</span> timer_list timer;
+} <span class="hljs-keyword">blkdev_t</span>;
+
+<span class="hljs-keyword">blkdev_t</span> *blkdev = <span class="hljs-literal">NULL</span>;
+</code></pre>
+<p>&#x540C;&#x65F6;&#xFF0C;&#x5B9A;&#x4E49;&#x4E86;&#x4E00;&#x4E9B;&#x5FC5;&#x8981;&#x7684;&#x5B8F;&#x5B9A;&#x4E49;&#xFF1A;</p>
+<pre><code class="lang-c"><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> SBULL_BLKDEV_SIZE   (16 * 1024 * 1024)    <span class="hljs-comment">// &#x6307;&#x5B9A;&#x5757;&#x8BBE;&#x5907;&#x786C;&#x76D8;&#x7684;&#x5927;&#x5C0F;&#x4E3A;16M</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> SBULL_BLKDEV_SECTOR_SIZE    (512)    <span class="hljs-comment">// &#x8BBE;&#x7F6E;&#x5757;&#x8BBE;&#x5907;&#x7684;sector&#x4E3A;512&#x5B57;&#x8282;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> SBULL_BLKDEV_MAX_PARTITIONS (16)    <span class="hljs-comment">// &#x8BBE;&#x7F6E;&#x5757;&#x8BBE;&#x5907;&#x6700;&#x5927;&#x7684;&#x5206;&#x533A;&#x6570;</span></span>
+</code></pre>
+<p>&#x8FD9;&#x6837;&#x5728;&#x5757;&#x8BBE;&#x5907;&#x4E2D;&#x53EA;&#x9700;&#x8981;&#x901A;&#x8FC7;blkdev&#x6307;&#x9488;&#x5C31;&#x53EF;&#x4EE5;&#x83B7;&#x53D6;&#x5230;&#x8BBE;&#x5907;&#x7684;&#x6240;&#x6709;&#x9700;&#x8981;&#x7684;&#x53C2;&#x6570;&#x4FE1;&#x606F;&#xFF1B;&#x800C;&#x76F8;&#x5E94;&#x7684;&#x521D;&#x59CB;&#x5316;&#x64CD;&#x4F5C;&#x4E5F;&#x9700;&#x8981;&#x76F8;&#x5E94;&#x5730;&#x4FEE;&#x6539;&#xFF1A;</p>
+<pre><code class="lang-c">blkdev = kmalloc(<span class="hljs-keyword">sizeof</span>(<span class="hljs-keyword">blkdev_t</span>), GFP_KERNEL);
+<span class="hljs-keyword">if</span> (!blkdev) {
+    printk(<span class="hljs-string">&quot;%s, blkdev kmalloc failed\n&quot;</span>, __func__);
+    <span class="hljs-keyword">goto</span> blkdev_kmalloc_err;
+}
+<span class="hljs-built_in">memset</span>(blkdev, <span class="hljs-number">0</span>, <span class="hljs-keyword">sizeof</span>(<span class="hljs-keyword">blkdev_t</span>));
+
+spin_lock_init(&amp;blkdev-&gt;lock);
+blkdev-&gt;<span class="hljs-built_in">queue</span> = blk_alloc_queue(GFP_KERNEL);
+blkdev-&gt;size = SBULL_BLKDEV_SIZE;
+blkdev-&gt;data = sbull_blkdev_data;
+
+blkdev-&gt;disk = alloc_disk(SBULL_BLKDEV_MAX_PARTITIONS);
+<span class="hljs-built_in">sprintf</span>(blkdev-&gt;disk-&gt;disk_name, SBULL_BLKDEV_NAME);
+blkdev-&gt;disk-&gt;fops = &amp;sbull_blkdev_fops;
+blkdev-&gt;disk-&gt;<span class="hljs-built_in">queue</span> = blkdev-&gt;<span class="hljs-built_in">queue</span>;
+blkdev-&gt;disk-&gt;major = major;
+blkdev-&gt;disk-&gt;first_minor = <span class="hljs-number">0</span>;
+set_capacity(blkdev-&gt;disk, SBULL_BLKDEV_SIZE / SBULL_BLKDEV_SECTOR_SIZE);
+add_disk(blkdev-&gt;disk);
+</code></pre>
+<p>&#x8FD9;&#x4E2A;&#x5757;&#x8BBE;&#x5907;&#x7684;&#x7ED3;&#x6784;&#x4F53;&#x4FE1;&#x606F;&#xFF0C;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;gendisk&#x7ED3;&#x6784;&#x4F53;&#x4E2D;&#x7684;private_data&#x6307;&#x9488;&#x4FDD;&#x5B58;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;request_queue&#x7ED3;&#x6784;&#x4F53;&#x4E2D;&#x7684;queuedata&#x6307;&#x9488;&#x4FDD;&#x5B58;&#xFF1B;</p>
+<pre><code class="lang-c">blkdev-&gt;<span class="hljs-built_in">queue</span>-&gt;queuedata = blkdev;
+blkdev-&gt;disk-&gt;private_data = blkdev;
+</code></pre>
+<p>&#x5728;&#x9700;&#x8981;&#x4F7F;&#x7528;&#x8FD9;&#x4E9B;&#x4FE1;&#x606F;&#x65F6;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;queue-&gt;queuedata&#x6216;disk-&gt;private_data&#x6307;&#x9488;&#x5FEB;&#x901F;&#x83B7;&#x53D6;&#x5230;&#x5757;&#x8BBE;&#x5907;&#x4FE1;&#x606F;&#xFF1B;</p>
+<h3 id="3-&#x961F;&#x5217;&#x8BF7;&#x6C42;">3. &#x961F;&#x5217;&#x8BF7;&#x6C42;</h3>
+<p>&#x8FD9;&#x4E3B;&#x8981;&#x662F;&#x7531;&#x4E8E;&#x8BE5;&#x7248;&#x672C;&#x9002;&#x7528;&#x4E8E;2.6.29&#x5185;&#x6838;&#xFF0C;&#x4ECE;2.6.31&#x5185;&#x6838;&#x5F00;&#x59CB;&#xFF0C;&#x4E00;&#x4E9B;API&#x53D1;&#x751F;&#x53D8;&#x5316;&#xFF08;&#x89C1;linux/include/blkdev.h&#xFF09;&#xFF1B;&#x7528;&#x5230;&#x7684;&#x51E0;&#x4E2A;API&#x4FEE;&#x6539;&#x5982;&#x4E0B;&#xFF1A;</p>
+<table>
+<thead>
+<tr>
+<th>&#x8001;&#x7248;&#x672C;&#x5185;&#x6838;&#x63A5;&#x53E3;</th>
+<th>&#x65B0;&#x7248;&#x672C;&#x5185;&#x6838;&#x63A5;&#x53E3;</th>
+<th>&#x610F;&#x4E49;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>request -&gt; sectors</td>
+<td>blk_rq_pos(request)</td>
+<td>&#x83B7;&#x53D6;&#x8BF7;&#x6C42;&#x7684;&#x5F00;&#x59CB;&#x6247;&#x533A;</td>
+</tr>
+<tr>
+<td>request -&gt; nr_sectors</td>
+<td>blk_rq_nr_sectors(request)</td>
+<td>&#x83B7;&#x53D6;&#x8BF7;&#x6C42;&#x7684;&#x6247;&#x533A;&#x6570;</td>
+</tr>
+<tr>
+<td>elev_next_request(request)</td>
+<td>blk_fetch_request(request)</td>
+<td></td>
+</tr>
+<tr>
+<td>end_request(request, error)</td>
+<td>blk_end_request_all(request, error)</td>
+</tr>
+</tbody>
+</table>
+<p>&#x6BCF;&#x4E2A;&#x5757;&#x8BBE;&#x5907;&#xFF0C;&#x90FD;&#x6709;&#x4E00;&#x4E2A;&#x8BF7;&#x6C42;&#x961F;&#x5217;&#xFF0C;&#x5F53;&#x8BF7;&#x6C42;&#x961F;&#x5217;&#x751F;&#x6210;&#x65F6;&#xFF0C;&#x8BF7;&#x6C42;&#x51FD;&#x6570;request()&#x5C31;&#x4E0E;&#x8BE5;&#x961F;&#x5217;&#x7ED1;&#x5B9A;&#xFF0C;&#x8FD9;&#x4E2A;&#x64CD;&#x4F5C;&#x6709;&#x4E24;&#x79CD;&#x65B9;&#x6CD5;&#x5B9E;&#x73B0;&#xFF1B;</p>
+<h4 id="31-blkinitqueue">3.1 blk_init_queue</h4>
+<p>&#x7B2C;&#x4E00;&#x79CD;&#x662F;&#x901A;&#x8FC7;blk_init_queue()&#x51FD;&#x6570;&#x5B8C;&#x6210;&#xFF1B;</p>
+<pre><code class="lang-c"><span class="hljs-comment">// block/blk-core.c</span>
+<span class="hljs-function"><span class="hljs-keyword">struct</span> request_queue *<span class="hljs-title">blk_init_queue</span><span class="hljs-params">(request_fn_proc *rfn, spinlock_t *lock)</span>
+</span>{
+    <span class="hljs-keyword">return</span> blk_init_queue_node(rfn, lock, NUMA_NO_NODE);
+}
+EXPORT_SYMBOL(blk_init_queue);
+</code></pre>
+<p>blk_init_queue()&#x51FD;&#x6570;&#x7684;&#x8C03;&#x7528;&#x5173;&#x7CFB;&#xFF1A;</p>
+<pre><code class="lang-c">blk_init_queue
+    blk_init_queue_node
+        blk_alloc_queue_node
+            kmem_cache_alloc_node
+            ida_simple_get
+            bioset_create
+            bdi_init
+            percpu_ref_init
+            blkcg_init_queue
+        blk_init_allocated_queue
+            blk_alloc_flush_queue
+            blk_init_rl
+            blk_queue_make_request
+            elevator_init
+</code></pre>
+<p>&#x5B9E;&#x73B0;&#x65B9;&#x6CD5;</p>
+<pre><code class="lang-c">blkdev-&gt;<span class="hljs-built_in">queue</span> = blk_init_queue(sbull_blkdev_request, &amp;blkdev-&gt;lock);
+</code></pre>
+<pre><code class="lang-c"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">sbull_blkdev_request</span><span class="hljs-params">(<span class="hljs-keyword">struct</span> request_queue *q)</span>
+</span>{
+    <span class="hljs-keyword">struct</span> request *req = <span class="hljs-literal">NULL</span>;
+    <span class="hljs-keyword">blkdev_t</span> *dev = q-&gt;queuedata;
+    <span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">long</span> sect_pos = <span class="hljs-number">0</span>;
+    <span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">long</span> sect_count = <span class="hljs-number">0</span>;
+    <span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">long</span> start = <span class="hljs-number">0</span>;
+    <span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">long</span> len = <span class="hljs-number">0</span>;
+    <span class="hljs-keyword">void</span> *buffer = <span class="hljs-literal">NULL</span>;
+    <span class="hljs-keyword">int</span> err = <span class="hljs-number">0</span>;
+
+    req = blk_fetch_request(q);
+    <span class="hljs-keyword">while</span> (req != <span class="hljs-literal">NULL</span>) {
+        sect_pos = blk_rq_pos(req);
+        sect_count = blk_rq_cur_sectors(req);
+        start = sect_pos &lt;&lt; <span class="hljs-number">9</span>;
+        len = blk_rq_cur_bytes(req);
+
+        <span class="hljs-keyword">if</span> (start + len &gt; dev-&gt;size) {
+            printk(<span class="hljs-string">&quot;%s, bad access, block: 0x%llx, count: 0x%lx\n&quot;</span>, __func__, (<span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">long</span> <span class="hljs-keyword">long</span>)sect_pos, sect_count);
+            err = -EIO;
+            <span class="hljs-keyword">goto</span> done;
+        }
+
+        buffer = bio_data(req-&gt;bio);
+        <span class="hljs-keyword">if</span> (!buffer) {
+            printk(<span class="hljs-string">&quot;%s, bio_data buffer is null\n&quot;</span>, __func__);
+            <span class="hljs-keyword">goto</span> done;
+        }
+        sbull_transfer(dev, sect_pos, sect_count, buffer, rq_data_dir(req) == WRITE);
+done:
+        <span class="hljs-keyword">if</span> (!__blk_end_request_cur(req, err)) {
+            req = blk_fetch_request(q);
+        }
+    }
+
+    <span class="hljs-keyword">return</span>;
+}
+</code></pre>
+<pre><code class="lang-c"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">sbull_transfer</span><span class="hljs-params">(blkdev_t *dev, <span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">long</span> sector, <span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">long</span> nsect, <span class="hljs-keyword">char</span> *buffer, <span class="hljs-keyword">int</span> write)</span>
+</span>{
+    <span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">long</span> offset = sector * SBULL_BLKDEV_SECTOR_SIZE;
+    <span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">long</span> nbytes = nsect * SBULL_BLKDEV_SECTOR_SIZE;
+
+    <span class="hljs-keyword">if</span> (offset + nbytes &gt; dev-&gt;size) {
+        printk(<span class="hljs-string">&quot;%s, over range, size: 0x%lx, offset: 0x%lx, nbytes: 0x%lx&quot;</span>, __func__, dev-&gt;size, offset, nbytes);
+        <span class="hljs-keyword">return</span>;
+    }
+
+    <span class="hljs-keyword">if</span> (write) {
+        <span class="hljs-built_in">memcpy</span>(dev-&gt;data + offset, buffer, nbytes);
+    } <span class="hljs-keyword">else</span> {
+        <span class="hljs-built_in">memcpy</span>(buffer, dev-&gt;data + offset, nbytes);
+    }
+
+    <span class="hljs-keyword">return</span>;
+}
+</code></pre>
+<h4 id="32-blkallocqueue">3.2 blk_alloc_queue</h4>
+<p>&#x5B9E;&#x73B0;&#x65B9;&#x6CD5;&#xFF1A;</p>
+<pre><code class="lang-c">blkdev-&gt;<span class="hljs-built_in">queue</span> = blk_alloc_queue(GFP_KERNEL);
+blk_queue_make_request(blkdev-&gt;<span class="hljs-built_in">queue</span>, sbull_blkdev_make_request);
+</code></pre>
+<pre><code class="lang-c"><span class="hljs-function"><span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">int</span> <span class="hljs-title">sbull_blkdev_make_request</span><span class="hljs-params">(<span class="hljs-keyword">struct</span> request_queue *q, <span class="hljs-keyword">struct</span> bio *bio)</span>
+</span>{
+    <span class="hljs-keyword">blkdev_t</span> *dev = q-&gt;queuedata;
+    <span class="hljs-keyword">int</span> status = <span class="hljs-number">0</span>;
+
+    status = sbull_xfer_bio(dev, bio);
+    bio_endio(bio);
+
+    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">sbull_xfer_bio</span><span class="hljs-params">(blkdev_t *dev, <span class="hljs-keyword">struct</span> bio *bio)</span>
+</span>{
+    <span class="hljs-keyword">struct</span> bvec_iter iter;
+    <span class="hljs-keyword">struct</span> bio_vec bvec;
+    <span class="hljs-keyword">sector_t</span> sector = bio-&gt;bi_iter.bi_sector;
+    <span class="hljs-keyword">char</span> *buffer = <span class="hljs-literal">NULL</span>;
+
+    bio_for_each_segment(bvec, bio, iter) {
+        buffer = __bio_kmap_atomic(bio, iter);
+        <span class="hljs-keyword">if</span> (!buffer) {
+            printk(<span class="hljs-string">&quot;%s, buffer is null\n&quot;</span>, __func__);
+            <span class="hljs-keyword">return</span> <span class="hljs-number">-1</span>;
+        }
+        sbull_transfer(dev, sector, bio_cur_bytes(bio)&gt;&gt;<span class="hljs-number">9</span>, buffer, bio_data_dir(bio) == WRITE);
+        sector += bio_cur_bytes(bio)&gt;&gt;<span class="hljs-number">9</span>;
+        __bio_kunmap_atomic(bio);
+    }
+
+    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+}
+</code></pre>
+<pre><code class="lang-c"><span class="hljs-comment">// include/linux/blkdev.h</span>
+<span class="hljs-keyword">struct</span> request {
+
+
+
+}
+</code></pre>
+<pre><code class="lang-c">blk_queue_max_hw_sectors(blkdev-&gt;<span class="hljs-built_in">queue</span>, <span class="hljs-number">255</span>);
+</code></pre>
+<p>blk_queue_max_hw_sectors()&#x51FD;&#x6570;&#xFF0C;&#x7528;&#x6765;&#x901A;&#x77E5;&#x901A;&#x7528;&#x5757;&#x5C42;&#x548C;I/O&#x8C03;&#x5EA6;&#x5668;&#xFF0C;&#x8BE5;&#x8BF7;&#x6C42;&#x961F;&#x5217;&#x7684;&#x6BCF;&#x4E2A;&#x8BF7;&#x6C42;&#x4E2D;&#x80FD;&#x591F;&#x5305;&#x542B;&#x7684;&#x6700;&#x5927;&#x6247;&#x533A;&#x6570;&#xFF1B;</p>
+<pre><code class="lang-c">blk_queue_logical_block_size(blkdev-&gt;<span class="hljs-built_in">queue</span>, sbull_sect_size);
+</code></pre>
+<p>blk_queue_logical_block_size()&#x51FD;&#x6570;&#xFF0C;&#x7528;&#x4E8E;&#x544A;&#x77E5;&#x8BE5;&#x8BF7;&#x6C42;&#x961F;&#x5217;&#x7684;&#x903B;&#x8F91;&#x5757;&#x5927;&#x5C0F;&#xFF1B;</p>
+<p>bio&#x7684;&#x4E00;&#x4E9B;&#x63A5;&#x53E3;&#xFF1A;</p>
+<pre><code class="lang-c"><span class="hljs-comment">// include/linux/fs.h</span>
+<span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">inline</span> <span class="hljs-keyword">int</span> <span class="hljs-title">bio_data_dir</span><span class="hljs-params">(<span class="hljs-keyword">struct</span> bio *bio)</span>
+</span>{
+    <span class="hljs-keyword">return</span> op_is_write(bio_op(bio)) ? WRITE : READ;
+}
+
+<span class="hljs-meta">#<span class="hljs-meta-keyword">ifdef</span> CONFIG_BLOCK</span>
+<span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">inline</span> <span class="hljs-keyword">bool</span> <span class="hljs-title">op_is_write</span><span class="hljs-params">(<span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">int</span> op)</span>
+</span>{
+    <span class="hljs-keyword">return</span> op == REQ_OP_READ ? <span class="hljs-literal">false</span> : <span class="hljs-literal">true</span>;
+}
+</code></pre>
+<p>return&#xFF1A;READ/WRITE</p>
+<pre><code class="lang-c"><span class="hljs-comment">// include/linux/bio.h</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> BIO_MAX_PAGES       256</span>
+
+<span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> bio_prio(bio)           (bio)-&gt;bi_ioprio</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> bio_set_prio(bio, prio)     ((bio)-&gt;bi_ioprio = prio)</span>
+
+<span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> bio_iter_iovec(bio, iter)               \
+    bvec_iter_bvec((bio)-&gt;bi_io_vec, (iter))</span>
+
+<span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> bio_iter_page(bio, iter)                \
+    bvec_iter_page((bio)-&gt;bi_io_vec, (iter))</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> bio_iter_len(bio, iter)                 \
+    bvec_iter_len((bio)-&gt;bi_io_vec, (iter))</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> bio_iter_offset(bio, iter)              \
+    bvec_iter_offset((bio)-&gt;bi_io_vec, (iter))</span>
+
+<span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> bio_page(bio)       bio_iter_page((bio), (bio)-&gt;bi_iter)</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> bio_offset(bio)     bio_iter_offset((bio), (bio)-&gt;bi_iter)</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> bio_iovec(bio)      bio_iter_iovec((bio), (bio)-&gt;bi_iter)</span>
+
+<span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> bio_multiple_segments(bio)              \
+    ((bio)-&gt;bi_iter.bi_size != bio_iovec(bio).bv_len)</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> bio_sectors(bio)    ((bio)-&gt;bi_iter.bi_size &gt;&gt; 9)</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> bio_end_sector(bio) ((bio)-&gt;bi_iter.bi_sector + bio_sectors((bio)))</span>
+</code></pre>
+<pre><code class="lang-c"><span class="hljs-comment">// include/linux/bio.h</span>
+<span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">inline</span> <span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">int</span> <span class="hljs-title">bio_cur_bytes</span><span class="hljs-params">(<span class="hljs-keyword">struct</span> bio *bio)</span>
+</span>{
+    <span class="hljs-keyword">if</span> (bio_has_data(bio))
+        <span class="hljs-keyword">return</span> bio_iovec(bio).bv_len;
+    <span class="hljs-keyword">else</span> <span class="hljs-comment">/* dataless requests such as discard */</span>
+        <span class="hljs-keyword">return</span> bio-&gt;bi_iter.bi_size;
+}
+
+<span class="hljs-comment">// &#x6570;&#x636E;&#x7F13;&#x51B2;&#x533A;&#x7684;&#x5185;&#x6838;&#x865A;&#x62DF;&#x5730;&#x5740;</span>
+<span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">inline</span> <span class="hljs-keyword">void</span> *<span class="hljs-title">bio_data</span><span class="hljs-params">(<span class="hljs-keyword">struct</span> bio *bio)</span>
+</span>{
+    <span class="hljs-keyword">if</span> (bio_has_data(bio))
+        <span class="hljs-keyword">return</span> page_address(bio_page(bio)) + bio_offset(bio);
+
+    <span class="hljs-keyword">return</span> <span class="hljs-literal">NULL</span>;
+}
+</code></pre>
+<pre><code class="lang-c"><span class="hljs-comment">// include/linux/bio.h</span>
+<span class="hljs-comment">// &#x83B7;&#x53D6;&#x7ED9;&#x5B9A;bio&#x7684;&#x7B2C;i&#x4E2A;&#x7F13;&#x51B2;&#x533A;&#x7684;&#x865A;&#x62DF;&#x5730;&#x5740;</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> __bio_kmap_atomic(bio, iter)                \
+    (kmap_atomic(bio_iter_iovec((bio), (iter)).bv_page) +   \
+        bio_iter_iovec((bio), (iter)).bv_offset)</span>
+
+<span class="hljs-comment">// &#x91CA;&#x653E;&#x7F13;&#x51B2;&#x533A;&#x7684;&#x865A;&#x62DF;&#x5730;&#x5740;</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> __bio_kunmap_atomic(addr)   kunmap_atomic(addr)</span>
+</code></pre>
+<pre><code class="lang-c"><span class="hljs-comment">// include/linux/blkdev.h</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> rq_data_dir(rq)     (op_is_write(req_op(rq)) ? WRITE : READ)</span>
+
+<span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> REQ_OP_SHIFT (8 * sizeof(u64) - REQ_OP_BITS)</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> req_op(req)  ((req)-&gt;cmd_flags &gt;&gt; REQ_OP_SHIFT)</span>
+
+<span class="hljs-comment">// include/linux/blk_types.h</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> REQ_OP_BITS 3</span>
+</code></pre>
+<pre><code class="lang-c"><span class="hljs-comment">// include/linux/blkdev.h</span>
+<span class="hljs-comment">/*
+ * blk_rq_pos()         : the current sector
+ * blk_rq_bytes()       : bytes left in the entire request
+ * blk_rq_cur_bytes()       : bytes left in the current segment
+ * blk_rq_err_bytes()       : bytes left till the next error boundary
+ * blk_rq_sectors()     : sectors left in the entire request
+ * blk_rq_cur_sectors()     : sectors left in the current segment
+ */</span>
+<span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">inline</span> sector_t <span class="hljs-title">blk_rq_pos</span><span class="hljs-params">(<span class="hljs-keyword">const</span> <span class="hljs-keyword">struct</span> request *rq)</span>
+</span>{
+    <span class="hljs-keyword">return</span> rq-&gt;__sector;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">inline</span> <span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">int</span> <span class="hljs-title">blk_rq_bytes</span><span class="hljs-params">(<span class="hljs-keyword">const</span> <span class="hljs-keyword">struct</span> request *rq)</span>
+</span>{
+    <span class="hljs-keyword">return</span> rq-&gt;__data_len;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">inline</span> <span class="hljs-keyword">int</span> <span class="hljs-title">blk_rq_cur_bytes</span><span class="hljs-params">(<span class="hljs-keyword">const</span> <span class="hljs-keyword">struct</span> request *rq)</span>
+</span>{
+    <span class="hljs-keyword">return</span> rq-&gt;bio ? bio_cur_bytes(rq-&gt;bio) : <span class="hljs-number">0</span>;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">inline</span> <span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">int</span> <span class="hljs-title">blk_rq_sectors</span><span class="hljs-params">(<span class="hljs-keyword">const</span> <span class="hljs-keyword">struct</span> request *rq)</span>
+</span>{
+    <span class="hljs-keyword">return</span> blk_rq_bytes(rq) &gt;&gt; <span class="hljs-number">9</span>;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">inline</span> <span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">int</span> <span class="hljs-title">blk_rq_cur_sectors</span><span class="hljs-params">(<span class="hljs-keyword">const</span> <span class="hljs-keyword">struct</span> request *rq)</span>
+</span>{
+    <span class="hljs-keyword">return</span> blk_rq_cur_bytes(rq) &gt;&gt; <span class="hljs-number">9</span>;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">inline</span> <span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">int</span> <span class="hljs-title">blk_rq_count_bios</span><span class="hljs-params">(<span class="hljs-keyword">struct</span> request *rq)</span>
+</span>{
+    <span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">int</span> nr_bios = <span class="hljs-number">0</span>;
+    <span class="hljs-keyword">struct</span> bio *bio;
+
+    __rq_for_each_bio(bio, rq)
+        nr_bios++;
+
+    <span class="hljs-keyword">return</span> nr_bios;
+}
+</code></pre>
+<h4 id="33-&#x4E24;&#x79CD;&#x961F;&#x5217;&#x8BF7;&#x6C42;&#x7684;&#x533A;&#x522B;">3.3 &#x4E24;&#x79CD;&#x961F;&#x5217;&#x8BF7;&#x6C42;&#x7684;&#x533A;&#x522B;</h4>
+<h4 id="34-io&#x8C03;&#x5EA6;&#x5668;">3.4 I/O&#x8C03;&#x5EA6;&#x5668;</h4>
+<p>I/O&#x8C03;&#x5EA6;&#x5668;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x5408;&#x5E76;&#x8BF7;&#x6C42;&#x3001;&#x91CD;&#x6392;&#x5757;&#x8BBE;&#x5907;&#x64CD;&#x4F5C;&#x987A;&#x5E8F;&#x7B49;&#x65B9;&#x5F0F;&#x63D0;&#x9AD8;&#x5757;&#x8BBE;&#x5907;&#x8BBF;&#x95EE;&#x7684;&#x987A;&#x5E8F;&#xFF1B;</p>
+<p>I/O&#x8C03;&#x5EA6;&#x5668;&#x56DB;&#x79CD;</p>
+<pre><code class="lang-c"><span class="hljs-meta"># cat /sys/block/sbull_disk/queue/scheduler</span>
+noop [cfq]
+</code></pre>
+<p>&#x5BF9;&#x4E8E;&#x5927;&#x591A;&#x6570;&#x57FA;&#x4E8E;&#x7269;&#x7406;&#x78C1;&#x76D8;&#x7684;&#x5757;&#x8BBE;&#x5907;&#x9A71;&#x52A8;&#xFF0C;&#x4F7F;&#x7528;&#x9002;&#x5408;&#x7684;I/O&#x8C03;&#x5EA6;&#x5668;&#x80FD;&#x63D0;&#x9AD8;&#x6027;&#x80FD;&#xFF1B;</p>
+<p>&#x65E0;I/O&#x8C03;&#x5EA6;&#x5668;</p>
+<pre><code class="lang-c"><span class="hljs-meta"># cat /sys/block/sbull_disk/queue/scheduler</span>
+none
+</code></pre>
+<h3 id="8-&#x6D4B;&#x8BD5;&#x9A8C;&#x8BC1;">8. &#x6D4B;&#x8BD5;&#x9A8C;&#x8BC1;</h3>
+<p>&#x6D4B;&#x8BD5;&#x6B65;&#x9AA4;&#xFF1A;</p>
+<blockquote>
+<p>&#x52A0;&#x8F7D;&#x9A71;&#x52A8;&#xFF1A;insmod ramblock.ko</p>
+<p>&#x683C;&#x5F0F;&#x5316;&#xFF1A;mkdosfs /dev/ramblock</p>
+<p>&#x6302;&#x8F7D;&#xFF1A;mount /dev/ramblock /mnt</p>
+<p>&#x8BFB;&#x5199;&#x6587;&#x4EF6;&#xFF1A;cd /mnt&#xFF0C;&#x521B;&#x5EFA;&#x6587;&#x4EF6;</p>
+<p>&#x5378;&#x8F7D;&#xFF1A;umount /mnt</p>
+<p>cat /dev/ramblock &gt; /mnt/ramblock.bin</p>
+<p>&#x5728;PC&#x4E0A;&#x67E5;&#x770B;/mnt/ramblock.bin&#xFF0C;sudo mount -o loop ramblock.bin /mnt</p>
+</blockquote>
+<h3 id="9-&#x603B;&#x7ED3;">9. &#x603B;&#x7ED3;</h3>
+<h3 id="&#x53C2;&#x8003;&#x8D44;&#x6599;">&#x53C2;&#x8003;&#x8D44;&#x6599;</h3>
+<p><a href="https://www.cnblogs.com/big-devil/p/8590007.html" target="_blank">https://www.cnblogs.com/big-devil/p/8590007.html</a></p>
+<p><a href="#&#x76EE;&#x5F55;">&#x56DE;&#x5230;&#x76EE;&#x5F55;</a></p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="Linux字符设备驱动.html" class="navigation navigation-prev " aria-label="Previous page: Linux字符设备驱动">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../platform/" class="navigation navigation-next " aria-label="Next page: platform">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Linux块设备驱动","date":"2020-04-19T10:40:13.000Z","tags":"Driver","level":"1.3.2.2","depth":3,"next":{"title":"platform","level":"1.3.3","depth":2,"path":"platform/README.md","ref":"platform/README.md","articles":[{"title":"platform总线设备驱动模型","level":"1.3.3.1","depth":3,"path":"platform/platform总线设备驱动模型.md","ref":"platform/platform总线设备驱动模型.md","articles":[]}]},"previous":{"title":"Linux字符设备驱动","level":"1.3.2.1","depth":3,"path":"driver/Linux字符设备驱动.md","ref":"driver/Linux字符设备驱动.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"driver/Linux块设备驱动.md","mtime":"2020-09-20T08:26:34.793Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-09-20T08:30:58.779Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

@@ -1,0 +1,1031 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Qemu搭建ARM-vexpress开发环境-1 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="Qemu搭建ARM-vexpress开发环境-2-u-boot启动kernel.html" />
+    
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" >
+            
+                <span>
+            
+                    
+                    计算机基础
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../elf/">
+            
+                <a href="../elf/">
+            
+                    
+                    ELF
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1.1" data-path="../elf/linux中ELF二进制程序解析.html">
+            
+                <a href="../elf/linux中ELF二进制程序解析.html">
+            
+                    
+                    Linux中ELF二进制程序解析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.2" data-path="../elf/linux中ELF二进制程序解析----ELF文件实例解析.html">
+            
+                <a href="../elf/linux中ELF二进制程序解析----ELF文件实例解析.html">
+            
+                    
+                    Linux中ELF二进制程序解析----ELF文件实例解析
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../driver/">
+            
+                <a href="../driver/">
+            
+                    
+                    Linux driver
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" >
+            
+                <span>
+            
+                    
+                    BringUp
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1.1" data-path="../bringup/u-boot引导kernel启动过程.html">
+            
+                <a href="../bringup/u-boot引导kernel启动过程.html">
+            
+                    
+                    u-boot引导kernel启动过程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.2" data-path="../bringup/Linux内核启动流程-基于ARM64.html">
+            
+                <a href="../bringup/Linux内核启动流程-基于ARM64.html">
+            
+                    
+                    Linux内核启动流程-基于ARM64
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" >
+            
+                <span>
+            
+                    
+                    Driver
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.2.1" data-path="../driver/Linux字符设备驱动.html">
+            
+                <a href="../driver/Linux字符设备驱动.html">
+            
+                    
+                    Linux字符设备驱动
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.2" data-path="../driver/Linux块设备驱动.html">
+            
+                <a href="../driver/Linux块设备驱动.html">
+            
+                    
+                    Linux块设备驱动
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../platform/">
+            
+                <a href="../platform/">
+            
+                    
+                    platform
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.3.1" data-path="../platform/platform总线设备驱动模型.html">
+            
+                <a href="../platform/platform总线设备驱动模型.html">
+            
+                    
+                    platform总线设备驱动模型
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../tty/">
+            
+                <a href="../tty/">
+            
+                    
+                    tty
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="../i2c/">
+            
+                <a href="../i2c/">
+            
+                    
+                    i2c
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../tool/">
+            
+                <a href="../tool/">
+            
+                    
+                    Tool
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" >
+            
+                <span>
+            
+                    
+                    qemu
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="1.4.1.1" data-path="Qemu搭建ARM-vexpress开发环境-1.html">
+            
+                <a href="Qemu搭建ARM-vexpress开发环境-1.html">
+            
+                    
+                    Qemu搭建ARM-vexpress开发环境-1
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.1.2" data-path="Qemu搭建ARM-vexpress开发环境-2-u-boot启动kernel.html">
+            
+                <a href="Qemu搭建ARM-vexpress开发环境-2-u-boot启动kernel.html">
+            
+                    
+                    Qemu搭建ARM-vexpress开发环境-2-u-boot启动kernel
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.1.3" data-path="Qemu搭建ARM-vexpress开发环境-3-NFS网络根文件系统.html">
+            
+                <a href="Qemu搭建ARM-vexpress开发环境-3-NFS网络根文件系统.html">
+            
+                    
+                    Qemu搭建ARM-vexpress开发环境-3-NFS网络根文件系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../hexo/">
+            
+                <a href="../hexo/">
+            
+                    
+                    hexo
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.2.1" data-path="../hexo/Hexo-Github搭建个人博客.html">
+            
+                <a href="../hexo/Hexo-Github搭建个人博客.html">
+            
+                    
+                    Hexo-Github搭建个人博客
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2.2" data-path="../hexo/Ubuntu-Hexo-Github搭建个人博客.html">
+            
+                <a href="../hexo/Ubuntu-Hexo-Github搭建个人博客.html">
+            
+                    
+                    Ubuntu-Hexo-Github搭建个人博客
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Qemu搭建ARM-vexpress开发环境-1</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="qemu&#x642D;&#x5EFA;arm-vexpress&#x5F00;&#x53D1;&#x73AF;&#x5883;1">Qemu&#x642D;&#x5EFA;ARM vexpress&#x5F00;&#x53D1;&#x73AF;&#x5883;(1)</h1>
+<h2 id="&#x76EE;&#x5F55;">&#x76EE;&#x5F55;</h2>
+<p>[TOC]</p>
+<p>&#x5D4C;&#x5165;&#x5F0F;&#x8F6F;&#x4EF6;&#x5F00;&#x53D1;&#x4F9D;&#x8D56;&#x4E8E;&#x5D4C;&#x5165;&#x5F0F;&#x786C;&#x4EF6;&#x8BBE;&#x5907;&#xFF0C;&#x6BD4;&#x5982;&#xFF1A;&#x5F00;&#x53D1;&#x677F;&#x3001;&#x5916;&#x90E8;&#x6A21;&#x5757;&#x8BBE;&#x5907;&#x7B49;&#xFF0C;&#x4F46;&#x662F;&#x5982;&#x679C;&#x53EA;&#x662F;&#x60F3;&#x5B66;&#x4E60;&#x3001;&#x7814;&#x7A76;Linux&#x5185;&#x6838;&#xFF0C;&#x60F3;&#x5B66;&#x4E60;Linux&#x5185;&#x6838;&#x7684;&#x67B6;&#x6784;&#xFF0C;&#x5DE5;&#x4F5C;&#x6A21;&#x5F0F;&#xFF0C;&#x9700;&#x8981;&#x4FEE;&#x6539;&#x4E00;&#x4E9B;&#x4EE3;&#x7801;&#xFF0C;&#x91CD;&#x65B0;&#x7F16;&#x8BD1;&#x5E76;&#x70E7;&#x5199;&#x5230;&#x5F00;&#x53D1;&#x677F;&#x4E2D;&#x8FDB;&#x884C;&#x9A8C;&#x8BC1;&#xFF0C;&#x8FD9;&#x6837;&#x672A;&#x5FC5;&#x6709;&#x4E9B;&#x590D;&#x6742;&#xFF0C;&#x5E76;&#x4E14;&#x4E3A;&#x6B64;&#x4E13;&#x95E8;&#x8D2D;&#x4E70;&#x5404;&#x79CD;&#x5F00;&#x53D1;&#x7248;&#xFF0C;&#x6D6A;&#x8D39;&#x8D44;&#x91D1;&#xFF0C;&#x5F00;&#x4F1A;&#x6F14;&#x793A;&#x6548;&#x679C;&#x8FD8;&#x9700;&#x8981;&#x643A;&#x5E26;&#x4E00;&#x5927;&#x4E32;&#x7684;&#x677F;&#x5B50;&#x548C;&#x7535;&#x7EBF;&#xFF0C;&#x4E0D;&#x80DC;&#x5176;&#x70E6;&#x3002;&#x7136;&#x800C;Qemu&#x7684;&#x4F7F;&#x7528;&#x53EF;&#x4EE5;&#x907F;&#x514D;&#x9891;&#x7E41;&#x5728;&#x5F00;&#x53D1;&#x677F;&#x4E0A;&#x70E7;&#x5199;&#x7248;&#x672C;&#xFF0C;&#x5982;&#x679C;&#x8FDB;&#x884C;&#x7684;&#x8C03;&#x8BD5;&#x5DE5;&#x4F5C;&#x4E0E;&#x5916;&#x8BBE;&#x65E0;&#x5173;&#xFF0C;&#x4EC5;&#x4EC5;&#x662F;&#x5185;&#x6838;&#x65B9;&#x9762;&#x7684;&#x8C03;&#x8BD5;&#xFF0C;Qemu&#x6A21;&#x62DF;ARM&#x5F00;&#x53D1;&#x73AF;&#x5883;&#x5B8C;&#x5168;&#x53EF;&#x4EE5;&#x5B8C;&#x7F8E;&#x5730;&#x80DC;&#x4EFB;&#x3002;</p>
+<!--more-->
+<p>&#x4E0B;&#x9762;&#x7B80;&#x5355;&#x4ECB;&#x7ECD;&#x4E0B;&#x6211;&#x7684;Qemu&#x5F00;&#x53D1;&#x73AF;&#x5883;&#x642D;&#x5EFA;&#x8FC7;&#x7A0B;</p>
+<h2 id="1-&#x73AF;&#x5883;">1. &#x73AF;&#x5883;</h2>
+<p>&#x7531;&#x4E8E;&#x5728;&#x5F00;&#x53D1;&#x8FC7;&#x7A0B;&#x4E2D;&#x4E5F;&#x9700;&#x8981;Windows&#x7CFB;&#x7EDF;&#x4E0B;&#x7684;&#x4E00;&#x4E9B;&#x5DE5;&#x5177;&#xFF0C;&#x53CC;&#x7CFB;&#x7EDF;&#x73AF;&#x5883;&#x5207;&#x6362;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x65F6;&#x5FC5;&#x987B;&#x91CD;&#x542F;&#xFF0C;&#x4E8E;&#x662F;&#x653E;&#x5F03;&#x4E86;&#x4EE5;&#x524D;&#x642D;&#x5EFA;&#x7684;&#x53CC;&#x7CFB;&#x7EDF;&#x73AF;&#x5883;&#xFF0C;&#x800C;&#x91C7;&#x7528;&#x5728;PC&#x7684;Windows10&#x7CFB;&#x7EDF;&#x4E0B;&#x901A;&#x8FC7;VirtualBox&#x865A;&#x62DF;&#x673A;&#x5B89;&#x88C5;Xubuntu&#x7CFB;&#x7EDF;&#x8FDB;&#x884C;&#x5F00;&#x53D1;&#xFF0C;&#x907F;&#x514D;&#x4E86;&#x53CC;&#x7CFB;&#x7EDF;&#x5F00;&#x53D1;&#x4E2D;&#x9700;&#x8981;&#x4E0D;&#x65AD;&#x91CD;&#x542F;&#x5207;&#x6362;PC&#x7CFB;&#x7EDF;&#x7684;&#x95EE;&#x9898;&#x3002;Xubuntu&#x7CFB;&#x7EDF;&#x548C;Ubuntu&#x7CFB;&#x7EDF;&#x5927;&#x540C;&#x5C0F;&#x5F02;&#xFF0C;&#x53EA;&#x662F;&#x684C;&#x9762;&#x5C01;&#x88C5;&#x66F4;&#x52A0;&#x7B80;&#x6D01;&#x3002;</p>
+<h3 id="11-&#x6240;&#x4F7F;&#x7528;&#x73AF;&#x5883;">1.1 &#x6240;&#x4F7F;&#x7528;&#x73AF;&#x5883;</h3>
+<blockquote>
+<p>Ubuntu-18.04.1</p>
+</blockquote>
+<p>&#x6216;&#xFF1A;</p>
+<blockquote>
+<p>PC&#x7CFB;&#x7EDF;&#xFF1A;Windows10
+&#x865A;&#x62DF;&#x673A;&#xFF1A;VirtualBox-5.18
+&#x865A;&#x62DF;&#x673A;&#x7CFB;&#x7EDF;&#xFF1A;Xubuntu
+&#x6A21;&#x62DF;&#x7684;&#x5F00;&#x53D1;&#x677F;&#xFF1A;vexpress</p>
+</blockquote>
+<h3 id="12-&#x642D;&#x5EFA;&#x73AF;&#x5883;&#x65F6;&#x4F7F;&#x7528;&#x7684;&#x5DE5;&#x5177;">1.2 &#x642D;&#x5EFA;&#x73AF;&#x5883;&#x65F6;&#x4F7F;&#x7528;&#x7684;&#x5DE5;&#x5177;</h3>
+<p>qemu-4.2.0
+linux-4.14.172(Linux Kernel)
+u-boot-2017.05
+busybox-1.31.1
+arm-linux-gnueabi-gcc (Linaro 7.5.0-3)</p>
+<p>&#x4E3A;&#x4E86;&#x5C06;Qemu&#x642D;&#x5EFA;&#x5F00;&#x53D1;&#x73AF;&#x5883;&#x8D44;&#x6599;&#x7EDF;&#x4E00;&#x653E;&#x5230;&#x4E00;&#x8D77;&#xFF0C;&#x521B;&#x5EFA;&#xFF5E;/qemu&#x76EE;&#x5F55;&#xFF0C;&#x6240;&#x6709;&#x76F8;&#x5173;&#x6587;&#x4EF6;&#x5168;&#x90E8;&#x653E;&#x7F6E;&#x5728;&#x4E00;&#x8D77;&#xFF1B;</p>
+<h2 id="2-&#x5B89;&#x88C5;&#x4EA4;&#x53C9;&#x7F16;&#x8BD1;&#x5DE5;&#x5177;">2. &#x5B89;&#x88C5;&#x4EA4;&#x53C9;&#x7F16;&#x8BD1;&#x5DE5;&#x5177;</h2>
+<pre><code class="lang-shell"># sudo apt install gcc-arm-linux-gnueabi
+</code></pre>
+<p>&#x67E5;&#x770B;&#x5B89;&#x88C5;&#x662F;&#x5426;&#x6210;&#x529F;&#xFF1A;</p>
+<pre><code class="lang-shell"># arm-linux-gnueabi-gcc -v
+Using built-in specs.
+COLLECT_GCC=arm-linux-gnueabi-gcc
+COLLECT_LTO_WRAPPER=/usr/lib/gcc-cross/arm-linux-gnueabi/7/lto-wrapper
+Target: arm-linux-gnueabi
+Configured with: ../src/configure -v --with-pkgversion=&apos;Ubuntu/Linaro 7.5.0-3ubuntu1~18.04&apos; --with-bugurl=file:///usr/share/doc/gcc-7/README.Bugs --enable-languages=c,ada,c++,go,d,fortran,objc,obj-c++ --prefix=/usr --with-gcc-major-version-only --program-suffix=-7 --enable-shared --enable-linker-build-id --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --with-sysroot=/ --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-gnu-unique-object --disable-libitm --disable-libquadmath --disable-libquadmath-support --enable-plugin --with-system-zlib --with-target-system-zlib --enable-multiarch --enable-multilib --disable-sjlj-exceptions --with-arch=armv5t --with-float=soft --disable-werror --enable-multilib --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=arm-linux-gnueabi --program-prefix=arm-linux-gnueabi- --includedir=/usr/arm-linux-gnueabi/include
+Thread model: posix
+gcc version 7.5.0 (Ubuntu/Linaro 7.5.0-3ubuntu1~18.04)
+</code></pre>
+<h2 id="3-&#x5B89;&#x88C5;qemu&#x5DE5;&#x5177;">3. &#x5B89;&#x88C5;Qemu&#x5DE5;&#x5177;</h2>
+<p>&#x6709;&#x4E24;&#x79CD;&#x65B9;&#x6CD5;&#x53EF;&#x4EE5;&#x5728;Linux&#x73AF;&#x5883;&#x4E0B;&#x5B89;&#x88C5;Qemu&#x5DE5;&#x5177;&#xFF0C;&#x7B2C;&#x4E00;&#x79CD;&#x76F4;&#x63A5;&#x4F7F;&#x7528;XUbuntu&#x7CFB;&#x7EDF;&#x7684;apt&#x5DE5;&#x5177;&#x5B89;&#x88C5;&#xFF0C;&#x4F46;&#x662F;&#x8FD9;&#x79CD;&#x65B9;&#x6CD5;&#x5B89;&#x88C5;&#x7684;Qemu&#x7CFB;&#x7EDF;&#x7248;&#x672C;&#x4E0D;&#x662F;&#x6700;&#x65B0;&#x7684;&#xFF0C;&#x5982;&#x679C;&#x9700;&#x8981;&#x5B89;&#x88C5;&#x6700;&#x65B0;&#x7248;&#x672C;&#x7684;Qemu&#x5DE5;&#x5177;&#xFF0C;&#x5C31;&#x9700;&#x8981;&#x7B2C;&#x4E8C;&#x79CD;&#x65B9;&#x6CD5;&#xFF0C;&#x901A;&#x8FC7;Git&#x5DE5;&#x5177;&#x4E0B;&#x8F7D;&#x6E90;&#x7801;&#xFF0C;&#x5207;&#x6362;&#x5230;&#x6700;&#x65B0;&#x5206;&#x652F;&#x518D;&#x53BB;&#x7F16;&#x8BD1;&#x5B89;&#x88C5;&#x4E86;&#xFF1B;&#x4F46;&#x662F;&#x4E00;&#x822C;&#x60C5;&#x51B5;&#x4E0B;&#x901A;&#x8FC7;git&#x4E0B;&#x8F7D;&#x4EE3;&#x7801;&#x901F;&#x5EA6;&#x6781;&#x6162;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x7B2C;&#x4E09;&#x79CD;&#x65B9;&#x6CD5;&#xFF0C;&#x627E;&#x5230;&#x8981;&#x4E0B;&#x8F7D;&#x7684;qemu&#x7248;&#x672C;&#xFF0C;&#x4F7F;&#x7528;&#x8FC5;&#x96F7;&#x4E0B;&#x8F7D;&#xFF1B;&#x5177;&#x4F53;&#x64CD;&#x4F5C;&#x5982;&#x4E0B;&#x6240;&#x8FF0;&#xFF1A;</p>
+<h3 id="31-&#x5FEB;&#x901F;&#x5B89;&#x88C5;qemu">3.1 &#x5FEB;&#x901F;&#x5B89;&#x88C5;Qemu</h3>
+<pre><code class="lang-shell"># sudo apt install qemu
+</code></pre>
+<p>&#x8FD9;&#x79CD;&#x60C5;&#x51B5;&#x4E0B;&#x5B89;&#x88C5;&#x7684;qemu&#x7248;&#x672C;&#x53EF;&#x80FD;&#x4E0D;&#x662F;&#x6700;&#x65B0;&#x7248;&#x672C;&#xFF1B;&#x5982;&#x679C;&#x60F3;&#x8981;&#x5B89;&#x88C5;&#x6700;&#x65B0;&#x7248;&#x672C;&#x7684;qemu&#xFF0C;&#x8FD8;&#x5F97;&#x4F7F;&#x7528;&#x4E0B;&#x8FB9;&#x4ECB;&#x7ECD;&#x7684;&#x4F7F;&#x7528;&#x6E90;&#x4EE3;&#x7801;&#x7F16;&#x8BD1;&#x5B89;&#x88C5;&#x7684;&#x65B9;&#x6CD5;&#xFF1B;</p>
+<h3 id="32-&#x4E0B;&#x8F7D;qemu&#x6E90;&#x7801;&#x7F16;&#x8BD1;&#x5B89;&#x88C5;">3.2 &#x4E0B;&#x8F7D;Qemu&#x6E90;&#x7801;&#x7F16;&#x8BD1;&#x5B89;&#x88C5;</h3>
+<h4 id="321-&#x4E0B;&#x8F7D;qemu&#x6E90;&#x7801;">3.2.1 &#x4E0B;&#x8F7D;Qemu&#x6E90;&#x7801;</h4>
+<ol>
+<li>&#x4ECE;Git&#x670D;&#x52A1;&#x5668;&#x4E0B;&#x8F7D;Qemu&#x4EE3;&#x7801;&#xFF0C;&#x8BB0;&#x7740;&#x5728;&#x4E0B;&#x8F7D;&#x4E4B;&#x524D;&#x9009;&#x62E9;&#x5E76;&#x5207;&#x6362;&#x9700;&#x8981;&#x7684;&#x6E90;&#x7801;&#x5206;&#x652F;&#xFF1A;</li>
+</ol>
+<pre><code class="lang-shell"># git clone git://git.qemu-project.org/qemu.git
+# cd qemu
+# git checkout -b stable-*** remotes/origin/stable-***
+</code></pre>
+<ol>
+<li><p>&#x5728;windows&#x7CFB;&#x7EDF;&#x4E0B;&#x4F7F;&#x7528;&#x8FC5;&#x96F7;&#x4E0B;&#x8F7D;</p>
+<p>&#x767B;&#x9646;download.qemu.org&#x7F51;&#x7AD9;&#xFF0C;&#x9009;&#x62E9;&#x9700;&#x8981;&#x7684;&#x7248;&#x672C;&#xFF0C;&#x70B9;&#x51FB;&#x4E0B;&#x8F7D;&#xFF0C;&#x6216;&#x8005;&#x53F3;&#x952E;&#x540E;&#x9009;&#x4F7F;&#x7528;&#x8FC5;&#x96F7;&#x4E0B;&#x8F7D;&#xFF0C;&#x901F;&#x5EA6;&#x4F1A;&#x66F4;&#x5FEB;&#xFF1A;</p>
+<p>&#x5728;&#x8FD9;&#x91CC;&#x9009;&#x62E9;qemu-4.2.0.tar.xz&#x4F7F;&#x7528;&#xFF1B;</p>
+</li>
+</ol>
+<h4 id="322-&#x5B89;&#x88C5;">3.2.2 &#x5B89;&#x88C5;</h4>
+<p>&#x5728;&#x914D;&#x7F6E;qemu&#x4E4B;&#x524D;&#xFF0C;&#x9700;&#x8981;&#x5B89;&#x88C5;&#x4E00;&#x4E9B;&#x4F9D;&#x8D56;&#x7684;&#x5E93;&#x6216;&#x8005;&#x8F6F;&#x4EF6;&#x5305;&#xFF1A;</p>
+<pre><code class="lang-shell"># sudo apt-get install zlib1g-dev 
+# sudo apt-get install libglib2.0-0
+# sudo apt-get install libglib2.0-dev
+# sudo apt-get install libtool
+# sudo apt-get install libsdl1.2-dev
+# sudo apt-get install autoconf
+</code></pre>
+<p>&#x89E3;&#x538B;&#x6E90;&#x4EE3;&#x7801;&#xFF1A;</p>
+<pre><code class="lang-shell"># tar -xvf qemu-4.2.0.tar.xz
+</code></pre>
+<p>&#x4E3A;&#x4E86;&#x9632;&#x6B62;&#x7F16;&#x8BD1;&#x540E;&#x6587;&#x4EF6;&#x6BD4;&#x8F83;&#x4E71;&#xFF0C;&#x9009;&#x62E9;&#x521B;&#x5EFA;build&#x76EE;&#x5F55;&#x4F5C;&#x4E3A;&#x7F16;&#x8BD1;&#x4E2D;&#x95F4;&#x76EE;&#x6807;&#x8DEF;&#x5F84;&#xFF1A;</p>
+<pre><code class="lang-shell"># cd qemu-4.2.0/
+# mkdir build
+# cd build/
+</code></pre>
+<p>&#x914D;&#x7F6E;&#x3001;&#x7F16;&#x8BD1;&#x5E76;&#x5B89;&#x88C5;Qemu&#xFF1A;</p>
+<pre><code class="lang-shell"># ../configure --target-list=arm-softmmu --audio-drv-list=
+# make
+# make install
+</code></pre>
+<h4 id="323-&#x5728;&#x7F16;&#x8BD1;&#x8FC7;&#x7A0B;&#x4E2D;&#x53EF;&#x80FD;&#x51FA;&#x73B0;&#x7684;&#x95EE;&#x9898;">3.2.3 &#x5728;&#x7F16;&#x8BD1;&#x8FC7;&#x7A0B;&#x4E2D;&#x53EF;&#x80FD;&#x51FA;&#x73B0;&#x7684;&#x95EE;&#x9898;</h4>
+<pre><code class="lang-shell"># ../configure --target-list=arm-softmmu --audio-drv-list=
+ERROR: pkg-config binary &apos;pkg-config&apos; not found
+</code></pre>
+<p>&#x7F3A;&#x5C11;&#x5E93;&#x6587;&#x4EF6;&#xFF0C;&#x6309;&#x7167;&#x4E0A;&#x4E00;&#x6B65;&#x4E2D;&#x7684;&#x6B65;&#x9AA4;&#x5B89;&#x88C5;&#x5E93;&#x6587;&#x4EF6;&#xFF1B;</p>
+<pre><code class="lang-shell"># ../configure --target-list=arm-softmmu --audio-drv-list=
+ERROR: pixman &gt;= 0.21.8 not present.
+       Please install the pixman devel package.
+</code></pre>
+<p>&#x53EF;&#x4EE5;&#x901A;&#x8FC7;apt-cache&#x67E5;&#x8BE2;&#x7F3A;&#x5C11;&#x7684;&#x4F9D;&#x8D56;&#x5E93;&#xFF1A;</p>
+<pre><code class="lang-shell"># apt-cache search pixman
+libpixman-1-0 - pixel-manipulation library for X and cairo
+libpixman-1-dev - pixel-manipulation library for X and cairo (development files)
+</code></pre>
+<p>&#x5B89;&#x88C5;&#x7F3A;&#x5C11;&#x7684;&#x4F9D;&#x8D56;&#x5E93;&#xFF1A;</p>
+<pre><code class="lang-shell"># sudo apt-get install libpixman-1-0
+# sudo apt-get install libpixman-1-dev
+</code></pre>
+<h3 id="33-&#x67E5;&#x770B;qemu&#x7248;&#x672C;">3.3 &#x67E5;&#x770B;Qemu&#x7248;&#x672C;</h3>
+<pre><code class="lang-shell"># qemu-system-arm --version
+QEMU emulator version 4.2.0
+Copyright (c) 2003-2019 Fabrice Bellard and the QEMU Project developers
+</code></pre>
+<h3 id="34-&#x67E5;&#x770B;qemu&#x652F;&#x6301;&#x7684;&#x5F00;&#x53D1;&#x677F;">3.4 &#x67E5;&#x770B;Qemu&#x652F;&#x6301;&#x7684;&#x5F00;&#x53D1;&#x677F;</h3>
+<p>Qemu&#x5DE5;&#x5177;&#x652F;&#x6301;&#x5927;&#x91CF;&#x5F00;&#x53D1;&#x677F;&#x7684;&#x865A;&#x62DF;&#xFF0C;&#x73B0;&#x5B58;&#x7684;&#x5927;&#x90E8;&#x5206;&#x5E38;&#x7528;&#x5F00;&#x53D1;&#x677F;&#x90FD;&#x80FD;&#x5F88;&#x597D;&#x5730;&#x652F;&#x6301;&#x3002;&#x901A;&#x8FC7;&#x4E0B;&#x9762;&#x7684;&#x547D;&#x4EE4;&#x64CD;&#x4F5C;&#x53EF;&#x4EE5;&#x770B;&#x5230;&#x5F53;&#x524D;&#x7248;&#x672C;&#x7684;Qemu&#x5DE5;&#x5177;&#x652F;&#x6301;&#x7684;&#x5F00;&#x53D1;&#x677F;&#x5217;&#x8868;&#xFF1A;</p>
+<pre><code class="lang-shell"># qemu-system-arm -M help
+......
+vexpress-a15         ARM Versatile Express for Cortex-A15
+vexpress-a9          ARM Versatile Express for Cortex-A9
+......
+</code></pre>
+<h3 id="35-&#x8FD0;&#x884C;qemu">3.5 &#x8FD0;&#x884C;Qemu</h3>
+<p>&#x8BE5;&#x64CD;&#x4F5C;&#x76EE;&#x524D;&#x8FD8;&#x4E0D;&#x80FD;&#x8FD0;&#x884C;&#xFF0C;&#x56E0;&#x4E3A;&#x8FD8;&#x6CA1;&#x6709;&#x7F16;&#x8BD1;&#x5185;&#x6838;&#xFF0C;&#x5982;&#x679C;&#x624B;&#x8FB9;&#x6709;&#x7F16;&#x8BD1;&#x597D;&#x7684;&#x522B;&#x7684;&#x7248;&#x672C;&#x7684;zImage&#x6587;&#x4EF6;&#xFF0C;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x4E0B;&#x9762;&#x547D;&#x4EE4;&#x5C1D;&#x8BD5;&#x8FD0;&#x884C;&#x770B;&#x4E0B;&#x6548;&#x679C;&#x3002;</p>
+<pre><code class="lang-shell"># qemu-system-arm -M vexpress-a9 -m 512M -kernel ./zImage -dtb ./vexpress-v2p-ca9.dtb -nographic -append &quot;console=ttyAMA0&quot;
+    -M          &#x6307;&#x5B9A;&#x5F00;&#x53D1;&#x677F;
+    -m          &#x6307;&#x5B9A;&#x5185;&#x5B58;&#x5927;&#x5C0F;
+    -kernel     &#x6307;&#x5B9A;&#x5185;&#x6838;&#x6587;&#x4EF6;
+    -dtb        &#x6307;&#x5B9A;dtb&#x6587;&#x4EF6;
+    -nographic  &#x6307;&#x5B9A;&#x4E0D;&#x9700;&#x8981;&#x56FE;&#x5F62;&#x754C;&#x9762;
+    -append     &#x6307;&#x5B9A;&#x6269;&#x5C55;&#x663E;&#x793A;&#x754C;&#x9762;&#xFF0C;&#x4E32;&#x53E3;&#x6216;&#x8005;LCD
+</code></pre>
+<p>&#x5B9E;&#x4F8B;&#x53C2;&#x8003;&#xFF1A;</p>
+<pre><code class="lang-shell"># qemu-system-arm -M vexpress-a9 -m 512M -kernel ~/qemu/zImage -dtb ~/qemu/vexpress-v2p-ca9.dtb -nographic -append &quot;console=ttyAMA0&quot;
+-M vexpress-a9    &#x6A21;&#x62DF;vexpress-a9&#x677F;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;-M ?&#x53C2;&#x6570;&#x6765;&#x67E5;&#x8BE2;qemu&#x652F;&#x6301;&#x7684;&#x6240;&#x6709;&#x5355;&#x677F;
+-m 512M    &#x5355;&#x677F;&#x7269;&#x7406;&#x5185;&#x5B58;512M
+-kernel    ~/qemu/zImage    &#x6307;&#x5B9A;&#x5185;&#x548C;&#x955C;&#x50CF;&#x53CA;&#x8DEF;&#x5F84;
+-dtb ~/qemu/vexpress-v2p-ca9.dtb    &#x6307;&#x5B9A;&#x5355;&#x677F;&#x7684;&#x8BBE;&#x5907;&#x6811;&#x6587;&#x4EF6;
+-nographic    &#x4E0D;&#x4F7F;&#x7528;&#x56FE;&#x5F62;&#x754C;&#x9762;&#xFF0C;&#x4F7F;&#x7528;&#x4E32;&#x53E3;
+-append &quot;console=ttyAMA0&quot;    &#x6307;&#x5B9A;&#x5185;&#x6838;&#x542F;&#x52A8;&#x53C2;&#x6570;&#xFF0C;&#x4E32;&#x53E3;&#x8BBE;&#x5907;&#x4F7F;&#x7528;ttyAMA0
+</code></pre>
+<h2 id="4-&#x914D;&#x7F6E;&#x5E76;&#x7F16;&#x8BD1;linux&#x5185;&#x6838;">4. &#x914D;&#x7F6E;&#x5E76;&#x7F16;&#x8BD1;Linux&#x5185;&#x6838;</h2>
+<h3 id="41-&#x4E0B;&#x8F7D;linux&#x5185;&#x6838;">4.1 &#x4E0B;&#x8F7D;Linux&#x5185;&#x6838;</h3>
+<p>&#x901A;&#x8FC7;&#x4F17;&#x6240;&#x5468;&#x77E5;&#x7684;&#x5185;&#x6838;&#x4E0B;&#x8F7D;&#x7F51;&#x7AD9;www.kernel.org&#x4E0B;&#x8F7D;&#x9700;&#x8981;&#x7684;&#x5185;&#x6838;&#x7248;&#x672C;&#xFF0C;&#x8FD9;&#x91CC;&#x6211;&#x4E0B;&#x8F7D;&#x7684;&#x662F;&#x76F8;&#x5BF9;&#x6765;&#x8BF4;&#x6700;&#x65B0;&#x7684;&#x957F;&#x671F;&#x652F;&#x6301;&#x7684;&#x5185;&#x6838;&#x7248;&#x672C;linux-4.4.157&#x3002;</p>
+<h3 id="42-&#x89E3;&#x538B;linux&#x5185;&#x6838;">4.2 &#x89E3;&#x538B;Linux&#x5185;&#x6838;</h3>
+<pre><code class="lang-shell"># tar -xvf linux-4.4.157.tar.xz
+</code></pre>
+<h3 id="43-&#x7F16;&#x8BD1;linux&#x5185;&#x6838;">4.3 &#x7F16;&#x8BD1;Linux&#x5185;&#x6838;</h3>
+<h4 id="431-&#x914D;&#x7F6E;">4.3.1 &#x914D;&#x7F6E;</h4>
+<pre><code class="lang-shell"># make vexpress_defconfig ARCH=arm O=./object
+make[1]: Entering directory &apos;/home/xiami/tool/linux-4.14.172/object&apos;
+  HOSTCC  scripts/basic/fixdep
+  GEN     ./Makefile
+  HOSTCC  scripts/kconfig/conf.o
+  SHIPPED scripts/kconfig/zconf.tab.c
+  SHIPPED scripts/kconfig/zconf.lex.c
+  HOSTCC  scripts/kconfig/zconf.tab.o
+  HOSTLD  scripts/kconfig/conf
+#
+# configuration written to .config
+#
+make[1]: Leaving directory &apos;/home/xiami/tool/linux-4.14.172/object&apos;
+</code></pre>
+<pre><code class="lang-shell"># make ARCH=arm CROSS_COMPILE=arm-linux-gnueabi- menuconfig -j4 O=./object
+</code></pre>
+<h4 id="432-&#x7F16;&#x8BD1;">4.3.2 &#x7F16;&#x8BD1;</h4>
+<pre><code class="lang-shell"># make ARCH=arm CROSS_COMPILE=arm-linux-gnueabi- -j4 O=./object
+</code></pre>
+<p>&#x6216;&#x8005;&#x5728;Makefile&#x4E2D;&#x914D;&#x7F6E;&#x9ED8;&#x8BA4;&#x503C;&#xFF0C;&#x6307;&#x5B9A;ARCH&#x548C;CROSS_COMPILE&#xFF0C;&#x514D;&#x5F97;&#x6BCF;&#x6B21;&#x7F16;&#x8BD1;&#x90FD;&#x9700;&#x8981;&#x5E26;&#x53C2;&#x6570;&#xFF1B;</p>
+<pre><code class="lang-shell"># make vexpress_defconfig
+# make zImage -j4
+# make modules -j4    // &#x7F16;&#x8BD1;&#x9A71;&#x52A8;&#x6A21;&#x5757;
+# make dtbs        // &#x7F16;&#x8BD1;&#x8BBE;&#x5907;&#x6811;
+</code></pre>
+<p>&#x5F97;&#x5230;&#x7F16;&#x8BD1;&#x6587;&#x4EF6;&#xFF1A;</p>
+<pre><code class="lang-shell">arch/arm/boot/zImage
+arch/arm/boot/dts/vexpress-v2p-ca9.dtb
+</code></pre>
+<p>&#x5206;&#x522B;&#x5C06;&#x7F16;&#x8BD1;&#x751F;&#x6210;&#x7684;zImage&#x548C;vexpress-v2p-ca9.dtb&#x6587;&#x4EF6;&#x653E;&#x5230;~/qemu&#x76EE;&#x5F55;&#xFF1B;</p>
+<pre><code class="lang-shell"># cp arch/arm/boot/zImage ~/qemu
+# cp arch/arm/boot/dts/vexpress-v2p-ca9.dtb ~/qemu
+</code></pre>
+<h3 id="44-qemu&#x542F;&#x52A8;&#x547D;&#x4EE4;">4.4 Qemu&#x542F;&#x52A8;&#x547D;&#x4EE4;</h3>
+<pre><code class="lang-shell"># qemu-system-arm -M vexpress-a9 -m 512M -kernel kernel/linux-4.4.157/arch/arm/boot/zImage -dtb kernel/linux-4.4.157/arch/arm/boot/dts/vexpress-v2p-ca9.dtb -nographic -append &quot;console=ttyAMA0&quot;
+</code></pre>
+<p>Qemu&#x7684;&#x542F;&#x52A8;&#x547D;&#x4EE4;&#x9700;&#x8981;&#x5E26;&#x597D;&#x51E0;&#x4E2A;&#x53C2;&#x6570;&#xFF0C;&#x5B8C;&#x6210;&#x542F;&#x52A8;&#x547D;&#x4EE4;&#x6BD4;&#x8F83;&#x957F;&#xFF0C;&#x6BCF;&#x6B21;&#x90FD;&#x8F93;&#x5165;&#x5F88;&#x53EF;&#x80FD;&#x4F1A;&#x51FA;&#x73B0;&#x9519;&#x8BEF;&#xFF0C;&#x4E3A;&#x4E86;&#x4F7F;&#x7528;&#x65B9;&#x4FBF;&#xFF0C;&#x53EF;&#x4EE5;&#x5C06;&#x8BE5;&#x547D;&#x4EE4;&#x653E;&#x5230;shell&#x811A;&#x672C;&#x4E2D;&#x6267;&#x884C;&#xFF1A;</p>
+<pre><code class="lang-shell"># cat boot.sh
+#! /bin/sh
+qemu-system-arm \
+        -M vexpress-a9  \
+        -m 512M \
+        -kernel kernel/linux-4.4.157/arch/arm/boot/zImage   \   
+        -dtb kernel/linux-4.4.157/arch/arm/boot/dts/vexpress-v2p-ca9.dtb    \   
+        -nographic  \
+        -append &quot;console=ttyAMA0&quot;
+</code></pre>
+<p>&#x542F;&#x52A8;&#x65E5;&#x5FD7;
+&#x5185;&#x6838;&#x6210;&#x529F;&#x542F;&#x52A8;&#xFF0C;&#x5185;&#x6838;&#x7684;&#x542F;&#x52A8;&#x6253;&#x5370;&#x4FE1;&#x606F;&#x975E;&#x5E38;&#x591A;&#x3002;&#x542F;&#x52A8;&#x6700;&#x540E;&#x51FA;&#x9519;&#x662F;&#x56E0;&#x4E3A;&#x6CA1;&#x6709;&#x6302;&#x8F7D;&#x6839;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x3002;</p>
+<pre><code>$ qemu-system-arm -M vexpress-a9 -m 512M -kernel ~/qemu/zImage -dtb ~/qemu/vexpress-v2p-ca9.dtb -nographic -append &quot;console=ttyAMA0&quot;
+Booting Linux on physical CPU 0x0
+Linux version 4.14.172 (xiami@xiami) (gcc version 7.5.0 (Ubuntu/Linaro 7.5.0-3ubuntu1~18.04)) #1 SMP Sun Mar 15 12:27:54 CST 2020
+CPU: ARMv7 Processor [410fc090] revision 0 (ARMv7), cr=10c5387d
+CPU: PIPT / VIPT nonaliasing data cache, VIPT nonaliasing instruction cache
+OF: fdt: Machine model: V2P-CA9
+Memory policy: Data cache writeback
+CPU: All CPU(s) started in SVC mode.
+percpu: Embedded 15 pages/cpu s32396 r8192 d20852 u61440
+Built 1 zonelists, mobility grouping on.  Total pages: 130048
+Kernel command line: console=ttyAMA0
+log_buf_len individual max cpu contribution: 4096 bytes
+log_buf_len total cpu_extra contributions: 12288 bytes
+log_buf_len min size: 16384 bytes
+log_buf_len: 32768 bytes
+early log buf free: 15044(91%)
+PID hash table entries: 2048 (order: 1, 8192 bytes)
+Dentry cache hash table entries: 65536 (order: 6, 262144 bytes)
+Inode-cache hash table entries: 32768 (order: 5, 131072 bytes)
+Memory: 509580K/524288K available (6144K kernel code, 403K rwdata, 1372K rodata, 1024K init, 161K bss, 14708K reserved, 0K cma-reserved)
+Virtual kernel memory layout:
+    vector  : 0xffff0000 - 0xffff1000   (   4 kB)
+    fixmap  : 0xffc00000 - 0xfff00000   (3072 kB)
+    vmalloc : 0xa0800000 - 0xff800000   (1520 MB)
+    lowmem  : 0x80000000 - 0xa0000000   ( 512 MB)
+    modules : 0x7f000000 - 0x80000000   (  16 MB)
+      .text : 0x80008000 - 0x80700000   (7136 kB)
+      .init : 0x80900000 - 0x80a00000   (1024 kB)
+      .data : 0x80a00000 - 0x80a64f90   ( 404 kB)
+       .bss : 0x80a6bd00 - 0x80a94468   ( 162 kB)
+SLUB: HWalign=64, Order=0-3, MinObjects=0, CPUs=4, Nodes=1
+Hierarchical RCU implementation.
+    RCU event tracing is enabled.
+    RCU restricting CPUs from NR_CPUS=8 to nr_cpu_ids=4.
+RCU: Adjusting geometry for rcu_fanout_leaf=16, nr_cpu_ids=4
+......
+input: ImExPS/2 Generic Explorer Mouse as /devices/platform/smb@4000000/smb@4000000:motherboard/smb@4000000:motherboard:iofpga@7,00000000/10007000.kmi/serio1/input/input2
+VFS: Cannot open root device &quot;(null)&quot; or unknown-block(0,0): error -6
+Please append a correct &quot;root=&quot; boot option; here are the available partitions:
+1f00          131072 mtdblock0 
+ (driver?)
+1f01           32768 mtdblock1 
+ (driver?)
+Kernel panic - not syncing: VFS: Unable to mount root fs on unknown-block(0,0)
+CPU: 0 PID: 1 Comm: swapper/0 Not tainted 4.14.172 #1
+Hardware name: ARM-Versatile Express
+[&lt;8010f180&gt;] (unwind_backtrace) from [&lt;8010b444&gt;] (show_stack+0x10/0x14)
+[&lt;8010b444&gt;] (show_stack) from [&lt;806616cc&gt;] (dump_stack+0x94/0xa8)
+[&lt;806616cc&gt;] (dump_stack) from [&lt;8011d67c&gt;] (panic+0xdc/0x248)
+[&lt;8011d67c&gt;] (panic) from [&lt;8090129c&gt;] (mount_block_root+0x1d4/0x2a8)
+[&lt;8090129c&gt;] (mount_block_root) from [&lt;80901490&gt;] (mount_root+0x120/0x128)
+[&lt;80901490&gt;] (mount_root) from [&lt;809015e8&gt;] (prepare_namespace+0x150/0x198)
+[&lt;809015e8&gt;] (prepare_namespace) from [&lt;80900ea0&gt;] (kernel_init_freeable+0x244/0x254)
+[&lt;80900ea0&gt;] (kernel_init_freeable) from [&lt;80674538&gt;] (kernel_init+0x8/0x114)
+[&lt;80674538&gt;] (kernel_init) from [&lt;801076a8&gt;] (ret_from_fork+0x14/0x2c)
+---[ end Kernel panic - not syncing: VFS: Unable to mount root fs on unknown-block(0,0)
+</code></pre><p>&#x6700;&#x540E;&#x7684;Kernel panic&#x662F;&#x56E0;&#x4E3A;&#x6CA1;&#x6709;&#x6302;&#x8F7D;&#x6839;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#xFF0C;&#x4E0B;&#x4E00;&#x5E03;&#x5236;&#x4F5C;&#x4E00;&#x4E2A;&#x7B80;&#x6613;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x3002;</p>
+<h2 id="5-&#x5236;&#x4F5C;&#x7B80;&#x6613;&#x6839;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;">5. &#x5236;&#x4F5C;&#x7B80;&#x6613;&#x6839;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;</h2>
+<p>&#x4F7F;&#x7528;busybox&#x5236;&#x4F5C;&#x7B80;&#x6613;&#x7684;&#x6839;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;</p>
+<h3 id="51-&#x4E0B;&#x8F7D;busybox&#x5DE5;&#x5177;">5.1 &#x4E0B;&#x8F7D;busybox&#x5DE5;&#x5177;</h3>
+<p>&#x4ECE;<a href="https://busybox.net/downloads/&#x4E0B;&#x8F7D;&#x6700;&#x65B0;&#x7684;busybox&#x3002;" target="_blank">https://busybox.net/downloads/&#x4E0B;&#x8F7D;&#x6700;&#x65B0;&#x7684;busybox&#x3002;</a></p>
+<p>&#x540C;&#x6837;&#xFF0C;&#x5EFA;&#x8BAE;&#x5728;windows&#x7CFB;&#x7EDF;&#x4E0B;&#x4F7F;&#x7528;&#x8FC5;&#x96F7;&#x4E0B;&#x8F7D;&#xFF0C;&#x5148;&#x627E;&#x5230;&#x5408;&#x9002;&#x7684;busybox&#x7248;&#x672C;&#xFF0C;&#x518D;&#x7528;&#x53F3;&#x952E;&#xFF0C;&#x9009;&#x62E9;&#x7528;&#x8FC5;&#x96F7;&#x4E0B;&#x8F7D;&#xFF0C;&#x8FD9;&#x6837;&#x901F;&#x5EA6;&#x4F1A;&#x5F88;&#x5FEB;&#xFF1B;</p>
+<h3 id="52-&#x89E3;&#x538B;busybox">5.2 &#x89E3;&#x538B;busybox</h3>
+<pre><code class="lang-shell"># tar -xvf busybox-1.31.1.tar.bz2
+</code></pre>
+<h3 id="53-&#x914D;&#x7F6E;&#x5E76;&#x7F16;&#x8BD1;busybox">5.3 &#x914D;&#x7F6E;&#x5E76;&#x7F16;&#x8BD1;busybox</h3>
+<h4 id="531-&#x914D;&#x7F6E;">5.3.1 &#x914D;&#x7F6E;</h4>
+<pre><code class="lang-shell"># make ARCH=arm CROSS_COMPILE=arm-linux-gnueabi- menuconfig
+</code></pre>
+<p>&#x7F16;&#x8BD1;&#x9009;&#x62E9;&#x4F7F;&#x7528;glibc&#x52A8;&#x6001;&#x5E93;&#xFF0C;&#x56E0;&#x4E3A;&#x9759;&#x6001;&#x5E93;&#x53EF;&#x80FD;&#x4F1A;&#x51FA;&#x73B0;&#x4E00;&#x4E9B;&#x672A;&#x77E5;&#x7684;&#x95EE;&#x9898;</p>
+<pre><code class="lang-shell"># make ARCH=arm CROSS_COMPILE=arm-linux-gnueabi- menuconfig
+Settings  ---&gt;
+    Build Options  ---&gt;
+        [ ] Build static binary (no shared libs)
+</code></pre>
+<p>&#x9ED8;&#x8BA4;&#x7684;&#x5B89;&#x88C5;&#x76EE;&#x5F55;&#x662F;./_install&#xFF0C;&#x5982;&#x679C;&#x9700;&#x8981;&#x6307;&#x5B9A;&#x5B89;&#x88C5;&#x76EE;&#x5F55;&#xFF0C;&#x53EF;&#x4EE5;&#x5728;&#x4E0B;&#x8FB9;&#x4FEE;&#x6539;&#xFF1A;</p>
+<pre><code class="lang-shell">Settings  ---&gt;
+Installation Options (&quot;make install&quot; behavior)
+(./_install) Destination path for &apos;make install&apos;
+</code></pre>
+<h4 id="532-&#x7F16;&#x8BD1;">5.3.2 &#x7F16;&#x8BD1;</h4>
+<pre><code class="lang-shell"># make ARCH=arm CROSS_COMPILE=arm-linux-gnueabi-
+</code></pre>
+<h4 id="533-&#x5B89;&#x88C5;">5.3.3 &#x5B89;&#x88C5;</h4>
+<pre><code class="lang-shell"># make ARCH=arm CROSS_COMPILE=arm-linux-gnueabi- install
+</code></pre>
+<p>&#x63D0;&#x793A;&#x4E0B;&#x8FB9;&#x4FE1;&#x606F;&#xFF0C;&#x8868;&#x793A;&#x5B89;&#x88C5;&#x6210;&#x529F;&#xFF1A;</p>
+<pre><code class="lang-shell">--------------------------------------------------
+You will probably need to make your busybox binary
+setuid root to ensure all configured applets will
+work properly.
+--------------------------------------------------
+</code></pre>
+<p>&#x5B89;&#x88C5;&#x5B8C;&#x6210;&#x4E4B;&#x540E;&#xFF0C;&#x751F;&#x6210;&#x7684;&#x76EE;&#x6807;&#x6587;&#x4EF6;&#x9ED8;&#x8BA4;&#x5728;./_install&#x76EE;&#x5F55;&#xFF0C;&#x8FD9;&#x4E2A;&#x76EE;&#x6807;&#x6587;&#x4EF6;&#x76EE;&#x5F55;&#x5C31;&#x662F;&#x4E0B;&#x8FB9;&#x8981;&#x5236;&#x4F5C;&#x6839;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x9700;&#x8981;&#x7528;&#x5230;&#x7684;&#x5DE5;&#x5177;&#xFF1A;</p>
+<pre><code class="lang-shell">$ ls _install/
+bin  linuxrc  sbin  usr
+</code></pre>
+<p>&#x6216;&#x8005;&#x76F4;&#x63A5;&#x4F7F;&#x7528;CONFIG_PREFIX&#x6307;&#x5B9A;&#x5B89;&#x88C5;&#x76EE;&#x5F55;&#xFF1A;</p>
+<pre><code class="lang-shell"># make ARCH=arm CROSS_COMPILE=arm-linux-gnueabi- CONFIG_PREFIX=/.../rootfs/ install
+</code></pre>
+<h4 id="534-&#x63D0;&#x524D;&#x8BBE;&#x7F6E;&#x597D;&#x7F16;&#x8BD1;&#x9ED8;&#x8BA4;&#x503C;">5.3.4 &#x63D0;&#x524D;&#x8BBE;&#x7F6E;&#x597D;&#x7F16;&#x8BD1;&#x9ED8;&#x8BA4;&#x503C;</h4>
+<p>&#x7F16;&#x8BD1;&#x5B89;&#x88C5;&#x8FC7;&#x7A0B;&#x4E2D;&#xFF0C;&#x4E00;&#x76F4;&#x8F93;&#x5165;ARCH=arm CROSS_COMPILE=arm-linux-gnueabi-&#x6BD4;&#x8F83;&#x9EBB;&#x70E6;&#xFF0C;&#x53EF;&#x4EE5;&#x5728;Makefile&#x4E2D;&#x8BBE;&#x7F6E;&#x597D;&#x9ED8;&#x8BA4;&#x503C;&#xFF1B;</p>
+<p>&#x4FEE;&#x6539;Makefile:</p>
+<pre><code class="lang-shell"># vim Makefile
+ARCH = arm
+CROSS_COMPILE = arm-linux-gnueabi-
+</code></pre>
+<p>&#x4E4B;&#x540E;&#x7684;&#x7F16;&#x8BD1;&#x3001;&#x5B89;&#x88C5;&#x547D;&#x4EE4;&#x5C31;&#x7B80;&#x5355;&#x4E86;&#xFF1A;</p>
+<pre><code class="lang-shell"># make
+# make install
+</code></pre>
+<h3 id="54-&#x751F;&#x6210;&#x7B80;&#x6613;&#x6839;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;">5.4 &#x751F;&#x6210;&#x7B80;&#x6613;&#x6839;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;</h3>
+<p>&#x5236;&#x4F5C;&#x4E00;&#x4E2A;&#x7B80;&#x6613;&#x7684;&#x6839;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#xFF0C;&#x8BE5;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x5305;&#x542B;&#x7684;&#x529F;&#x80FD;&#x6781;&#x5176;&#x7B80;&#x964B;&#xFF0C;&#x4EC5;&#x4E3A;&#x4E86;&#x9A8C;&#x8BC1;Qemu&#x542F;&#x52A8;Linux&#x5185;&#x6838;&#x540E;&#x6302;&#x8F7D;&#x8DDF;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x7684;&#x8FC7;&#x7A0B;&#x3002;&#x4EE5;&#x540E;&#x4F1A;&#x6839;&#x636E;&#x5177;&#x4F53;&#x9700;&#x8981;&#x8FDB;&#x4E00;&#x6B65;&#x5B8C;&#x5584;&#x8BE5;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x3002;</p>
+<h4 id="1-&#x7F16;&#x8BD1;&#x5E76;&#x5B89;&#x88C5;busybox">1) &#x7F16;&#x8BD1;&#x5E76;&#x5B89;&#x88C5;busybox</h4>
+<p>&#x5C06;busybox&#x7F16;&#x8BD1;&#x751F;&#x6210;&#x7684;_install&#x76EE;&#x5F55;&#x4E0B;&#x7684;&#x6587;&#x4EF6;&#x5168;&#x90E8;&#x62F7;&#x8D1D;&#x5230;&#x6839;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x76EE;&#x6807;rootfs/&#x76EE;&#x5F55;&#xFF1A;</p>
+<pre><code class="lang-shell"># mkdir rootfs
+# cp /.../busybox-1.29.3/_install/* rootfs/ -rfd
+</code></pre>
+<p>&#x4E5F;&#x53EF;&#x4EE5;&#x5728;&#x6307;&#x5B9A;busybox&#x7684;&#x5B89;&#x88C5;&#x76EE;&#x5F55;&#x76F4;&#x63A5;&#x5B89;&#x88C5;&#xFF1A;</p>
+<pre><code class="lang-shell"># make CONFIG_PREFIX=/.../rootfs/ install
+</code></pre>
+<h4 id="2-&#x6DFB;&#x52A0;glibc&#x5E93;">2) &#x6DFB;&#x52A0;glibc&#x5E93;</h4>
+<p>&#x5728;&#x6839;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x4E2D;&#x6DFB;&#x52A0;&#x52A0;&#x8F7D;&#x5668;&#x548C;&#x52A8;&#x6001;&#x5E93;&#xFF1A;</p>
+<pre><code class="lang-shell"># mkdir rootfs/lib
+# cp /usr/arm-linux-gnueabi/lib/* rootfs/lib/ -rfp
+</code></pre>
+<h4 id="3-&#x9759;&#x6001;&#x521B;&#x5EFA;&#x8BBE;&#x5907;&#x6587;&#x4EF6;">3) &#x9759;&#x6001;&#x521B;&#x5EFA;&#x8BBE;&#x5907;&#x6587;&#x4EF6;</h4>
+<pre><code class="lang-shell"># mkdir rootfs/dev
+# cd rootfs/dev
+# mknod -m 666 tty1 c 4 1
+# mknod -m 666 tty2 c 4 2
+# mknod -m 666 tty3 c 4 3
+# mknod -m 666 tty4 c 4 4
+# mknod -m 666 console c 5 1
+# mknod -m 666 null c 1 3
+</code></pre>
+<p>&#x81F3;&#x6B64;&#xFF0C;&#x7B80;&#x6613;&#x7248;&#x6839;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x5C31;&#x5236;&#x4F5C;&#x5B8C;&#x6210;&#xFF0C;&#x8BE5;&#x6839;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x53EA;&#x542B;&#x6709;&#x6700;&#x57FA;&#x672C;&#x7684;&#x529F;&#x80FD;&#xFF0C;&#x4E00;&#x4E9B;&#x5176;&#x4ED6;&#x529F;&#x80FD;&#x5728;&#x4EE5;&#x540E;&#x7684;&#x64CD;&#x4F5C;&#x4E2D;&#x4F1A;&#x8FDB;&#x884C;&#x6DFB;&#x52A0;&#xFF0C;&#x5982;&#x6709;&#x5174;&#x8DA3;&#x53EF;&#x4EE5;&#x7EE7;&#x7EED;&#x53C2;&#x8003;&#x4E0B;&#x4E00;&#x7BC7;&#x6587;&#x7AE0;&#x300A;&#x300B;&#x300A;&#x300B;&#x3002;</p>
+<h3 id="55-&#x5236;&#x4F5C;sd&#x5361;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x955C;&#x50CF;">5.5 &#x5236;&#x4F5C;SD&#x5361;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x955C;&#x50CF;</h3>
+<h4 id="1-&#x751F;&#x6210;&#x4E00;&#x4E2A;&#x7A7A;&#x7684;sd&#x5361;&#x955C;&#x50CF;&#xFF1A;">1) &#x751F;&#x6210;&#x4E00;&#x4E2A;&#x7A7A;&#x7684;SD&#x5361;&#x955C;&#x50CF;&#xFF1A;</h4>
+<pre><code class="lang-shell"># dd if=/dev/zero of=rootfs.ext3 bs=1M count=32
+32+0 records in
+32+0 records out
+33554432 bytes (34 MB, 32 MiB) copied, 0.0236764 s, 1.4 GB/s
+</code></pre>
+<h4 id="2-&#x5C06;sd&#x5361;&#x683C;&#x5F0F;&#x5316;&#x4E3A;exts&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#xFF1A;">2) &#x5C06;SD&#x5361;&#x683C;&#x5F0F;&#x5316;&#x4E3A;exts&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#xFF1A;</h4>
+<pre><code class="lang-shell"># mkfs.ext3 rootfs.ext3
+mke2fs 1.42.13 (17-May-2015)
+Discarding device blocks: done                            
+Creating filesystem with 32768 1k blocks and 8192 inodes
+Filesystem UUID: 51ab1063-a137-48e5-a6f4-4552dad3b898
+Superblock backups stored on blocks:
+    8193, 24577
+
+Allocating group tables: done                            
+Writing inode tables: done                            
+Creating journal (4096 blocks): done
+Writing superblocks and filesystem accounting information: done
+</code></pre>
+<h4 id="3-&#x5C06;rootfs&#x70E7;&#x5199;&#x5230;sd&#x5361;&#xFF1A;">3) &#x5C06;rootfs&#x70E7;&#x5199;&#x5230;SD&#x5361;&#xFF1A;</h4>
+<pre><code class="lang-shell"># sudo mount -t ext3 rootfs.ext3 /mnt -o loop
+# sudo cp -rf rootfs/* /mnt/
+# sudo umount /mnt
+</code></pre>
+<p>&#x5728;&#x5F00;&#x53D1;&#x8FC7;&#x7A0B;&#x4E2D;&#xFF0C;&#x5982;&#x679C;&#x9700;&#x8981;&#x4FEE;&#x6539;SD&#x5361;&#x4E2D;&#x7684;&#x5185;&#x5BB9;&#xFF0C;&#x53EF;&#x4EE5;&#x5C06;SD&#x5361;&#x7684;&#x955C;&#x50CF;rootfs.ext3&#x6302;&#x8F7D;&#x5230;/mnt&#x76EE;&#x5F55;&#x4E0B;&#xFF0C;&#x76F4;&#x63A5;&#x64CD;&#x4F5C;/mnt&#x6765;&#x4FEE;&#x6539;&#xFF1B;</p>
+<pre><code class="lang-shell"># sudo mount -t ext3 rootfs.ext3 /mnt -o loop
+</code></pre>
+<pre><code class="lang-shell"># cp rootfs.ext3 ~/qemu
+</code></pre>
+<h2 id="6-&#x9A8C;&#x8BC1;">6. &#x9A8C;&#x8BC1;</h2>
+<h3 id="1-qemu&#x542F;&#x52A8;&#x547D;&#x4EE4;&#xFF1A;">1) Qemu&#x542F;&#x52A8;&#x547D;&#x4EE4;&#xFF1A;</h3>
+<pre><code class="lang-shell"># qemu-system-arm -M vexpress-a9 -m 512M -kernel ~/qemu/zImage -dtb ~/qemu/vexpress-v2p-ca9.dtb -nographic -append &quot;root=/dev/mmcblk0 rw console=ttyAMA0&quot; -sd rootfs.ext3
+</code></pre>
+<h3 id="2-&#x542F;&#x52A8;&#x811A;&#x672C;&#xFF1A;">2) &#x542F;&#x52A8;&#x811A;&#x672C;&#xFF1A;</h3>
+<pre><code class="lang-shell"># boot.sh
+#! /bin/sh
+qemu-system-arm \
+        -M vexpress-a9  \
+        -m 512M \
+        -kernel ~/qemu/zImage   \   
+        -dtb ~/qemu/vexpress-v2p-ca9.dtb    \   
+        -nographic  \
+        -append &quot;root=/dev/mmcblk0 rw console=ttyAMA0&quot;    \
+        -sd rootfs.ext3
+</code></pre>
+<p>&#x4EE5;&#x4E0A;&#x4E3A;&#x5728;&#x4E32;&#x53E3;&#x7EC8;&#x7AEF;&#x542F;&#x52A8;&#x7CFB;&#x7EDF;&#xFF0C;&#x6309;&#x7167;&#x4EE5;&#x4E0B;&#x7684;&#x542F;&#x52A8;&#x547D;&#x4EE4;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;LCD&#x5C4F;&#x4F5C;&#x4E3A;&#x8F93;&#x51FA;&#x542F;&#x52A8;&#x7CFB;&#x7EDF;&#x3002;</p>
+<h3 id="3-&#x56FE;&#x5F62;&#x5316;&#x542F;&#x52A8;&#x5185;&#x6838;&#xFF1A;">3) &#x56FE;&#x5F62;&#x5316;&#x542F;&#x52A8;&#x5185;&#x6838;&#xFF1A;</h3>
+<pre><code class="lang-shell">qemu-system-arm -M vexpress-a9 -m 512M -kernel ~/qemu/zImage -dtb ~/qemu/vexpress-v2p-ca9.dtb -append &quot;root=/dev/mmcblk0 rw console=tty0&quot; -sd rootfs.ext3
+</code></pre>
+<h3 id="4-&#x542F;&#x52A8;&#x9A8C;&#x8BC1;&#xFF1A;">4) &#x542F;&#x52A8;&#x9A8C;&#x8BC1;&#xFF1A;</h3>
+<pre><code>request_module: kmod_concurrent_max (0) close to 0 (max_modprobes: 50), for module binfmt-464c, throttling...
+request_module: modprobe binfmt-464c cannot be processed, kmod busy with 50 threads for more than 5 seconds now
+Starting init: /sbin/init exists but couldn&apos;t execute it (error -8)
+request_module: kmod_concurrent_max (0) close to 0 (max_modprobes: 50), for module binfmt-464c, throttling...
+request_module: modprobe binfmt-464c cannot be processed, kmod busy with 50 threads for more than 5 seconds now
+Starting init: /bin/sh exists but couldn&apos;t execute it (error -8)
+Kernel panic - not syncing: No working init found.  Try passing init= option to kernel. See Linux Documentation/admin-guide/init.rst for guidance.
+CPU: 0 PID: 1 Comm: swapper/0 Not tainted 4.14.172 #1
+Hardware name: ARM-Versatile Express
+[&lt;8010f180&gt;] (unwind_backtrace) from [&lt;8010b444&gt;] (show_stack+0x10/0x14)
+[&lt;8010b444&gt;] (show_stack) from [&lt;806616cc&gt;] (dump_stack+0x94/0xa8)
+[&lt;806616cc&gt;] (dump_stack) from [&lt;8011d67c&gt;] (panic+0xdc/0x248)
+[&lt;8011d67c&gt;] (panic) from [&lt;80674634&gt;] (kernel_init+0x104/0x114)
+[&lt;80674634&gt;] (kernel_init) from [&lt;801076a8&gt;] (ret_from_fork+0x14/0x2c)
+---[ end Kernel panic - not syncing: No working init found.  Try passing init= option to kernel. See Linux Documentation/admin-guide/init.rst for guidance.
+QEMU: Terminated
+</code></pre><p>&#x5982;&#x4E0A;&#x95EE;&#x9898;&#x662F;&#x7531;&#x4E8E;&#x7F16;&#x8BD1;&#x751F;&#x6210;&#x7684;busybox&#x5DE5;&#x5177;&#xFF0C;&#x662F;x86&#x73AF;&#x5883;&#x4E0B;&#x4F7F;&#x7528;&#x7684;&#xFF1A;</p>
+<pre><code class="lang-shell"># file bin/busybox 
+bin/busybox: ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, interpreter /lib64/l, for GNU/Linux 3.2.0, BuildID[sha1]=7fe433943e201f5337be6116a883d54fc1a4a349, stripped
+</code></pre>
+<p>&#x662F;&#x56E0;&#x4E3A;&#x5728;&#x5B89;&#x88C5;busybox&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x4F7F;&#x7528;&#x4E86;make install&#xFF0C;&#x5E94;&#x8BE5;&#x4F7F;&#x7528;</p>
+<pre><code class="lang-shell">make ARCH=arm CROSS_COMPILE=arm-linux-gnueabi- install
+</code></pre>
+<p>&#x7F16;&#x8BD1;&#x5DE5;&#x5177;&#x751F;&#x6210;arm&#x5E73;&#x53F0;&#x4F7F;&#x7528;&#x7684;busybox&#x5DE5;&#x5177;&#xFF1A;</p>
+<pre><code class="lang-shell"># file rootfs/bin/busybox
+rootfs/bin/busybox: ELF 32-bit LSB executable, ARM, EABI5 version 1 (SYSV), dynamically linked, interpreter /lib/ld-, for GNU/Linux 3.2.0, BuildID[sha1]=cbcd33b8d6c946cb19408a5e8e714de554c87f52, stripped
+</code></pre>
+<p>&#x518D;&#x6B21;&#x9A8C;&#x8BC1;&#xFF1A;</p>
+<pre><code>rtc-pl031 10017000.rtc: setting system clock to 2018-09-24 13:22:14 UTC (1537795334)
+ALSA device list:
+  #0: ARM AC&apos;97 Interface PL041 rev0 at 0x10004000, irq 33
+input: ImExPS/2 Generic Explorer Mouse as /devices/platform/smb/smb:motherboard/smb:motherboard:iofpga@7,00000000/10007000.kmi/serio1/input/input2
+EXT4-fs (mmcblk0): mounting ext3 file system using the ext4 subsystem
+EXT4-fs (mmcblk0): recovery complete
+EXT4-fs (mmcblk0): mounted filesystem with ordered data mode. Opts: (null)
+VFS: Mounted root (ext3 filesystem) on device 179:0.
+Freeing unused kernel memory: 284K
+random: nonblocking pool is initialized
+can&apos;t run &apos;/etc/init.d/rcS&apos;: No such file or directory
+
+Please press Enter to activate this console.
+/ #
+/ #
+/ # uname -a
+Linux (none) 4.4.157 #1 SMP Sun Sep 23 21:11:22 CST 2018 armv7l GNU/Linux
+</code></pre><p>&#x81F3;&#x6B64;&#xFF0C;Qemu&#x542F;&#x52A8;Linux&#x5185;&#x6838;&#x5E76;&#x6302;&#x8F7D;&#x8DDF;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x5DF2;&#x7ECF;&#x542F;&#x52A8;&#x6210;&#x529F;&#xFF0C;&#x901A;&#x8FC7;&#x4E32;&#x53E3;&#x7EC8;&#x7AEF;&#x53EF;&#x4EE5;&#x6B63;&#x5E38;&#x548C;&#x7CFB;&#x7EDF;&#x8FDB;&#x884C;&#x7B80;&#x5355;&#x529F;&#x80FD;&#x7684;&#x4EA4;&#x4E92;&#x3002;
+&#x6253;&#x5370;&#x4E2D;&#x63D0;&#x793A;&#x7684;&#x4E0D;&#x80FD;&#x8FD0;&#x884C;/etc/init.d/rcS&#x95EE;&#x9898;&#xFF0C;&#x53EA;&#x9700;&#x8981;&#x6DFB;&#x52A0;/etc/init.d/rcS&#x6587;&#x4EF6;&#x5373;&#x53EF;&#xFF0C;&#x6587;&#x4EF6;&#x5185;&#x5BB9;&#x53EF;&#x4EE5;&#x662F;&#x63D0;&#x793A;&#x8BED;&#x53E5;&#x3002;</p>
+<pre><code class="lang-shell"># cat /etc/init.d/rcS
+Hello Qemu Linux!
+</code></pre>
+<p>&#x6CE8;&#x610F;&#xFF0C;&#x8981;&#x5728;&#x521B;&#x5EFA;/etc/init.d/rcS&#x6587;&#x4EF6;&#x65F6;&#xFF0C;&#x8BB0;&#x7740;&#x4FEE;&#x6539;&#x8BE5;&#x6587;&#x4EF6;&#x7684;&#x53EF;&#x6267;&#x884C;&#x6743;&#x9650;&#xFF0C;&#x5426;&#x5219;&#x542F;&#x52A8;&#x8FC7;&#x7A0B;&#x4E2D;&#x4F1A;&#x62A5;&#x9519;&#xFF1A;</p>
+<pre><code>Freeing unused kernel memory: 1024K
+random: crng init done
+can&apos;t run &apos;/etc/init.d/rcS&apos;: Permission denied
+
+Please press Enter to activate this console.
+</code></pre><h2 id="7-&#x9000;&#x51FA;qemu&#x73AF;&#x5883;">7. &#x9000;&#x51FA;Qemu&#x73AF;&#x5883;</h2>
+<p>Qemu&#x73AF;&#x5883;&#x642D;&#x5EFA;&#x597D;&#x4E4B;&#x540E;&#xFF0C;&#x5728;&#x51FA;&#x9519;&#x65F6;&#x9700;&#x8981;&#x5173;&#x95ED;&#x5E76;&#x91CD;&#x65B0;&#x542F;&#x52A8;Qemu&#xFF0C;&#x4E0D;&#x7528;&#x7684;&#x65F6;&#x5019;&#x9700;&#x8981;&#x5173;&#x95ED;Qemu&#x3002;</p>
+<h3 id="1&#xFF09;&#x624B;&#x52A8;&#x9000;&#x51FA;qemu">1&#xFF09;&#x624B;&#x52A8;&#x9000;&#x51FA;Qemu</h3>
+<pre><code>Ctrl + A; X
+</code></pre><p>&#x64CD;&#x4F5C;&#x4E4B;&#x540E;&#xFF0C;&#x7EC8;&#x7AEF;&#x4E0A;&#x4F1A;&#x6253;&#x5370;&#xFF1A;</p>
+<pre><code>QEMU: Terminated
+</code></pre><h3 id="2&#xFF09;&#x5F3A;&#x5236;&#x9000;&#x51FA;qemu">2&#xFF09;&#x5F3A;&#x5236;&#x9000;&#x51FA;Qemu</h3>
+<p>&#x6709;&#x65F6;&#x5019;&#x4F1A;&#x53D1;&#x73B0;&#x65E0;&#x6CD5;&#x901A;&#x8FC7;shutdown&#x7B49;&#x5DE5;&#x5177;&#x5173;&#x95ED;&#xFF0C;&#x56E0;&#x4E3A;Qemu&#x4E5F;&#x662F;&#x4E00;&#x4E2A;&#x8FDB;&#x7A0B;&#xFF0C;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x6740;&#x6389;Qemu&#x8FDB;&#x7A0B;&#x7684;&#x65B9;&#x6CD5;&#x5173;&#x95ED;Qemu&#x6A21;&#x62DF;&#x73AF;&#x5883;&#x3002;</p>
+<pre><code class="lang-shell"># ps -a
+# kill xxx
+</code></pre>
+<p>&#x5982;&#x4E0B;&#x53EF;&#x4EE5;&#x91C7;&#x7528;&#x811A;&#x672C;&#x8FD0;&#x884C;&#xFF1A;</p>
+<pre><code class="lang-shell"># cat kill_qemu.sh 
+#! /bin/sh
+ps -a | grep qemu-system-arm | awk &apos;{print $1}&apos; | xargs sudo kill -9
+</code></pre>
+<p>&#x672C;&#x6587;&#x8BB2;&#x8FF0;&#x4E86;Qemu&#x73AF;&#x5883;&#x542F;&#x52A8;Linux&#x5185;&#x6838;&#xFF0C;&#x5E76;&#x6302;&#x8F7D;SD&#x5361;&#x4E2D;&#x7684;&#x6839;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x7684;&#x4E00;&#x4E9B;&#x64CD;&#x4F5C;&#x6B65;&#x9AA4;&#x3002;&#x5982;&#x679C;&#x9700;&#x8981;&#x5728;Qemu&#x73AF;&#x5883;&#x4E0B;&#x4EE5;ARM&#x5F00;&#x53D1;&#x677F;&#x7684;&#x6B63;&#x5E38;&#x542F;&#x52A8;&#x6D41;&#x7A0B;&#x6765;&#x52A0;&#x8F7D;Linux&#x5185;&#x6838;&#x5E76;&#x6302;&#x8F7D;&#x6839;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#xFF0C;&#x53EF;&#x4EE5;&#x53C2;&#x8003;&#x4E0B;&#x4E00;&#x7BC7;&#x6587;&#x7AE0;&#x300A;<a href="https://www.jianshu.com/p/8619a6739040" target="_blank">Qemu&#x642D;&#x5EFA;ARM vexpress&#x5F00;&#x53D1;&#x73AF;&#x5883;(2)----&#x901A;&#x8FC7;u-boot&#x542F;&#x52A8;Linux&#x5185;&#x6838;</a>&#x300B;&#x3002;</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                
+                <a href="Qemu搭建ARM-vexpress开发环境-2-u-boot启动kernel.html" class="navigation navigation-next navigation-unique" aria-label="Next page: Qemu搭建ARM-vexpress开发环境-2-u-boot启动kernel">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Qemu搭建ARM-vexpress开发环境-1","level":"1.4.1.1","depth":3,"next":{"title":"Qemu搭建ARM-vexpress开发环境-2-u-boot启动kernel","level":"1.4.1.2","depth":3,"path":"qemu/Qemu搭建ARM-vexpress开发环境-2-u-boot启动kernel.md","ref":"qemu/Qemu搭建ARM-vexpress开发环境-2-u-boot启动kernel.md","articles":[]},"previous":{"title":"qemu","level":"1.4.1","depth":2,"ref":"","articles":[{"title":"Qemu搭建ARM-vexpress开发环境-1","level":"1.4.1.1","depth":3,"path":"qemu/Qemu搭建ARM-vexpress开发环境-1.md","ref":"qemu/Qemu搭建ARM-vexpress开发环境-1.md","articles":[]},{"title":"Qemu搭建ARM-vexpress开发环境-2-u-boot启动kernel","level":"1.4.1.2","depth":3,"path":"qemu/Qemu搭建ARM-vexpress开发环境-2-u-boot启动kernel.md","ref":"qemu/Qemu搭建ARM-vexpress开发环境-2-u-boot启动kernel.md","articles":[]},{"title":"Qemu搭建ARM-vexpress开发环境-3-NFS网络根文件系统","level":"1.4.1.3","depth":3,"path":"qemu/Qemu搭建ARM-vexpress开发环境-3-NFS网络根文件系统.md","ref":"qemu/Qemu搭建ARM-vexpress开发环境-3-NFS网络根文件系统.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"qemu/Qemu搭建ARM-vexpress开发环境-1.md","mtime":"2020-09-20T08:26:34.801Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-09-20T08:30:58.779Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

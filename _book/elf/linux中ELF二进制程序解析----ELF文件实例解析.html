@@ -1,0 +1,807 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Linux中ELF二进制程序解析----ELF文件实例解析 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../driver/" />
+    
+    
+    <link rel="prev" href="linux中ELF二进制程序解析.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" >
+            
+                <span>
+            
+                    
+                    计算机基础
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    ELF
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1.1" data-path="linux中ELF二进制程序解析.html">
+            
+                <a href="linux中ELF二进制程序解析.html">
+            
+                    
+                    Linux中ELF二进制程序解析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2.1.2" data-path="linux中ELF二进制程序解析----ELF文件实例解析.html">
+            
+                <a href="linux中ELF二进制程序解析----ELF文件实例解析.html">
+            
+                    
+                    Linux中ELF二进制程序解析----ELF文件实例解析
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../driver/">
+            
+                <a href="../driver/">
+            
+                    
+                    Linux driver
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" >
+            
+                <span>
+            
+                    
+                    BringUp
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1.1" data-path="../bringup/u-boot引导kernel启动过程.html">
+            
+                <a href="../bringup/u-boot引导kernel启动过程.html">
+            
+                    
+                    u-boot引导kernel启动过程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.2" data-path="../bringup/Linux内核启动流程-基于ARM64.html">
+            
+                <a href="../bringup/Linux内核启动流程-基于ARM64.html">
+            
+                    
+                    Linux内核启动流程-基于ARM64
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" >
+            
+                <span>
+            
+                    
+                    Driver
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.2.1" data-path="../driver/Linux字符设备驱动.html">
+            
+                <a href="../driver/Linux字符设备驱动.html">
+            
+                    
+                    Linux字符设备驱动
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.2" data-path="../driver/Linux块设备驱动.html">
+            
+                <a href="../driver/Linux块设备驱动.html">
+            
+                    
+                    Linux块设备驱动
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../platform/">
+            
+                <a href="../platform/">
+            
+                    
+                    platform
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.3.1" data-path="../platform/platform总线设备驱动模型.html">
+            
+                <a href="../platform/platform总线设备驱动模型.html">
+            
+                    
+                    platform总线设备驱动模型
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../tty/">
+            
+                <a href="../tty/">
+            
+                    
+                    tty
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="../i2c/">
+            
+                <a href="../i2c/">
+            
+                    
+                    i2c
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../tool/">
+            
+                <a href="../tool/">
+            
+                    
+                    Tool
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" >
+            
+                <span>
+            
+                    
+                    qemu
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1.1" data-path="../qemu/Qemu搭建ARM-vexpress开发环境-1.html">
+            
+                <a href="../qemu/Qemu搭建ARM-vexpress开发环境-1.html">
+            
+                    
+                    Qemu搭建ARM-vexpress开发环境-1
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.1.2" data-path="../qemu/Qemu搭建ARM-vexpress开发环境-2-u-boot启动kernel.html">
+            
+                <a href="../qemu/Qemu搭建ARM-vexpress开发环境-2-u-boot启动kernel.html">
+            
+                    
+                    Qemu搭建ARM-vexpress开发环境-2-u-boot启动kernel
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.1.3" data-path="../qemu/Qemu搭建ARM-vexpress开发环境-3-NFS网络根文件系统.html">
+            
+                <a href="../qemu/Qemu搭建ARM-vexpress开发环境-3-NFS网络根文件系统.html">
+            
+                    
+                    Qemu搭建ARM-vexpress开发环境-3-NFS网络根文件系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../hexo/">
+            
+                <a href="../hexo/">
+            
+                    
+                    hexo
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.2.1" data-path="../hexo/Hexo-Github搭建个人博客.html">
+            
+                <a href="../hexo/Hexo-Github搭建个人博客.html">
+            
+                    
+                    Hexo-Github搭建个人博客
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2.2" data-path="../hexo/Ubuntu-Hexo-Github搭建个人博客.html">
+            
+                <a href="../hexo/Ubuntu-Hexo-Github搭建个人博客.html">
+            
+                    
+                    Ubuntu-Hexo-Github搭建个人博客
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Linux中ELF二进制程序解析----ELF文件实例解析</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h2 id="linux&#x4E2D;elf&#x4E8C;&#x8FDB;&#x5236;&#x7A0B;&#x5E8F;&#x89E3;&#x6790;----elf&#x6587;&#x4EF6;&#x5B9E;&#x4F8B;&#x89E3;&#x6790;">linux&#x4E2D;ELF&#x4E8C;&#x8FDB;&#x5236;&#x7A0B;&#x5E8F;&#x89E3;&#x6790;----ELF&#x6587;&#x4EF6;&#x5B9E;&#x4F8B;&#x89E3;&#x6790;</h2>
+<h3 id="&#x76EE;&#x5F55;">&#x76EE;&#x5F55;</h3>
+<p>[TOC]</p>
+<p>&#x9488;&#x5BF9;32&#x4F4D;&#x7CFB;&#x7EDF;&#xFF0C;&#x901A;&#x8FC7;&#x4E00;&#x4E2A;&#x6781;&#x4E3A;&#x7B80;&#x5355;&#x7684;C&#x8BED;&#x8A00;&#x7A0B;&#x5E8F;&#x7684;&#x7F16;&#x8BD1;&#x548C;&#x5206;&#x6790;&#xFF0C;&#x8FDB;&#x884C;ELF&#x6587;&#x4EF6;&#x4E2D;&#x5404;&#x7ED3;&#x6784;&#x4F53;&#x6210;&#x5458;&#x529F;&#x80FD;&#x5206;&#x6790;&#xFF1B;</p>
+<p>&#x4EE3;&#x7801;&#x793A;&#x4F8B;&#xFF1A;</p>
+<pre><code class="lang-c"><span class="hljs-comment">// cat main.c</span>
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">(<span class="hljs-keyword">void</span>)</span>
+</span>{
+    <span class="hljs-keyword">while</span> (<span class="hljs-number">1</span>);
+    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+}
+</code></pre>
+<h3 id="0-&#x751F;&#x6210;&#x53EF;&#x6267;&#x884C;&#x6587;&#x4EF6;">0. &#x751F;&#x6210;&#x53EF;&#x6267;&#x884C;&#x6587;&#x4EF6;</h3>
+<p>&#x7F16;&#x8BD1;&#x4E3A;&#x4E2D;&#x95F4;&#x6587;&#x4EF6;&#xFF0C;&#x5E76;&#x94FE;&#x63A5;&#x4E3A;&#x76EE;&#x6807;&#x6587;&#x4EF6;&#xFF1B;</p>
+<pre><code class="lang-c">$ gcc -c -o main.o main.c
+$ ld main.o -Ttext <span class="hljs-number">0xc0001500</span> -e main -o kernel.bin
+</code></pre>
+<p>&#x901A;&#x8FC7;file&#x547D;&#x4EE4;&#x67E5;&#x770B;main.o&#x6587;&#x4EF6;&#x5C5E;&#x6027;&#xFF1B;main.o&#x6587;&#x4EF6;&#x662F;32&#x4F4D;&#x5927;&#x7AEF;&#x53EF;&#x91CD;&#x5B9A;&#x5411;&#x7684;ELF&#x6587;&#x4EF6;&#xFF0C;&#x673A;&#x5668;&#x5E73;&#x53F0;&#x4E3A;PowerPC&#xFF1B;</p>
+<pre><code class="lang-c">$ file main.o main.o: ELF <span class="hljs-number">32</span>-bit MSB relocatable, PowerPC or cisco <span class="hljs-number">4500</span>, version <span class="hljs-number">1</span> (SYSV), not stripped
+</code></pre>
+<p>&#x901A;&#x8FC7;file&#x547D;&#x4EE4;&#x67E5;&#x770B;kernel.bin&#x6587;&#x4EF6;&#x5C5E;&#x6027;&#xFF1B;kernel.bin&#x6587;&#x4EF6;&#x662F;32&#x4F4D;&#x5927;&#x7AEF;&#x53EF;&#x6267;&#x884C;&#x7684;ELF&#x6587;&#x4EF6;&#xFF0C;&#x673A;&#x5668;&#x5E73;&#x53F0;&#x4E3A;PowerPC&#xFF1B;</p>
+<pre><code class="lang-c">$ file kernel.bin kernel.bin: ELF <span class="hljs-number">32</span>-bit MSB executable, PowerPC or cisco <span class="hljs-number">4500</span>, version <span class="hljs-number">1</span> (SYSV), statically linked, not stripped
+</code></pre>
+<p>&#x901A;&#x8FC7;nm&#x547D;&#x4EE4;&#x67E5;&#x770B;main.o&#x6587;&#x4EF6;&#x7684;&#x7B26;&#x53F7;&#x8868;&#xFF0C;&#x7B26;&#x53F7;&#x8868;&#x4E2D;&#x4EC5;&#x6709;&#x4E00;&#x4E2A;main&#x51FD;&#x6570;&#x7B26;&#x53F7;&#xFF1B;</p>
+<pre><code class="lang-c">$ nm main.o <span class="hljs-number">00000000</span> T main
+</code></pre>
+<p>&#x901A;&#x8FC7;nm&#x67E5;&#x770B;kernel.bin&#x6587;&#x4EF6;&#x7684;&#x7B26;&#x53F7;&#x8868;&#xFF0C;</p>
+<pre><code class="lang-c">$ nm kernel.bin c0011510 A __bss_start c0011510 A _edata c0011510 A _end c0001500 T main
+</code></pre>
+<h3 id="1-elf-header">1. ELF header</h3>
+<p>ELF&#x4E3A;&#x4E8C;&#x8FDB;&#x5236;&#x6587;&#x4EF6;&#xFF0C;&#x4E0D;&#x80FD;&#x901A;&#x8FC7;&#x4E00;&#x822C;&#x7684;&#x65B9;&#x5F0F;&#x6765;&#x6253;&#x5F00;&#xFF0C;&#x5728;Linux&#x73AF;&#x5883;&#x4E0B;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;xxd&#x547D;&#x4EE4;&#xFF0C;xxd&#x547D;&#x4EE4;&#x4E3B;&#x8981;&#x7528;&#x6765;&#x67E5;&#x770B;&#x6587;&#x4EF6;&#x7684;&#x5341;&#x516D;&#x8FDB;&#x5236;&#x683C;&#x5F0F;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x67E5;&#x770B;&#x4E8C;&#x8FDB;&#x5236;&#x6587;&#x4EF6;&#xFF1B;&#x5728;Windows&#x73AF;&#x5883;&#x4E0B;&#xFF0C;&#x4F7F;&#x7528;Notepad++&#x7B49;&#x6587;&#x672C;&#x7F16;&#x8F91;&#x5DE5;&#x5177;&#x5C31;&#x53EF;&#x4EE5;&#x6253;&#x5F00;&#x67E5;&#x770B;&#xFF1B;</p>
+<pre><code class="lang-c">$ xxd -u -a -g <span class="hljs-number">1</span> -s <span class="hljs-number">0</span> -l <span class="hljs-number">0x100</span> kernel.bin
+<span class="hljs-number">0000000</span>: <span class="hljs-number">7F</span> <span class="hljs-number">45</span> <span class="hljs-number">4</span>C <span class="hljs-number">46</span> <span class="hljs-number">01</span> <span class="hljs-number">02</span> <span class="hljs-number">01</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span>  .ELF............
+<span class="hljs-number">0000010</span>: <span class="hljs-number">00</span> <span class="hljs-number">02</span> <span class="hljs-number">00</span> <span class="hljs-number">14</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">01</span> C0 <span class="hljs-number">00</span> <span class="hljs-number">15</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">34</span>  ..............<span class="hljs-number">.4</span>
+<span class="hljs-number">0000020</span>: <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">15</span> <span class="hljs-number">74</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">34</span> <span class="hljs-number">00</span> <span class="hljs-number">20</span> <span class="hljs-number">00</span> <span class="hljs-number">02</span> <span class="hljs-number">00</span> <span class="hljs-number">28</span>  ...t....<span class="hljs-number">.4</span>. ...(
+<span class="hljs-number">0000030</span>: <span class="hljs-number">00</span> <span class="hljs-number">06</span> <span class="hljs-number">00</span> <span class="hljs-number">03</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">01</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span> C0 <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span>  ................
+</code></pre>
+<p>0x00~0x0F&#x662F;e_ident&#x6570;&#x7EC4;&#xFF0C;e_ident[0]~e_ident[3]&#x7684;&#x56DB;&#x4E2A;&#x5B57;&#x8282;&#x662F;&#x56FA;&#x5B9A;&#x7684;ELF&#x9B54;&#x6570;&#xFF0C;0x7f, 0x45, 0x4c, 0x46&#xFF1B;e_ident[4] = 1&#x8868;&#x793A;&#x6587;&#x4EF6;&#x662F;32&#x4F4D;&#x7684;ELF&#x6587;&#x4EF6;&#xFF0C;e_ident[5] = 2&#x8868;&#x793A;&#x6587;&#x4EF6;&#x65F6;&#x5927;&#x7AEF;&#x5B57;&#x8282;&#x5E8F;&#xFF0C;e_ident[6] = 1&#x8868;&#x793A;&#x9ED8;&#x8BA4;&#x7248;&#x672C;&#xFF0C;e_ident[7]~e_ident[15]&#x7684;9&#x4E2A;&#x5B57;&#x8282;&#x7F6E;&#x4E3A;0&#xFF1B;</p>
+<p>0x10~0x11&#x662F;e_type&#xFF0C;2&#x4E2A;&#x5B57;&#x8282;&#xFF0C;e_type = 0x00 02&#xFF0C;&#x8868;&#x793A;&#x7C7B;&#x578B;&#x662F;ET_EXEC&#xFF0C;&#x5373;&#x53EF;&#x6267;&#x884C;&#x6587;&#x4EF6;&#xFF1B;</p>
+<p>0x12~0x13&#x662F;e_machine&#xFF0C;2&#x4E2A;&#x5B57;&#x8282;&#xFF0C;e_machine = 0x00 14&#xFF0C;&#x8868;&#x793A;&#x673A;&#x5668;&#x662F;EM_PPC&#xFF0C;&#x5373;power pc&#x786C;&#x4EF6;&#x5E73;&#x53F0;&#xFF1B;</p>
+<p>0x14~0x17&#x662F;e_version&#xFF0C;4&#x4E2A;&#x5B57;&#x8282;&#xFF0C;e_version = 0x00 00 00 01&#xFF0C;&#x8868;&#x793A;&#x7248;&#x672C;&#x4FE1;&#x606F;&#xFF1B;</p>
+<p>0x18~0x1B&#x662F;e_entry&#xFF0C;4&#x4E2A;&#x5B57;&#x8282;&#xFF0C;e_entry = 0xC0 00 15 00&#xFF0C;&#x8868;&#x793A;&#x7A0B;&#x5E8F;&#x7684;&#x865A;&#x62DF;&#x5165;&#x53E3;&#x5730;&#x5740;&#xFF1B;</p>
+<p>0x1C~0x1F&#x662F;e_phoff &#xFF0C;4&#x4E2A;&#x5B57;&#x8282;&#xFF0C;e_phoff = 0x00 00 00 34&#xFF0C;&#x8868;&#x793A;&#x7A0B;&#x5E8F;&#x5934;&#x8868;&#x5728;&#x6587;&#x4EF6;&#x4E2D;&#x7684;&#x504F;&#x79FB;&#x91CF;&#xFF1B;</p>
+<p>0x20~0x23&#x662F;e_shoff&#xFF0C;4&#x4E2A;&#x5B57;&#x8282;&#xFF0C;e_shoff = 0x00 00 15 74&#xFF0C;&#x8868;&#x793A;&#x8282;&#x5934;&#x8868;&#x5728;&#x6587;&#x4EF6;&#x5185;&#x7684;&#x504F;&#x79FB;&#x91CF;&#xFF1B;</p>
+<p>0x24~0x27&#x662F;e_flags&#xFF0C;4&#x4E2A;&#x5B57;&#x8282;&#xFF0C;e_flags = 0x00 00 00 00&#xFF0C;&#x8868;&#x793A;&#x5C5E;&#x6027;&#xFF1B;</p>
+<p>0x28~0x29&#x662F;e_ehsize&#xFF0C;2&#x4E2A;&#x5B57;&#x8282;&#xFF0C;e_ehsize = 0x00 34&#xFF0C;&#x8868;&#x793A;ELF header&#x5927;&#x5C0F;&#x662F;0x34&#x5B57;&#x8282;&#xFF1B;&#x7A0B;&#x5E8F;&#x5934;&#x8868;&#x7D27;&#x8DDF;ELF header&#x4E4B;&#x540E;&#xFF1B;</p>
+<p>0x2A~0x2B&#x662F;e_phentsize&#xFF0C;2&#x4E2A;&#x5B57;&#x8282;&#xFF0C;e_phentsize = 0x00 20&#xFF0C;&#x8868;&#x793A;program header&#x7ED3;&#x6784;ELF32_Phdr&#x7684;&#x5927;&#x5C0F;&#xFF0C;&#x6B64;&#x5904;&#x4E3A;0x20&#xFF1B;</p>
+<p>0x2C~0x2D&#x662F;e_phnum&#xFF0C;2&#x4E2A;&#x5B57;&#x8282;&#xFF0C;e_phnum = 0x00 02&#xFF0C;&#x8868;&#x793A;&#x7A0B;&#x5E8F;&#x5934;&#x8868;&#x4E2D;&#x6BB5;&#x7684;&#x4E2A;&#x6570;&#xFF0C;&#x6B64;&#x5904;&#x4E3A;2&#x4E2A;&#x6BB5;&#xFF1B;</p>
+<p>0x2E~0x2F&#x662F;e_shentsize&#xFF0C;2&#x4E2A;&#x5B57;&#x8282;&#xFF0C;e_shentsize = 0x00 28&#xFF0C;&#x8868;&#x793A;&#x8282;&#x5934;&#x8868;&#x4E2D;&#x8282;&#x7684;&#x5927;&#x5C0F;&#xFF0C;&#x6B64;&#x5904;&#x4E3A;0x28&#xFF1B;</p>
+<p>0x30~0x31&#x662F;e_shnum&#xFF0C;2&#x4E2A;&#x5B57;&#x8282;&#xFF0C;e_shnum = 0x00 06&#xFF0C;&#x8868;&#x793A;&#x8282;&#x5934;&#x8868;&#x4E2D;&#x8282;&#x7684;&#x4E2A;&#x6570;&#xFF0C;&#x6B64;&#x5904;&#x4E3A;6&#x4E2A;&#x8282;&#xFF1B;</p>
+<p>0x32~0x33&#x662F;e_shstrndx&#xFF0C;2&#x4E2A;&#x5B57;&#x8282;&#xFF0C;e_shstrndx = 0x00 03&#xFF0C;&#x8868;&#x793A;string name table&#x5728;&#x8282;&#x5934;&#x8868;&#x4E2D;&#x7684;&#x7D22;&#x5F15;&#x4E3A;3&#xFF1B;</p>
+<h3 id="2-&#x7A0B;&#x5E8F;&#x5934;&#x8868;">2. &#x7A0B;&#x5E8F;&#x5934;&#x8868;</h3>
+<pre><code class="lang-c">$ xxd -u -a -g <span class="hljs-number">1</span> -s <span class="hljs-number">0</span> -l <span class="hljs-number">0x100</span> kernel.bin
+......
+<span class="hljs-number">0000030</span>: <span class="hljs-number">00</span> <span class="hljs-number">06</span> <span class="hljs-number">00</span> <span class="hljs-number">03</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">01</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span> C0 <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span>  ................
+<span class="hljs-number">0000040</span>: C0 <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">15</span> <span class="hljs-number">10</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">15</span> <span class="hljs-number">10</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">05</span>  ................
+<span class="hljs-number">0000050</span>: <span class="hljs-number">00</span> <span class="hljs-number">01</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">64</span> <span class="hljs-number">74</span> E5 <span class="hljs-number">51</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span>  ....dt.Q........
+<span class="hljs-number">0000060</span>: <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">06</span>  ................
+<span class="hljs-number">0000070</span>: <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">04</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span>  ................
+</code></pre>
+<p>&#x5728;ELF header&#x4E2D;&#xFF0C;&#x7A0B;&#x5E8F;&#x5934;&#x8868;&#x504F;&#x79FB;e_phoff = 0x00 00 00 34&#xFF0C;&#x6240;&#x4EE5;&#x7A0B;&#x5E8F;&#x5934;&#x8868;&#x7684;&#x504F;&#x79FB;&#x4F4D;&#x7F6E;&#x4E3A;0x34&#xFF0C;&#x7A0B;&#x5E8F;&#x5934;&#x8868;&#x4E2D;&#x6BB5;&#x7684;&#x5927;&#x5C0F;e_phentsize = 0x00 20&#xFF0C;&#x6BB5;&#x7684;&#x4E2A;&#x6570;e_phnum = 0x00 02&#xFF0C;&#x8868;&#x793A;&#x7A0B;&#x5E8F;&#x5934;&#x8868;&#x4E2D;&#x6709;&#x4E24;&#x4E2A;&#x6BB5;&#xFF0C;&#x6BCF;&#x4E2A;&#x6BB5;&#x5927;&#x5C0F;0x20&#x5B57;&#x8282;&#xFF1B;ELF header&#x5927;&#x5C0F;e_ehsize = 0x00 34&#xFF0C;&#x7A0B;&#x5E8F;&#x5934;&#x8868;&#x7D27;&#x8DDF;ELF header&#x4E4B;&#x540E;&#xFF1B;0x34~0x73&#x4E4B;&#x95F4;&#x5171;0x40&#x4E2A;&#x5B57;&#x8282;&#xFF0C;&#x662F;&#x4E24;&#x4E2A;&#x7A0B;&#x5E8F;&#x5934;&#x7684;&#x5185;&#x5BB9;&#xFF0C;&#x4ECE;0x34&#x5730;&#x5740;&#x5F00;&#x59CB;&#xFF0C;&#x6309;&#x7167;Elf32_Phdr&#x7ED3;&#x6784;&#x5206;&#x6790;&#xFF1B;</p>
+<p>&#x7B2C;&#x4E00;&#x4E2A;&#x6BB5;&#x5934;&#x5728;0x34~0x53&#xFF0C;&#x5171;0x20&#x4E2A;&#x5B57;&#x8282;&#xFF1B;</p>
+<p>0x34~0x37&#x662F;p_type&#xFF0C;4&#x4E2A;&#x5B57;&#x8282;&#xFF0C;p_type = 0x00 00 00 01&#xFF0C;&#x8868;&#x793A;&#x7C7B;&#x578B;&#x4E3A;PT_LOAD&#xFF0C;&#x4E3A;&#x53EF;&#x52A0;&#x8F7D;&#x7A0B;&#x5E8F;&#x6BB5;&#xFF1B;</p>
+<p>0x38~0x3B&#x662F;p_offset&#xFF0C;4&#x4E2A;&#x5B57;&#x8282;&#xFF0C;p_offset = 0x00 00 00 00&#xFF0C;&#x8868;&#x793A;&#x672C;&#x6BB5;&#x5728;&#x6587;&#x4EF6;&#x5185;&#x7684;&#x504F;&#x79FB;&#x91CF;&#xFF1B;</p>
+<p>0x3C~0x3F&#x662F;p_vaddr&#xFF0C;4&#x4E2A;&#x5B57;&#x8282;&#xFF0C;p_vaddr = 0xC0 00 00 00&#xFF0C;&#x8868;&#x793A;&#x672C;&#x6BB5;&#x88AB;&#x52A0;&#x8F7D;&#x5230;&#x5185;&#x5B58;&#x540E;&#x7684;&#x8D77;&#x59CB;&#x865A;&#x62DF;&#x5730;&#x5740;&#xFF1B;</p>
+<p>0x40~0x43&#x662F;p_paddr&#xFF0C;4&#x4E2A;&#x5B57;&#x8282;&#xFF0C;p_paddr = 0xC0 00 00 00&#xFF0C;&#x4FDD;&#x7559;&#xFF0C;&#x548C;p_vaddr&#x4E00;&#x81F4;&#xFF1B;</p>
+<p>0x44~0x47&#x662F;p_filesz&#xFF0C;4&#x4E2A;&#x5B57;&#x8282;&#xFF0C;p_filesz = 0x00 00 15 10&#xFF0C;&#x8868;&#x793A;&#x672C;&#x6BB5;&#x5728;&#x6587;&#x4EF6;&#x4E2D;&#x7684;&#x5927;&#x5C0F;&#xFF1B;</p>
+<p>0x48~0x4B&#x662F;p_memsz&#xFF0C;4&#x4E2A;&#x5B57;&#x8282;&#xFF0C;p_memsz = 0x00 00 15 10&#xFF0C;&#x8868;&#x793A;&#x672C;&#x6BB5;&#x5728;&#x5185;&#x5B58;&#x4E2D;&#x7684;&#x5927;&#x5C0F;&#xFF1B;</p>
+<p>0x4C~0x4F&#x662F;p_flags&#xFF0C;4&#x4E2A;&#x5B57;&#x8282;&#xFF0C;p_flags = 0x00 00 00 05&#xFF0C;&#x8868;&#x793A;&#x672C;&#x6BB5;&#x7684;&#x5C5E;&#x6027;&#xFF0C;5 = 4 + 1 = PF_R + PF_X&#xFF0C;&#x6B64;&#x5904;&#x4E3A;&#x53EF;&#x8BFB;&#x548C;&#x53EF;&#x6267;&#x884C;&#x6743;&#x9650;&#xFF1B;</p>
+<p>0x50~0x53&#x662F;p_align&#xFF0C;4&#x4E2A;&#x5B57;&#x8282;&#xFF0C;p_align = 0x00 01 00 00&#xFF0C;&#x8868;&#x793A;&#x672C;&#x6BB5;&#x7684;&#x5BF9;&#x9F50;&#x65B9;&#x5F0F;&#xFF0C;&#x6B64;&#x5904;&#x4E3A;64K&#x5BF9;&#x9F50;&#xFF1B;</p>
+<p>&#x7B2C;&#x4E8C;&#x4E2A;&#x6BB5;&#x5934;&#x5728;0x54~0x73&#xFF0C;&#x5171;0x20&#x4E2A;&#x5B57;&#x8282;&#xFF1B;</p>
+<p>0x54~0x57&#x662F;p_type&#xFF0C;4&#x4E2A;&#x5B57;&#x8282;&#xFF0C;p_type = 0x64 74 E5 51&#xFF0C;&#x8868;&#x793A;&#x7C7B;&#x578B;&#x4E3A;PT_GNU_STACK&#xFF0C;&#x4E3A;GNU&#x7684;&#x6808;&#x6BB5;&#xFF1B;</p>
+<pre><code class="lang-c"><span class="hljs-comment">// include/uapi/linux/elf.h</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> PT_LOOS    0x60000000</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> PT_GNU_STACK    (PT_LOOS + 0x474e551)</span>
+</code></pre>
+<p>&#x4E4B;&#x540E;&#x7684;&#x5206;&#x6790;&#x7701;&#x7565;&#xFF1B;</p>
+<h3 id="3-&#x8282;&#x5934;&#x8868;">3. &#x8282;&#x5934;&#x8868;</h3>
+<p>&#x5728;ELF header&#x4E2D;&#xFF0C;&#x8282;&#x5934;&#x8868;&#x504F;&#x79FB;e_shoff = 0x00 00 15 74&#xFF0C;&#x6240;&#x4EE5;&#x8282;&#x5934;&#x8868;&#x7684;&#x504F;&#x79FB;&#x4F4D;&#x7F6E;&#x4E3A;0x1574&#xFF0C;&#x8282;&#x5934;&#x8868;&#x4E2D;&#x6BB5;&#x7684;&#x5927;&#x5C0F;e_shentsize = 0x00 28&#xFF0C;&#x6BB5;&#x7684;&#x4E2A;&#x6570;e_shnum = 0x00 06&#xFF0C;&#x8868;&#x793A;&#x8282;&#x5934;&#x8868;&#x4E2D;&#x6709;&#x516D;&#x4E2A;&#x8282;&#xFF0C;&#x6BCF;&#x4E2A;&#x8282;0x28&#x5B57;&#x8282;&#xFF1B;0x1574~0x1663&#x5171;0xF0&#x4E2A;&#x5B57;&#x8282;&#xFF0C;&#x662F;&#x516D;&#x4E2A;&#x8282;&#x5934;&#x7684;&#x5185;&#x5BB9;&#xFF0C;&#x4ECE;0x1574&#x5730;&#x5740;&#x5F00;&#x59CB;&#xFF0C;&#x6309;&#x7167;Elf32_Shdr&#x7ED3;&#x6784;&#x5206;&#x6790;&#xFF1B;</p>
+<pre><code class="lang-c">$ xxd -u -g <span class="hljs-number">1</span> -s <span class="hljs-number">0x1570</span> -l <span class="hljs-number">0x100</span> kernel.bin
+<span class="hljs-number">0001570</span>: <span class="hljs-number">74</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span>  t...............
+<span class="hljs-number">0001580</span>: <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span>  ................
+<span class="hljs-number">0001590</span>: <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">1</span>B  ................
+<span class="hljs-number">00015</span>a0: <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">01</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">06</span> C0 <span class="hljs-number">00</span> <span class="hljs-number">15</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">15</span> <span class="hljs-number">00</span>  ................
+<span class="hljs-number">00015</span>b0: <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">10</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">04</span>  ................
+<span class="hljs-number">00015</span>c0: <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">21</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">01</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span>  .......!........
+<span class="hljs-number">00015</span>d0: <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">15</span> <span class="hljs-number">10</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">38</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span>  ..........<span class="hljs-number">.8</span>....
+<span class="hljs-number">00015e0</span>: <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">01</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">11</span>  ................
+<span class="hljs-number">00015f</span>0: <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">03</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">15</span> <span class="hljs-number">48</span>  ...............H
+<span class="hljs-number">0001600</span>: <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">2</span>A <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">01</span>  ...*............
+<span class="hljs-number">0001610</span>: <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">01</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">02</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span>  ................
+<span class="hljs-number">0001620</span>: <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">16</span> <span class="hljs-number">64</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">80</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">05</span>  .......d........
+<span class="hljs-number">0001630</span>: <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">04</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">04</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">10</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">09</span>  ................
+<span class="hljs-number">0001640</span>: <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">03</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">16</span> E4  ................
+<span class="hljs-number">0001650</span>: <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">25</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">01</span>  ...%............
+<span class="hljs-number">0001660</span>: <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span>  ................
+</code></pre>
+<p>&#x7B2C;&#x4E00;&#x4E2A;&#x8282;&#x5934;&#x5728;0x1574~0x159B&#xFF0C;&#x5171;0x28&#x4E2A;&#x5B57;&#x8282;&#xFF1B;</p>
+<p>0x1574~0x1577&#x662F;sh_name&#xFF0C;4&#x4E2A;&#x5B57;&#x8282;&#xFF0C;sh_name = 0x00 00 00 00&#xFF0C;&#x8868;&#x793A;&#x8282;&#x540D;&#x79F0;&#x662F;&#x5728;&#x5B57;&#x7B26;&#x4E32;&#x8868;&#x7D22;&#x5F15;&#x503C;&#x4E3A;0x00&#x7684;&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x8BE5;&#x5B57;&#x7B26;&#x4E32;&#x4E3A;&#x7A7A;&#xFF1B;</p>
+<p>0x1578~0x157B&#x662F;sh_type&#xFF0C;4&#x4E2A;&#x5B57;&#x8282;&#xFF0C;sh_type = 0x00 00 00 00&#xFF0C;&#x8868;&#x793A;&#x8BE5;&#x8282;&#x662F;&#x4E00;&#x4E2A;&#x65E0;&#x6548;&#x7684;&#x8282;&#x5934;&#xFF0C;&#x6CA1;&#x6709;&#x5BF9;&#x5E94;&#x7684;&#x8282;&#xFF1B;&#x8BE5;&#x8282;&#x4E2D;&#x5176;&#x4ED6;&#x6210;&#x5458;&#x4E5F;&#x65E0;&#x610F;&#x4E49;&#xFF1B;</p>
+<p>&#x7B2C;&#x4E8C;&#x4E2A;&#x8282;&#x5934;&#x5728;0x159C~0x15C3&#xFF0C;&#x5171;0x28&#x4E2A;&#x5B57;&#x8282;&#xFF1B;</p>
+<p>0x159C~0x159F&#x662F;sh_name&#xFF0C;4&#x4E2A;&#x5B57;&#x8282;&#xFF0C;sh_name = 0x00 00 00 1B&#xFF0C;&#x8868;&#x793A;&#x8282;&#x540D;&#x79F0;&#x662F;&#x5728;&#x5B57;&#x7B26;&#x4E32;&#x8868;&#x7D22;&#x5F15;&#x503C;&#x4E3A;0x1B&#x7684;&#x5B57;&#x7B26;&#x4E32;&#xFF1B;&#x8BE5;&#x5B57;&#x7B26;&#x4E32;&#x4E3A;&quot;.text&quot;&#xFF1B;</p>
+<p>0x15A0~0x15A3&#x662F;sh_type&#xFF0C;4&#x4E2A;&#x5B57;&#x8282;&#xFF0C;sh_type = 0x00 00 00 01&#xFF0C;&#x8868;&#x793A;</p>
+<p>0x15A4~0x15A7&#x662F;sh_flags&#xFF0C;4&#x4E2A;&#x5B57;&#x8282;&#xFF0C;sh_flags = 0x00 00 00 06&#xFF0C;0x06 = 0x04 + 0x02 = SHF_EXECINSTR + SHF_ALLOC&#xFF0C;&#x8868;&#x793A;&#x8BE5;&#x8282;&#x5185;&#x5BB9;&#x662F;&#x6307;&#x4EE4;&#x4EE3;&#x7801;&#xFF0C;&#x5E76;&#x4E14;&#x5305;&#x542B;&#x5185;&#x5B58;&#x5728;&#x8FDB;&#x7A0B;&#x8FD0;&#x884C;&#x65F6;&#x9700;&#x8981;&#x5360;&#x7528;&#x5185;&#x5B58;&#x5355;&#x5143;&#xFF1B;</p>
+<p>0x15A8~0x15AB&#x662F;sh_addr&#xFF0C;4&#x4E2A;&#x5B57;&#x8282;&#xFF0C;sh_addr = 0xC0 00 15 00&#xFF0C;&#x8868;&#x793A;&#x8BE5;&#x8282;&#x5728;&#x5185;&#x5B58;&#x4E2D;&#x7684;&#x8D77;&#x59CB;&#x5730;&#x5740;&#xFF0C;&#x8282;&#x6620;&#x5C04;&#x5230;&#x865A;&#x62DF;&#x5730;&#x5740;&#x7A7A;&#x95F4;&#x4E2D;&#x7684;&#x4F4D;&#x7F6E;&#xFF1B;</p>
+<p>0x15AC~0x15AF&#x662F;sh_offset&#xFF0C;4&#x4E2A;&#x5B57;&#x8282;&#xFF0C;sh_offset = 0x00 00 15 00&#xFF0C;&#x8868;&#x793A;&#x8BE5;&#x8282;&#x5728;&#x6587;&#x4EF6;&#x4E2D;&#x7684;&#x8D77;&#x59CB;&#x4F4D;&#x7F6E;&#xFF1B;</p>
+<p>0x15B0~0x15B3&#x662F;sh_size&#xFF0C;4&#x4E2A;&#x5B57;&#x8282;&#xFF0C;sh_size = 0x00 00 00 10&#xFF0C;&#x8868;&#x793A;&#x8BE5;&#x8282;&#x7684;&#x5927;&#x5C0F;&#xFF1B;</p>
+<p>0x15B4~0x15B7&#x662F;sh_link&#xFF0C;4&#x4E2A;&#x5B57;&#x8282;&#xFF0C;sh_link = 00 00 00 00</p>
+<p>0x15B8~0x15BB&#x662F;sh_info&#xFF0C;4&#x4E2A;&#x5B57;&#x8282;&#xFF0C;sh_info = 0x00 00 00 00</p>
+<p>0x15BC~0x15BF&#x662F;sh_addralign&#xFF0C;4&#x4E2A;&#x5B57;&#x8282;&#xFF0C;sh_addralign = 0x00 00 00 04&#xFF0C;&#x8868;&#x793A;&#x8BE5;&#x8282;&#x7684;&#x6570;&#x636E;&#x5728;&#x5185;&#x5B58;&#x4E2D;&#x4EE5;16&#x5B57;&#x8282;&#x5BF9;&#x9F50;&#xFF1B;</p>
+<p>0x15C0~0x15C3&#x662F;sh_entsize&#xFF0C;4&#x4E2A;&#x5B57;&#x8282;&#xFF0C;sh_entsize = 0x00 00 00 00</p>
+<p>&#x4EE5;&#x540E;&#x5404;&#x8282;&#x7684;&#x89E3;&#x6790;&#x7701;&#x7565;&#xFF1B;</p>
+<h3 id="4-readelf&#x67E5;&#x770B;&#x7ED3;&#x679C;">4. readelf&#x67E5;&#x770B;&#x7ED3;&#x679C;</h3>
+<p>1) &#x663E;&#x793A;&#x7A0B;&#x5E8F;&#x7684;ELF&#x6587;&#x4EF6;&#x5934;</p>
+<pre><code class="lang-c">$ readelf -h kernel.bin
+ELF Header:
+  Magic:   7f 45 4c 46 01 02 01 00 00 00 00 00 00 00 00 00
+  Class:                             ELF32
+  Data:                              2&apos;s complement, big endian
+  Version:                           1 (current)
+  OS/ABI:                            UNIX - System V
+  ABI Version:                       0
+  Type:                              EXEC (Executable file)
+  Machine:                           PowerPC
+  Version:                           0x1
+  Entry point address:               0xc0001500
+  Start of program headers:          52 (bytes into file)
+  Start of section headers:          5492 (bytes into file)
+  Flags:                             0x0
+  Size of this header:               52 (bytes)
+  Size of program headers:           32 (bytes)
+  Number of program headers:         2
+  Size of section headers:           40 (bytes)
+  Number of section headers:         6
+  Section header string table index: 3
+</code></pre>
+<p>2) &#x663E;&#x793A;&#x7A0B;&#x5E8F;&#x6240;&#x6709;&#x7684;&#x7A0B;&#x5E8F;&#x5934;</p>
+<pre><code class="lang-c">$ readelf -l kernel.bin
+
+Elf file type is EXEC (Executable file)
+Entry point 0xc0001500
+There are 2 program headers, starting at offset 52
+
+Program Headers:
+  Type           Offset   VirtAddr   PhysAddr   FileSiz MemSiz  Flg Align
+  LOAD           0x000000 0xc0000000 0xc0000000 0x01510 0x01510 R E 0x10000
+  GNU_STACK      0x000000 0x00000000 0x00000000 0x00000 0x00000 RW  0x4
+
+ Section to Segment mapping:
+  Segment Sections...
+   00     .text
+   01
+</code></pre>
+<p>3) &#x663E;&#x793A;&#x7A0B;&#x5E8F;&#x6240;&#x6709;&#x7684;&#x8282;&#x5934;</p>
+<pre><code class="lang-c">$ readelf -S kernel.bin
+There are <span class="hljs-number">6</span> section headers, starting at offset <span class="hljs-number">0x1574</span>:
+
+Section Headers:
+  [Nr] Name              Type            Addr     Off    Size   ES Flg Lk Inf Al
+  [ <span class="hljs-number">0</span>]                   <span class="hljs-literal">NULL</span>            <span class="hljs-number">00000000</span> <span class="hljs-number">000000</span> <span class="hljs-number">000000</span> <span class="hljs-number">00</span>      <span class="hljs-number">0</span>   <span class="hljs-number">0</span>  <span class="hljs-number">0</span>
+  [ <span class="hljs-number">1</span>] .text             PROGBITS        c0001500 <span class="hljs-number">001500</span> <span class="hljs-number">000010</span> <span class="hljs-number">00</span>  AX  <span class="hljs-number">0</span>   <span class="hljs-number">0</span>  <span class="hljs-number">4</span>
+  [ <span class="hljs-number">2</span>] .comment          PROGBITS        <span class="hljs-number">00000000</span> <span class="hljs-number">001510</span> <span class="hljs-number">000038</span> <span class="hljs-number">00</span>      <span class="hljs-number">0</span>   <span class="hljs-number">0</span>  <span class="hljs-number">1</span>
+  [ <span class="hljs-number">3</span>] .shstrtab         STRTAB          <span class="hljs-number">00000000</span> <span class="hljs-number">001548</span> <span class="hljs-number">00002</span>a <span class="hljs-number">00</span>      <span class="hljs-number">0</span>   <span class="hljs-number">0</span>  <span class="hljs-number">1</span>
+  [ <span class="hljs-number">4</span>] .symtab           SYMTAB          <span class="hljs-number">00000000</span> <span class="hljs-number">001664</span> <span class="hljs-number">000080</span> <span class="hljs-number">10</span>      <span class="hljs-number">5</span>   <span class="hljs-number">4</span>  <span class="hljs-number">4</span>
+  [ <span class="hljs-number">5</span>] .strtab           STRTAB          <span class="hljs-number">00000000</span> <span class="hljs-number">0016e4</span> <span class="hljs-number">000025</span> <span class="hljs-number">00</span>      <span class="hljs-number">0</span>   <span class="hljs-number">0</span>  <span class="hljs-number">1</span>
+Key to Flags:
+  W (write), A (alloc), X (execute), M (merge), S (strings)
+  I (info), L (link order), G (group), T (TLS), E (exclude), x (unknown)
+  O (extra OS processing required) o (OS specific), p (processor specific)
+</code></pre>
+<p>4) &#x7EFC;&#x5408;&#x663E;&#x793A;&#x7A0B;&#x5E8F;&#x6240;&#x6709;&#x7684;&#x5934;&#x4FE1;&#x606F;&#xFF0C;&#x5305;&#x542B;ELF&#x6587;&#x4EF6;&#x5934;&#x3001;&#x7A0B;&#x5E8F;&#x5934;&#x3001;&#x8282;&#x5934;&#x4FE1;&#x606F;&#xFF1B;</p>
+<pre><code class="lang-c">$ readelf -e kernel.bin
+ELF Header:
+  Magic:   7f 45 4c 46 01 02 01 00 00 00 00 00 00 00 00 00
+  Class:                             ELF32
+  Data:                              2&apos;s complement, big endian
+  Version:                           1 (current)
+  OS/ABI:                            UNIX - System V
+  ABI Version:                       0
+  Type:                              EXEC (Executable file)
+  Machine:                           PowerPC
+  Version:                           0x1
+  Entry point address:               0xc0001500
+  Start of program headers:          52 (bytes into file)
+  Start of section headers:          5492 (bytes into file)
+  Flags:                             0x0
+  Size of this header:               52 (bytes)
+  Size of program headers:           32 (bytes)
+  Number of program headers:         2
+  Size of section headers:           40 (bytes)
+  Number of section headers:         6
+  Section header string table index: 3
+
+Section Headers:
+  [Nr] Name              Type            Addr     Off    Size   ES Flg Lk Inf Al
+  [ 0]                   NULL            00000000 000000 000000 00      0   0  0
+  [ 1] .text             PROGBITS        c0001500 001500 000010 00  AX  0   0  4
+  [ 2] .comment          PROGBITS        00000000 001510 000038 00      0   0  1
+  [ 3] .shstrtab         STRTAB          00000000 001548 00002a 00      0   0  1
+  [ 4] .symtab           SYMTAB          00000000 001664 000080 10      5   4  4
+  [ 5] .strtab           STRTAB          00000000 0016e4 000025 00      0   0  1
+Key to Flags:
+  W (write), A (alloc), X (execute), M (merge), S (strings)
+  I (info), L (link order), G (group), T (TLS), E (exclude), x (unknown)
+  O (extra OS processing required) o (OS specific), p (processor specific)
+
+Program Headers:
+  Type           Offset   VirtAddr   PhysAddr   FileSiz MemSiz  Flg Align
+  LOAD           0x000000 0xc0000000 0xc0000000 0x01510 0x01510 R E 0x10000
+  GNU_STACK      0x000000 0x00000000 0x00000000 0x00000 0x00000 RW  0x4
+
+ Section to Segment mapping:
+  Segment Sections...
+   00     .text
+   01
+</code></pre>
+<p>&#x901A;&#x8FC7;readelf&#x547D;&#x4EE4;&#x67E5;&#x770B;&#x7684;&#x7ED3;&#x679C;&#xFF0C;&#x548C;&#x6309;&#x7167;ELF&#x6587;&#x4EF6;&#x5206;&#x6790;&#x7684;&#x7ED3;&#x679C;&#xFF0C;&#x5BF9;&#x6BD4;&#x7ED3;&#x679C;&#x4E00;&#x81F4;&#xFF1B;</p>
+<h3 id="5-&#x603B;&#x7ED3;">5. &#x603B;&#x7ED3;</h3>
+<p>&#x901A;&#x8FC7;xxd&#x547D;&#x4EE4;&#x6253;&#x5F00;ELF&#x4E8C;&#x8FDB;&#x5236;&#x6587;&#x4EF6;&#xFF0C;&#x5BF9;&#x6BD4;ELF&#x6587;&#x4EF6;&#x5934;&#x3001;&#x7A0B;&#x5E8F;&#x5934;&#x8868;&#x3001;&#x8282;&#x5934;&#x8868;&#x7684;&#x7ED3;&#x6784;&#x4F53;&#x8FDB;&#x884C;&#x89E3;&#x6790;&#xFF0C;&#x53EF;&#x4EE5;&#x5F97;&#x51FA;&#x7A0B;&#x5E8F;&#x4E2D;&#x7A0B;&#x5E8F;&#x5934;&#x548C;&#x8282;&#x5934;&#x5728;&#x6587;&#x4EF6;&#x4E2D;&#x7684;&#x4F4D;&#x7F6E;&#x548C;&#x5176;&#x4ED6;&#x4FE1;&#x606F;&#xFF1B;&#x5728;&#x5185;&#x6838;&#x4E2D;&#x901A;&#x8FC7;&#x8FD9;&#x79CD;&#x56FA;&#x5B9A;&#x7684;&#x7ED3;&#x6784;&#x4F53;&#x8FDB;&#x884C;&#x89E3;&#x6790;&#xFF0C;&#x5C06;&#x5404;&#x4E2A;&#x7A0B;&#x5E8F;&#x5934;&#x548C;&#x8282;&#x5934;&#x7B49;&#x4FE1;&#x606F;&#x6309;&#x7167;&#x6309;&#x7167;&#x4E00;&#x5B9A;&#x7684;&#x5E03;&#x5C40;&#x52A0;&#x8F7D;&#x5230;&#x5185;&#x5B58;&#x4E2D;&#xFF0C;&#x4E4B;&#x540E;&#x5C31;&#x53EF;&#x4EE5;&#x6267;&#x884C;&#x4E86;&#xFF1B;</p>
+<h3 id="&#x53C2;&#x8003;&#x8D44;&#x6599;">&#x53C2;&#x8003;&#x8D44;&#x6599;</h3>
+<p>&#x300A;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x771F;&#x8C61;&#x8FD8;&#x539F;&#x300B;</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="linux中ELF二进制程序解析.html" class="navigation navigation-prev " aria-label="Previous page: Linux中ELF二进制程序解析">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../driver/" class="navigation navigation-next " aria-label="Next page: Linux driver">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Linux中ELF二进制程序解析----ELF文件实例解析","level":"1.2.1.2","depth":3,"next":{"title":"Linux driver","level":"1.3","depth":1,"path":"driver/README.md","ref":"driver/README.md","articles":[{"title":"BringUp","level":"1.3.1","depth":2,"ref":"","articles":[{"title":"u-boot引导kernel启动过程","level":"1.3.1.1","depth":3,"path":"bringup/u-boot引导kernel启动过程.md","ref":"bringup/u-boot引导kernel启动过程.md","articles":[]},{"title":"Linux内核启动流程-基于ARM64","level":"1.3.1.2","depth":3,"path":"bringup/Linux内核启动流程-基于ARM64.md","ref":"bringup/Linux内核启动流程-基于ARM64.md","articles":[]}]},{"title":"Driver","level":"1.3.2","depth":2,"ref":"","articles":[{"title":"Linux字符设备驱动","level":"1.3.2.1","depth":3,"path":"driver/Linux字符设备驱动.md","ref":"driver/Linux字符设备驱动.md","articles":[]},{"title":"Linux块设备驱动","level":"1.3.2.2","depth":3,"path":"driver/Linux块设备驱动.md","ref":"driver/Linux块设备驱动.md","articles":[]}]},{"title":"platform","level":"1.3.3","depth":2,"path":"platform/README.md","ref":"platform/README.md","articles":[{"title":"platform总线设备驱动模型","level":"1.3.3.1","depth":3,"path":"platform/platform总线设备驱动模型.md","ref":"platform/platform总线设备驱动模型.md","articles":[]}]},{"title":"tty","level":"1.3.4","depth":2,"path":"tty/README.md","ref":"tty/README.md","articles":[]},{"title":"i2c","level":"1.3.5","depth":2,"path":"i2c/README.md","ref":"i2c/README.md","articles":[]}]},"previous":{"title":"Linux中ELF二进制程序解析","level":"1.2.1.1","depth":3,"path":"elf/linux中ELF二进制程序解析.md","ref":"elf/linux中ELF二进制程序解析.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"elf/linux中ELF二进制程序解析----ELF文件实例解析.md","mtime":"2020-09-20T08:27:48.273Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-09-20T08:30:58.779Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
